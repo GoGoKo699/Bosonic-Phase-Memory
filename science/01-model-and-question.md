@@ -15,7 +15,7 @@ Bosonic number-phase codes and their phase-recovery mechanism are established co
 The oscillator Hilbert space is spanned by the nondegenerate number basis:
 
 ```math
-\mathcal H_B=\overline{\operatorname{span}}\{|n\rangle:n=0,1,2,\ldots\}
+\mathcal H_B=\overline{\mathrm{span}}\{|n\rangle:n=0,1,2,\ldots\}
 \simeq\ell^2(\mathbb N_0),
 \qquad
 \hat n=\sum_{n=0}^{\infty}n|n\rangle\langle n|.
@@ -45,7 +45,7 @@ The exact result assumes that $p(\theta)=p(-\theta)$ and that $p$ is nonincreasi
 
 ## Allowed operations and information
 
-The logical system is $A\simeq\mathbb C^d$, with $d$ a positive integer. In the basic model, an arbitrary completely positive trace-preserving encoder $\mathcal E$ maps it to the oscillator, and a completely positive trace-preserving recovery $\mathcal R$ returns a $d$-level system:
+The logical system is $A\simeq\mathbb C^d$, with $d$ a positive integer. In the basic model, an arbitrary completely positive trace-preserving encoder $\mathcal E$ maps it to the oscillator, and a completely positive trace-preserving recovery $\mathcal R$ returns a system with $d$ levels:
 
 ```math
 \Lambda=\mathcal R\circ\mathcal D_p\circ\mathcal E.
@@ -87,7 +87,7 @@ Entanglement fidelity on the maximally mixed logical input is
 
 ```math
 F_e(\Lambda)=\langle\Phi_d|
-(\operatorname{id}_R\otimes\Lambda)(|\Phi_d\rangle\langle\Phi_d|)
+(\mathrm{id}_R\otimes\Lambda)(|\Phi_d\rangle\langle\Phi_d|)
 |\Phi_d\rangle.
 ```
 
@@ -95,7 +95,7 @@ This is a probability, rather than its square root. It tests preservation of the
 
 ```math
 \varepsilon_\diamond(\Lambda)
-=\frac12\|\Lambda-\operatorname{id}_d\|_\diamond.
+=\frac12\|\Lambda-\mathrm{id}_d\|_\diamond.
 ```
 
 The diamond norm maximizes distinguishability over arbitrary logical inputs together with a reference; a reference of dimension $d$ suffices here. Entanglement fidelity and diamond error are different quantities for a general channel. The exact benchmark establishes their respective optima. It does not identify them for every finite code.
@@ -138,7 +138,7 @@ F_*(d,p)=\frac{2\pi p(0)}{d}+o(d^{-1})
 
 For bounded $p$, the simpler inequality $F_*\le 2\pi\|p\|_\infty/d$ is immediate. These are statements about preserving the whole register, not the error of one selected observable or one selected logical qubit.
 
-If $p$ is continuous and strictly decreasing on $(0,\pi)$ and $d>1$, no normal code attains the optimum; the more general sufficient condition is the [strict-threshold condition](02-exact-benchmark.md#continuity-and-nonattainment). The [constructive proof](03-constructive-achievability.md) specifies a sequence with finite photon support and convergence of the complete logical channel. The [finite-resource account](04-finite-resources.md) quantifies how this sequence approaches the limit and how photon loss changes its performance.
+If $p$ is continuous and strictly decreasing on $(0,\pi)$ and $d\gt 1$, no normal code attains the optimum; the more general sufficient condition is the [strict-threshold condition](02-exact-benchmark.md#continuity-and-nonattainment). The [constructive proof](03-constructive-achievability.md) specifies a sequence with finite photon support and convergence of the complete logical channel. The [finite-resource account](04-finite-resources.md) quantifies how this sequence approaches the limit and how photon loss changes its performance.
 
 ## Why the single-mode assumption matters
 

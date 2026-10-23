@@ -10,14 +10,14 @@ w_d(p)&=\int_{-\pi/d}^{\pi/d}p(\theta)\,d\theta,\\
 \sup_{\mathcal E,\mathcal R}F_e(\mathcal R\mathcal D_p\mathcal E)
 &=w_d(p),\\
 \inf_{\mathcal E,\mathcal R}\frac12
-\|\mathcal R\mathcal D_p\mathcal E-\operatorname{id}_d\|_\diamond
+\|\mathcal R\mathcal D_p\mathcal E-\mathrm{id}_d\|_\diamond
 &=1-w_d(p).
 \end{aligned}
 ```
 
 The optimization allows arbitrary deterministic encoders and recoveries, with no photon-number limit. The oscillator is the only quantum memory through the interval; no external record reveals the realized phase, and no correction occurs during the interval. Retained classical encoding records do not improve the optimum.
 
-The converse applies to every allowed code. A finite-support number-phase construction approaches it, with its full logical channel converging to an explicit mixture of logical phase errors. If the density is continuous and strictly decreasing on $(0,\pi)$ and $d>1$, the limiting optimum is not attained by a normal code. The [number-phase construction is inherited](science/06-prior-work.md); the claim developed here is its exact universal optimum in this operational model.
+The converse applies to every allowed code. A finite-support number-phase construction approaches it, with its full logical channel converging to an explicit mixture of logical phase errors. If the density is continuous and strictly decreasing on $(0,\pi)$ and $d\gt 1$, the limiting optimum is not attained by a normal code. The [number-phase construction is inherited](science/06-prior-work.md); the claim developed here is its exact universal optimum in this operational model.
 
 ## Main results
 

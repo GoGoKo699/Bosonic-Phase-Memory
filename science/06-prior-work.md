@@ -70,7 +70,7 @@ Q(\mathcal D_p)=D(p\|u)
 =\int_{-\pi}^{\pi}p(\theta)\log_2[2\pi p(\theta)]\,d\theta.
 ```
 
-It also supplies finite-blocklength Rényi converse bounds; main equations 30 and 33 are relevant, and the supplement defines one-shot tasks. These statements concern achievable rates over many uses or bounds on finite-use tasks. They do not state the exact single-use, fixed-$d$ fidelity curve proved here. Their explicit Gaussian and Cauchy comparisons already establish that the full noise law matters. Thus a coarse logarithmic packing estimate or noise-law comparison alone would be a weak novelty claim.
+It also supplies finite-blocklength Rényi converse bounds; main equations 30 and 33 are relevant, and the supplement defines one-shot tasks. These statements concern achievable rates over many uses or bounds on finite-use tasks. They do not state the exact single-use, fixed-dimension fidelity curve proved here. Their explicit Gaussian and Cauchy comparisons already establish that the full noise law matters. Thus a coarse logarithmic packing estimate or noise-law comparison alone would be a weak novelty claim.
 
 **Arqand and Smith, “No advantage from classical assistance for energy-constrained bosonic dephasing channels,” arXiv:2610.13854v1, 9 October 2026.** [Primary full text](https://arxiv.org/html/2610.13854v1).
 
@@ -87,7 +87,7 @@ The distinction between a wrapped Gaussian *phase distribution* and a bosonic *G
 
 **Huang, Lami, and Wilde, “Exact Quantum Sensing Limits for Bosonic Dephasing Channels,” PRX Quantum 5, 020354 (2024).** Published 6 June 2024. [Primary preprint](https://arxiv.org/abs/2402.05793); [full paper](https://pure.uva.nl/ws/files/230546417/Exact_Quantum_Sensing_Limits_for_Bosonic_Dephasing_Channels.pdf); [DOI](https://doi.org/10.1103/PRXQuantum.5.020354).
 
-This work reduces dephasing-channel discrimination and estimation, including adaptive strategies, to classical statistics of the phase density. Number-superposition probes and phase measurements supply the corresponding high-energy achievability. It is the closest methodological predecessor of the present classical acceptance-function argument. The fact that the converse can be written as a probability-mass optimization should not be portrayed as a new general method for bosonic channels. The coding statement requires the additional step of matching that upper bound while retaining an unknown $d$-dimensional quantum state.
+This work reduces dephasing-channel discrimination and estimation, including adaptive strategies, to classical statistics of the phase density. Number-superposition probes and phase measurements supply the corresponding high-energy achievability. It is the closest methodological predecessor of the present classical acceptance-function argument. The fact that the converse can be written as a probability-mass optimization should not be portrayed as a new general method for bosonic channels. The coding statement requires the additional step of matching that upper bound while retaining an unknown quantum state of dimension $d$.
 
 **Huang, Lami, Singh, and Wilde, “Efficiently Computable Strategies and Limits for Bosonic Channel Discrimination,” Physical Review A 114, 032441 (2026).** [Primary full text, arXiv:2603.19911v2, revised 21 September 2026](https://arxiv.org/html/2603.19911v2); [DOI](https://doi.org/10.1103/fypm-kjt6).
 
@@ -119,7 +119,7 @@ These sources also explain why taking photon number to infinity in a loss-free c
 
 The strongest scientific conclusion is that an oscillator's unlimited number of levels does not allow unlimited quantum memory quality at fixed phase uncertainty. There is an exact register-size/error tradeoff, and a known code family exhausts what every allowed code can do in the stated model. This changes a code-specific phase window into a physical optimum.
 
-Three aspects make that result more informative than a scaling estimate. It gives the full fixed-$d$ error curve, rather than only a rate or exponent. It identifies an optimal worst-case operational error, not just an average selected observable. It also exposes the failure of a single Ramsey contrast to certify a large register's fidelity, including the reversal between the Gaussian and Cauchy examples as the dimension changes. The proof remains short because uniform phase averaging destroys all entanglement and the optimal remaining statistical test has a simple geometry.
+Three aspects make that result more informative than a scaling estimate. It gives the full fixed-dimension error curve, rather than only a rate or exponent. It identifies an optimal worst-case operational error, not just an average selected observable. It also exposes the failure of a single Ramsey contrast to certify a large register's fidelity, including the reversal between the Gaussian and Cauchy examples as the dimension changes. The proof remains short because uniform phase averaging destroys all entanglement and the optimal remaining statistical test has a simple geometry.
 
 The proof ingredients and ideal code are established. The result does not establish an exact finite-energy optimum, an experimentally competitive implementation, or a fault-tolerance threshold. Its contribution is the global single-use optimization and the resulting physical benchmark.
 

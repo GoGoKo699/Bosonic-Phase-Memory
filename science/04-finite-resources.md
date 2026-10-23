@@ -19,13 +19,13 @@ Take $d\ge2$, $M\ge1$, $N=dM$, and $a=\pi/d$. The trivial case $d=1$ needs no me
 
 ```math
 V_M|j\rangle=\frac1{\sqrt M}\sum_{k=0}^{M-1}|dk+j\rangle,
-\qquad 0\le j<d.
+\qquad 0\le j\lt d.
 ```
 
 For a logical state $\rho$, its encoded mean number is
 
 ```math
-\operatorname{Tr}(\hat nV_M\rho V_M^\dagger)
+\mathrm{Tr}(\hat nV_M\rho V_M^\dagger)
 =\frac{d(M-1)}2+\sum_{j=0}^{d-1}j\rho_{jj}.
 ```
 
@@ -79,7 +79,7 @@ For any real density, including a nonsymmetric one, the finite Fourier formula i
 F_M=\frac1d+
 \frac2\pi\sum_{r=1}^{N-1}
 \left(1-\frac rN\right)
-\operatorname{Re}\widehat p(r)\frac{\sin(ra)}r.
+\mathrm{Re}\,\widehat p(r)\frac{\sin(ra)}r.
 ```
 
 This finite sum has no truncation error. It is usually the simplest numerical evaluation of the flat construction.
@@ -137,8 +137,8 @@ Subtracting the finite Fourier sum from the interval mass gives
 
 ```math
 w-F_M=\frac2\pi\left[
-\frac1N\sum_{r=1}^{N-1}\operatorname{Re}\widehat p(r)\sin(ra)
-+\sum_{r=N}^{\infty}\operatorname{Re}\widehat p(r)\frac{\sin(ra)}r
+\frac1N\sum_{r=1}^{N-1}\mathrm{Re}\,\widehat p(r)\sin(ra)
++\sum_{r=N}^{\infty}\mathrm{Re}\,\widehat p(r)\frac{\sin(ra)}r
 \right].
 ```
 
@@ -152,7 +152,7 @@ There is also an exact first-order asymptotic coefficient:
 
 ```math
 A(p,d)=\frac2\pi\sum_{r=1}^{\infty}
-\operatorname{Re}\widehat p(r)\sin(ra),
+\mathrm{Re}\,\widehat p(r)\sin(ra),
 \qquad
 w-F_M=\frac{A(p,d)}N+o(N^{-1}).
 ```
@@ -190,14 +190,14 @@ B_1=\min\left\{\frac{\pi^2L}{2},\ B_{\rm F},\ 2A\right\}
 0\le\Delta_M\le\frac{B_1}N.
 ```
 
-The $2A$ option requires the nonnegative integrand, hence the unimodal hypothesis. When $A>0$, the order $1/N$ is the actual convergence rate of this flat-envelope decoder. It is not a lower bound on all codes with the same energy.
+The $2A$ option requires the nonnegative integrand, hence the unimodal hypothesis. When $A\gt 0$, the order $1/N$ is the actual convergence rate of this flat-envelope decoder. It is not a lower bound on all codes with the same energy.
 
 ### 2.3 Bounded and bounded-variation densities
 
-Smoothness is relevant to the rate. For $p\in L^\infty$, let $\operatorname{osc}(p)=\operatorname{ess\,sup}p-\operatorname{ess\,inf}p$. The translated interval mass is Lipschitz with constant at most $\operatorname{osc}(p)$, because $H'(t)=p(a+t)-p(-a+t)$ almost everywhere. Consequently,
+Smoothness is relevant to the rate. For $p\in L^\infty$, let $\mathrm{osc}(p)=\mathrm{ess\,sup}\,p-\mathrm{ess\,inf}\,p$. The translated interval mass is Lipschitz with constant at most $\mathrm{osc}(p)$, because $H'(t)=p(a+t)-p(-a+t)$ almost everywhere. Consequently,
 
 ```math
-|F_M-w|\le\operatorname{osc}(p)\,\mu_{1,N},
+|F_M-w|\le\mathrm{osc}(p)\,\mu_{1,N},
 \qquad
 \mu_{1,N}=\int_{-\pi}^{\pi}\frac{K_N(t)}{2\pi}|t|\,dt.
 ```
@@ -208,7 +208,7 @@ Using $K_N(t)\le\min\{N,\pi^2/(Nt^2)\}$ and splitting the integral at $\pi/N$ gi
 \mu_{1,N}\le\frac\pi N\left(\log N+\frac12\right).
 ```
 
-For a periodic density of total variation $V(p)$, $\operatorname{osc}(p)\le V(p)/2$, which gives a bounded-variation bound of order $\log N/N$.
+For a periodic density of total variation $V(p)$, $\mathrm{osc}(p)\le V(p)/2$, which gives a bounded-variation bound of order $\log N/N$.
 
 The logarithm cannot be removed uniformly for this flat construction. For the box density $p=\mathbf1_{[-a,a]}/(2a)$, with $d\ge2$, $w=1$ and $H(t)=\max\{1-|t|/(2a),0\}$ on the principal circle. Substitution into the kernel integral yields
 
@@ -247,7 +247,7 @@ For direct calculation, let $c_r=\sum_{n=0}^{N-1-r}v_nv_{n+r}$. Then
 
 ```math
 F_g=\frac1d+\frac2\pi\sum_{r=1}^{N-1}
-c_r\operatorname{Re}\widehat p(r)\frac{\sin(ra)}r.
+c_r\mathrm{Re}\,\widehat p(r)\frac{\sin(ra)}r.
 ```
 
 Choose the standard sine envelope [3],
@@ -283,7 +283,7 @@ The absolute-value version holds for a general Lipschitz density. At fixed $d$ a
 
 ## 4. Converting finite fidelity into diamond error
 
-The raw finite decoder is a random diagonal-rotation channel. Its half-diamond error is generally **not** $1-F_g$ for $d>2$. A generic bound, if no twirl is used, is
+The raw finite decoder is a random diagonal-rotation channel. Its half-diamond error is generally **not** $1-F_g$ for $d\gt 2$. A generic bound, if no twirl is used, is
 
 ```math
 1-F_g\le\varepsilon_\diamond(\Lambda_g)
@@ -291,7 +291,7 @@ The raw finite decoder is a random diagonal-rotation channel. Its half-diamond e
 ```
 
 The upper bound follows from the normalized Choi-state inequality
-$\|\Lambda-\operatorname{id}\|_\diamond\le d\|J(\Lambda)-|\Phi_d\rangle\langle\Phi_d|\|_1$
+$\|\Lambda-\mathrm{id}\|_\diamond\le d\|J(\Lambda)-|\Phi_d\rangle\langle\Phi_d|\|_1$
 and the pure-target trace-distance bound. It is conservative and need not approach the optimal phase floor at the correct rate.
 
 The [allowed classical-record model](01-model-and-question.md) permits a sharper construction. Choose $q$ uniformly from $\{0,\ldots,d-1\}$, apply $X^q$ before encoding, retain $q$ classically, and apply $X^{-q}$ after recovery, where $X|j\rangle=|j+1\bmod d\rangle$. The resulting cyclic twirl preserves entanglement fidelity. For the phase-only Schur channel it produces a random $Z_d$ channel, and therefore
@@ -302,7 +302,7 @@ The [allowed classical-record model](01-model-and-question.md) permits a sharper
 
 This is an equality for the actual finite implementation. The resource is a classical seed independent of the input and noise; there is no coherent bypass, phase side information, or postselection. Averaging the seed also makes the physical mean energy equal to $(N-1)/2$ for every input.
 
-After adding pure loss, the raw logical channel remains $Z_d$-covariant. The encoder intertwines logical $Z_d$ with the physical rotation $e^{-2\pi i\hat n/d}$; both the loss channel and the decoder respect that covariance. The cyclic-$X$ twirl is then equivalent to the full logical Weyl twirl. Its Choi state is diagonal in the generalized Bell basis, so it is a random Weyl channel and again satisfies
+After adding pure loss, the raw logical channel remains covariant under $Z_d$. The encoder intertwines logical $Z_d$ with the physical rotation $e^{-2\pi i\hat n/d}$; both the loss channel and the decoder respect that covariance. The cyclic $X$ twirl is then equivalent to the full logical Weyl twirl. Its Choi state is diagonal in the generalized Bell basis, so it is a random Weyl channel and again satisfies
 
 ```math
 \varepsilon_\diamond(\widetilde\Lambda_g^{\rm loss+phase})
@@ -319,16 +319,16 @@ Write $\mathcal A_\eta$ for the quantum-limited pure-loss channel with $0\le\eta
 A_\ell|n\rangle=
 \begin{cases}
 \sqrt{\binom n\ell}(1-\eta)^{\ell/2}\eta^{(n-\ell)/2}|n-\ell\rangle,&n\ge\ell,\\
-0,&n<\ell.
+0,&n\lt \ell.
 \end{cases}
 ```
 
-In particular $A_0=\eta^{\hat n/2}$. Put $s=-\log\eta$ when $\eta>0$; for Markov loss of rate $\kappa_1$ over time $\tau$, $s=\kappa_1\tau$.
+In particular $A_0=\eta^{\hat n/2}$. Put $s=-\log\eta$ when $\eta\gt 0$; for Markov loss of rate $\kappa_1$ over time $\tau$, $s=\kappa_1\tau$.
 
-On the input subspace $\mathcal H_{n_{\max}}=\operatorname{span}\{|0\rangle,\ldots,|n_{\max}\rangle\}$, the exact restricted distance is
+On the input subspace $\mathcal H_{n_{\max}}=\mathrm{span}\{|0\rangle,\ldots,|n_{\max}\rangle\}$, the exact restricted distance is
 
 ```math
-\frac12\|\mathcal A_\eta-\operatorname{id}\|_{\diamond,\mathcal H_{n_{\max}}}
+\frac12\|\mathcal A_\eta-\mathrm{id}\|_{\diamond,\mathcal H_{n_{\max}}}
 =1-\eta^{n_{\max}}.
 ```
 
@@ -341,7 +341,7 @@ It suffices to consider a pure state $|\psi\rangle$ of the cutoff system and an 
 ```math
 |\phi\rangle\langle\phi|+\sigma,
 \qquad |\phi\rangle=B|\psi\rangle,
-\qquad \sigma\ge0,\quad\operatorname{Tr}\sigma=1-c.
+\qquad \sigma\ge0,\quad\mathrm{Tr}\,\sigma=1-c.
 ```
 
 The rank-two trace-norm identity and the triangle inequality give
@@ -350,7 +350,7 @@ The rank-two trace-norm identity and the triangle inequality give
 D\le\frac12\left[\sqrt{(1+c)^2-4b^2}+1-c\right].
 ```
 
-The scalar inequality $x^2\le(1+\alpha)x-\alpha$ for $x\in[\alpha,1]$ implies $b\ge(c+\alpha)/(1+\alpha)$. For $0\le\alpha<1$, write $u=(1-c)/(1-\alpha^2)\in[0,1]$. Substitution yields
+The scalar inequality $x^2\le(1+\alpha)x-\alpha$ for $x\in[\alpha,1]$ implies $b\ge(c+\alpha)/(1+\alpha)$. For $0\le\alpha\lt 1$, write $u=(1-c)/(1-\alpha^2)\in[0,1]$. Substitution yields
 
 ```math
 D\le\frac{1-\alpha}{2}
@@ -398,7 +398,7 @@ together with
 =\frac{\sin t_0(1+y^{M+1})}{1-2y\cos t_0+y^2}.
 ```
 
-The denominator cancels two roots of the numerator; the remaining roots have unit modulus. Taking $d$th roots and multiplying by the geometric factor preserves that property. The case $M=1$ is included by the cancellation identity.
+The denominator cancels two roots of the numerator; the remaining roots have unit modulus. Taking roots of order $d$ and multiplying by the geometric factor preserves that property. The case $M=1$ is included by the cancellation identity.
 
 For $|\zeta|=1$ and $|z|=1$,
 
@@ -406,7 +406,7 @@ For $|\zeta|=1$ and $|z|=1$,
 |rz-\zeta|^2=(1-r)^2+r|z-\zeta|^2\ge r|z-\zeta|^2.
 ```
 
-Factoring the degree-$(N-1)$ polynomial therefore proves the pointwise inequality
+Factoring the degree $N-1$ polynomial therefore proves the pointwise inequality
 
 ```math
 |P_g(rz)|^2\ge r^{N-1}|P_g(z)|^2.
@@ -434,7 +434,7 @@ $|P_g(e^{-s/2-it})|^2$ at $s=0$ equal to $-E_{\rm av}|P_g(e^{-it})|^2$. A one-ph
 
 ### Exact finite calculation with loss
 
-The full fidelity can be evaluated without phase quadrature. For $\ell=0,d,2d,\ldots,(M-1)d$ and $0\le m<N-\ell$, define
+The full fidelity can be evaluated without phase quadrature. For $\ell=0,d,2d,\ldots,(M-1)d$ and $0\le m\lt N-\ell$, define
 
 ```math
 b_{\ell,m}=\frac{g_{\lfloor(m+\ell)/d\rfloor}}{\sqrt d}
@@ -448,11 +448,11 @@ Then, with $c_{\ell,r}=0$ outside its range,
 
 ```math
 F_g^{\rm loss+phase}
-=\sum_{\ell\in d\mathbb Z_{\ge0},\,\ell<N}
+=\sum_{\ell\in d\mathbb Z_{\ge0},\,\ell\lt N}
 \left[
 \frac{c_{\ell,0}}d+
 \frac2\pi\sum_{r=1}^{N-\ell-1}
-c_{\ell,r}\operatorname{Re}\widehat p(r)\frac{\sin(ra)}r
+c_{\ell,r}\mathrm{Re}\,\widehat p(r)\frac{\sin(ra)}r
 \right].
 ```
 
@@ -518,7 +518,7 @@ Again for $N_0\ge d$, rounding upward to a multiple of $d$ proves
 
 Thus a fully specified finite-energy protocol approaches the pure-phase optimum with excess error $O(s^{2/3})$ at fixed $d$ and fixed Lipschitz density, using $N=O(s^{-1/3})$ photon levels and $E_{\rm av}=O(s^{-1/3})$. This improves the certified weak-loss tradeoff of the flat comb. Neither exponent is claimed to be optimal among all joint-noise codes. If the continuous minimizer is below $d$, set $M=1$ and use the exact finite formula instead. Uniform phase noise and other zero-constant edge cases should likewise be evaluated directly.
 
-At zero loss, a target excess phase error $\delta>0$ is guaranteed by $N\ge B_1/\delta$ for the flat code. For the sine code it is enough that
+At zero loss, a target excess phase error $\delta\gt 0$ is guaranteed by $N\ge B_1/\delta$ for the flat code. For the sine code it is enough that
 
 ```math
 M+1\ge\frac{\pi^2}{2}\sqrt{\frac{L}{d\delta}}.

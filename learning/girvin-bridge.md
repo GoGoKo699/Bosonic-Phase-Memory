@@ -65,7 +65,7 @@ Preserving a few chosen basis states does not establish that a quantum memory pr
 |\Phi_d\rangle=\frac1{\sqrt d}\sum_{j=0}^{d-1}|j\rangle_R|j\rangle_A,
 \qquad
 F_e(\Lambda)=\langle\Phi_d|
-(\operatorname{id}_R\otimes\Lambda)(|\Phi_d\rangle\langle\Phi_d|)
+(\mathrm{id}_R\otimes\Lambda)(|\Phi_d\rangle\langle\Phi_d|)
 |\Phi_d\rangle.
 ```
 
@@ -127,10 +127,10 @@ Increasing $M$ improves precision within that modular cell. It leaves an ambigui
 For every logical channel,
 
 ```math
-\frac12\|\Lambda-\operatorname{id}_d\|_\diamond\ge1-F_e(\Lambda).
+\frac12\|\Lambda-\mathrm{id}_d\|_\diamond\ge1-F_e(\Lambda).
 ```
 
-For the limiting phase-Pauli channel, equality holds: its nonidentity aliases have total probability $1-w_d(p)$. Thus the construction matches the converse in both metrics. If $p$ is even, continuous, and strictly decreasing on $(0,\pi)$, and $d>1$, the optimal value is approached by normal codes but is not attained by one. These qualifications appear in [M21](milestones.md#m21) and [the theorem's continuity discussion](../science/02-exact-benchmark.md#continuity-and-nonattainment).
+For the limiting phase-Pauli channel, equality holds: its nonidentity aliases have total probability $1-w_d(p)$. Thus the construction matches the converse in both metrics. If $p$ is even, continuous, and strictly decreasing on $(0,\pi)$, and $d\gt 1$, the optimal value is approached by normal codes but is not attained by one. These qualifications appear in [M21](milestones.md#m21) and [the theorem's continuity discussion](../science/02-exact-benchmark.md#continuity-and-nonattainment).
 
 Finite $M$ requires a separate calculation. The raw finite-code channel does not generally have diamond error $1-F_e$. The permitted classical twirl gives that equality for the twirled channel; [M22](milestones.md#m22) explains what resource is used. Photon support, convergence estimates, and additional loss are treated in [M23–M26](milestones.md#m23) and [finite resources](../science/04-finite-resources.md). None of these steps makes the joint loss-and-dephasing optimum an exact solved quantity.
 
@@ -149,7 +149,7 @@ Both number states are preserved perfectly. Nevertheless, a superposition loses 
 ```math
 F_e(\Lambda)=1-q,
 \qquad
-\frac12\|\Lambda-\operatorname{id}_2\|_\diamond=q.
+\frac12\|\Lambda-\mathrm{id}_2\|_\diamond=q.
 ```
 
 The metric equality is justified here by the explicit Pauli mixture; it is not an identity for arbitrary channels. Under Gaussian phase noise with $\chi=0.01$, this simple code has $q=(1-e^{-0.01})/2\approx0.004975$. It is a feasible finite-energy code, not the optimized benchmark. The optimal error instead depends on the full probability outside the correct half-circle, with wrapping included.

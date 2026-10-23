@@ -39,7 +39,7 @@ Write
 ```math
 |\Phi_d\rangle=\frac1{\sqrt d}\sum_{j=0}^{d-1}|j\rangle_R|j\rangle_A,
 \qquad
-F_e(\Lambda)=\langle\Phi_d|(\operatorname{id}_R\otimes\Lambda)
+F_e(\Lambda)=\langle\Phi_d|(\mathrm{id}_R\otimes\Lambda)
 (|\Phi_d\rangle\langle\Phi_d|)|\Phi_d\rangle.
 ```
 
@@ -49,7 +49,7 @@ This fidelity is the squared overlap with the target pure state. For an arbitrar
 F_{\mathrm{ref}}(\Lambda)
 =\inf_{\rho_A}F_e(\rho_A,\Lambda)
 =\inf_{|\psi\rangle_{RA}}
-\langle\psi|(\operatorname{id}_R\otimes\Lambda)
+\langle\psi|(\mathrm{id}_R\otimes\Lambda)
 (|\psi\rangle\langle\psi|)|\psi\rangle.
 ```
 
@@ -57,7 +57,7 @@ A reference of dimension $d$ suffices, since any purification of a state on $A$ 
 
 ```math
 \varepsilon_\diamond(\Lambda)
-=\frac12\|\Lambda-\operatorname{id}_d\|_\diamond.
+=\frac12\|\Lambda-\mathrm{id}_d\|_\diamond.
 ```
 
 ### Theorem
@@ -92,13 +92,13 @@ Fix an admissible encoder and recovery, including any classical record. For a de
 
 ```math
 \Lambda_\theta=\sum_x\mathcal R_x\circ
-\operatorname{Ad}_{U_\theta}\circ\mathcal E_x,
+\mathrm{Ad}_{U_\theta}\circ\mathcal E_x,
 \qquad
 f(\theta)=F_e(\Lambda_\theta),
 \qquad 0\le f(\theta)\le1.
 ```
 
-Here $\operatorname{Ad}_U(\rho)=U\rho U^\dagger$. Entanglement fidelity is linear in the channel, so
+Here $\mathrm{Ad}_U(\rho)=U\rho U^\dagger$. Entanglement fidelity is linear in the channel, so
 
 ```math
 F_e(\Lambda)=\int_{-\pi}^{\pi}p(\theta)f(\theta)\,d\theta.
@@ -130,7 +130,7 @@ The $A_{x,n}$ are positive logical effects satisfying $\sum_{x,n}A_{x,n}=I_d$, a
 
 ```math
 \Lambda_u(\rho)
-=\sum_{x,n}\operatorname{Tr}(A_{x,n}\rho)\,\sigma_{x,n}.
+=\sum_{x,n}\mathrm{Tr}(A_{x,n}\rho)\,\sigma_{x,n}.
 ```
 
 This proves entanglement breaking even when the encoder measures the input and retains the result. It also gives the needed bound directly:
@@ -139,8 +139,8 @@ This proves entanglement breaking even when the encoder measures the input and r
 \begin{aligned}
 \frac1{2\pi}\int_{-\pi}^{\pi}f(\theta)\,d\theta
 &=F_e(\Lambda_u)\\
-&=\frac1{d^2}\sum_{x,n}\operatorname{Tr}(A_{x,n}\sigma_{x,n})\\
-&\le\frac1{d^2}\sum_{x,n}\operatorname{Tr}A_{x,n}
+&=\frac1{d^2}\sum_{x,n}\mathrm{Tr}(A_{x,n}\sigma_{x,n})\\
+&\le\frac1{d^2}\sum_{x,n}\mathrm{Tr}\,A_{x,n}
 =\frac1d.
 \end{aligned}
 ```
@@ -153,15 +153,15 @@ The inequality uses $0\le\sigma_{x,n}\le I_d$. For a general outcome space, the 
 
 ### 3. Unimodality puts the allowed response under the central peak
 
-For $d>1$, let $\chi(\theta)=\mathbf 1_{[-a,a]}(\theta)$. Monotonicity permits a finite $c\ge0$ between the one-sided values of $p$ at $a$, so that
+For $d\gt 1$, let $\chi(\theta)=\mathbf 1_{[-a,a]}(\theta)$. Monotonicity permits a finite $c\ge0$ between the one-sided values of $p$ at $a$, so that
 
 ```math
-p(\theta)\ge c\quad\text{for }|\theta|<a,
+p(\theta)\ge c\quad\text{for }|\theta|\lt a,
 \qquad
-p(\theta)\le c\quad\text{for }a<|\theta|<\pi
+p(\theta)\le c\quad\text{for }a\lt |\theta|\lt \pi
 ```
 
-almost everywhere. Integrability ensures that such a finite threshold exists at $a>0$, even if $p$ is unbounded at its peak. Then
+almost everywhere. Integrability ensures that such a finite threshold exists at $a\gt 0$, even if $p$ is unbounded at its peak. Then
 
 ```math
 \begin{aligned}
@@ -189,7 +189,7 @@ The maximally mixed state is one admissible input in the worst-case fidelity, he
 \begin{aligned}
 \varepsilon_\diamond(\Lambda)
 &\ge\frac12\left\|
-(\operatorname{id}_R\otimes\Lambda)(\Phi_d)-\Phi_d
+(\mathrm{id}_R\otimes\Lambda)(\Phi_d)-\Phi_d
 \right\|_1\\
 &\ge1-F_e(\Lambda)
 \ge1-w_d(p),
@@ -209,12 +209,12 @@ V_M|j\rangle=\frac1{\sqrt M}\sum_{k=0}^{M-1}|dk+j\rangle,
 
 Its photon support ends at $dM-1$. Under the quotient/remainder identification $|dk+j\rangle\mapsto|k\rangle_G|j\rangle_L$, the noisy encoded state separates into a gauge state carrying phase $d\theta$ and a logical state rotated by $\theta$. A gauge phase measurement and a conditional logical rotation recover the phase modulo $2\pi/d$.
 
-These code and phase-recovery ingredients belong to the established number-phase and shift-resistant oscillator-code literature: see [Gottesman, Kitaev, and Preskill (2001)](https://doi.org/10.1103/PhysRevA.64.012310), and the number-phase discussion and Appendix B.3 of [Grimsmo, Combes, and Baragiola (2020)](https://arxiv.org/html/1901.08071v3). The [construction page](03-constructive-achievability.md) provides a trace-preserving decoder, its exact finite-$M$ channel, and the convergence proof used here.
+These code and phase-recovery ingredients belong to the established number-phase and shift-resistant oscillator-code literature: see [Gottesman, Kitaev, and Preskill (2001)](https://doi.org/10.1103/PhysRevA.64.012310), and the number-phase discussion and Appendix B.3 of [Grimsmo, Combes, and Baragiola (2020)](https://arxiv.org/html/1901.08071v3). The [construction page](03-constructive-achievability.md) provides a trace-preserving decoder, its exact finite $M$ channel, and the convergence proof used here.
 
-Let $\operatorname{wrap}(t)$ denote the representative of $t$ in $[-\pi,\pi)$, and set
+Let $\mathrm{wrap}(t)$ denote the representative of $t$ in $[-\pi,\pi)$, and set
 
 ```math
-\ell(\theta)=\frac{d\theta-\operatorname{wrap}(d\theta)}{2\pi}\in\mathbb Z,
+\ell(\theta)=\frac{d\theta-\mathrm{wrap}(d\theta)}{2\pi}\in\mathbb Z,
 \qquad
 Z_d=\sum_{j=0}^{d-1}e^{-2\pi i j/d}|j\rangle\langle j|.
 ```
@@ -236,7 +236,7 @@ For every logical density operator $\rho$,
 
 ```math
 F_e(\rho,\Lambda_\infty)
-=\sum_{r=0}^{d-1}w_r\left|\operatorname{Tr}(\rho Z_d^r)\right|^2
+=\sum_{r=0}^{d-1}w_r\left|\mathrm{Tr}(\rho Z_d^r)\right|^2
 \ge w_0.
 ```
 
@@ -249,7 +249,7 @@ F_e(\Lambda_\infty)=F_{\mathrm{ref}}(\Lambda_\infty)=w_0.
 The triangle inequality gives
 
 ```math
-\frac12\|\Lambda_\infty-\operatorname{id}_d\|_\diamond
+\frac12\|\Lambda_\infty-\mathrm{id}_d\|_\diamond
 \le\sum_{r\ne0}w_r=1-w_0.
 ```
 
@@ -257,12 +257,12 @@ The converse bound, or the mutually orthogonal Choi vectors $(I\otimes Z_d^r)|\P
 
 ## Continuity and nonattainment
 
-The optimum is generally approached by increasingly large photon support. A precise sufficient condition for nonattainment is the existence, for $d>1$, of a threshold $c$ satisfying
+The optimum is generally approached by increasingly large photon support. A precise sufficient condition for nonattainment is the existence, for $d\gt 1$, of a threshold $c$ satisfying
 
 ```math
-p(\theta)>c\quad\text{for almost every }|\theta|<a,
+p(\theta)\gt c\quad\text{for almost every }|\theta|\lt a,
 \qquad
-p(\theta)<c\quad\text{for almost every }a<|\theta|<\pi.
+p(\theta)\lt c\quad\text{for almost every }a\lt |\theta|\lt \pi.
 ```
 
 A continuous density strictly decreasing with $|\theta|$ satisfies this condition. Equality in the converse would force $f(\theta)=1$ almost everywhere inside the central interval and $f(\theta)=0$ almost everywhere outside it: each nonpositive term in the threshold argument must vanish.
@@ -277,12 +277,12 @@ Every admissible physical protocol, however, has a continuous response $f$. To s
 
 as $\theta\to\theta_0$. A finite-rank approximation of $\tau_{RB}$ proves this implication without any energy assumption. Recovery is trace-norm contractive on state differences, and taking the overlap with $\Phi_d$ is continuous. For a classical-record instrument, apply the same argument to its unnormalized branch states. Their traces sum or integrate to one, and each difference has norm at most twice its branch trace, so dominated convergence proves continuity after summing over the record.
 
-A continuous function cannot equal the central interval's discontinuous indicator almost everywhere when $d>1$. Under the strict threshold condition, every individual protocol therefore satisfies
+A continuous function cannot equal the central interval's discontinuous indicator almost everywhere when $d\gt 1$. Under the strict threshold condition, every individual protocol therefore satisfies
 
 ```math
-F_e(\Lambda)<w_d(p),\qquad
-F_{\mathrm{ref}}(\Lambda)<w_d(p),\qquad
-\varepsilon_\diamond(\Lambda)>1-w_d(p).
+F_e(\Lambda)\lt w_d(p),\qquad
+F_{\mathrm{ref}}(\Lambda)\lt w_d(p),\qquad
+\varepsilon_\diamond(\Lambda)\gt 1-w_d(p).
 ```
 
 This statement includes normal encoders with infinite mean photon number. It does not classify densities with a flat region at the threshold. In particular, the strictness assumption is essential to this nonattainment argument.

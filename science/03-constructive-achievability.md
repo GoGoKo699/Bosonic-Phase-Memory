@@ -2,7 +2,7 @@
 
 ## Construction and inherited ingredients
 
-The [exact benchmark](02-exact-benchmark.md) is approached by a number-phase comb and a gauge phase measurement. Every member of the sequence is a normal finite-energy encoding with a completely positive trace-preserving recovery. The proof below gives the entire finite-$M$ logical channel, then establishes diamond-norm convergence to the optimal phase Pauli channel.
+The [exact benchmark](02-exact-benchmark.md) is approached by a number-phase comb and a gauge phase measurement. Every member of the sequence is a normal finite-energy encoding with a completely positive trace-preserving recovery. The proof below gives the entire finite $M$ logical channel, then establishes diamond-norm convergence to the optimal phase Pauli channel.
 
 The comb, its interpretation as a shift-resistant oscillator code, and phase-based recovery are established ingredients. [Gottesman, Kitaev, and Preskill (2001)](https://doi.org/10.1103/PhysRevA.64.012310) introduced oscillator shift-resistant encodings. [Grimsmo, Combes, and Baragiola (2020)](https://arxiv.org/html/1901.08071v3), particularly Section III and Appendix B.3, identify the connection between Pegg–Barnett number-phase constructions and GKP qudit codes. Canonical phase measurements of number superpositions also appear in the channel-sensing setting of [Huang, Lami, and Wilde (2024)](https://doi.org/10.1103/PRXQuantum.5.020354). The role of this page is to establish their precise performance in the present one-use memory model and match the universal converse; it does not introduce a new code family.
 
@@ -77,7 +77,7 @@ Let
 P_M=\sum_{k=0}^{M-1}|k\rangle\langle k|,
 \qquad
 |e_M(\phi)\rangle=\sum_{k=0}^{M-1}e^{-ik\phi}|k\rangle,
-\qquad -\pi\le\phi<\pi.
+\qquad -\pi\le\phi\lt \pi.
 ```
 
 The finite-dimensional canonical phase POVM is
@@ -94,7 +94,7 @@ For outcome $\phi$, apply the logical correction
 C_\phi=e^{+i\phi J/d}.
 ```
 
-The principal branch $[-\pi,\pi)$ matters: it determines which phase alias is treated as the identity. There are no infinite-norm phase kets in this finite-$M$ definition.
+The principal branch $[-\pi,\pi)$ matters: it determines which phase alias is treated as the identity. There are no infinite-norm phase kets in this finite $M$ definition.
 
 To make the recovery trace preserving on every oscillator input, include a complementary outcome. For $\tau=W\sigma W^\dagger$ and a fixed logical state $\tau_0=|0\rangle\langle0|$, define
 
@@ -104,11 +104,11 @@ To make the recovery trace preserving on every oscillator input, include a compl
 ={}&\int_{-\pi}^{\pi}\frac{d\phi}{2\pi}\,
 C_\phi(\langle e_M(\phi)|\otimes I_d)\tau
 (|e_M(\phi)\rangle\otimes I_d)C_\phi^\dagger\\
-&+\operatorname{Tr}\!\left[((I_G-P_M)\otimes I_d)\tau\right]\tau_0.
+&+\mathrm{Tr}\left[((I_G-P_M)\otimes I_d)\tau\right]\tau_0.
 \end{aligned}
 ```
 
-Both terms are completely positive. The trace of the integral is $\operatorname{Tr}[(P_M\otimes I_d)\tau]$, and the second term supplies its complement. This proves trace preservation and defines a normal channel on the full oscillator. For encoded states subject only to phase noise, the complement has probability zero.
+Both terms are completely positive. The trace of the integral is $\mathrm{Tr}[(P_M\otimes I_d)\tau]$, and the second term supplies its complement. This proves trace preservation and defines a normal channel on the full oscillator. For encoded states subject only to phase noise, the complement has probability zero.
 
 The continuous outcome is a convenient description of a finite-input, finite-output channel on the occupied support. That channel has a finite Kraus representation, so the notation does not require retaining an infinitely precise classical record across the storage interval. No classical encoding record is used by this recovery.
 
@@ -130,7 +130,7 @@ e^{-i(\theta-\phi/d)J}\rho e^{+i(\theta-\phi/d)J}.
 
 Consequently the recovered channel $\Lambda_M=\mathcal R_M\mathcal D_p\mathcal E_M$ is an average of diagonal rotations. At finite $M$ these rotations have a continuous range; they are generally not restricted to powers of the discrete operator $Z_d$.
 
-## Exact finite-$M$ logical channel
+## Exact finite-M logical channel
 
 ### Schur multiplier
 
@@ -150,14 +150,14 @@ C^{(M)}_{jh}
 e^{-i(j-h)(\theta-\phi/d)}.
 ```
 
-Let $\operatorname{sinc}(x)=\sin(\pi x)/(\pi x)$, with $\operatorname{sinc}(0)=1$. Expanding the squared Dirichlet sum and integrating first in $\phi$ gives the exact finite sums
+Let $\mathrm{sinc}(x)=\sin(\pi x)/(\pi x)$, with $\mathrm{sinc}(0)=1$. Expanding the squared Dirichlet sum and integrating first in $\phi$ gives the exact finite sums
 
 ```math
 \boxed{
 C^{(M)}_{jh}
 =\frac1M\sum_{k,l=0}^{M-1}
 \widehat p\bigl(d(k-l)+j-h\bigr)
-\operatorname{sinc}\!\left(k-l+\frac{j-h}{d}\right)
+\mathrm{sinc}\left(k-l+\frac{j-h}{d}\right)
 }
 ```
 
@@ -168,7 +168,7 @@ C^{(M)}_{jh}
 =\sum_{r=-(M-1)}^{M-1}
 \left(1-\frac{|r|}{M}\right)
 \widehat p(dr+j-h)
-\operatorname{sinc}\!\left(r+\frac{j-h}{d}\right).
+\mathrm{sinc}\left(r+\frac{j-h}{d}\right).
 ```
 
 In the expansion, the $\theta$ factor is $e^{-i[d(k-l)+j-h]\theta}$ and the $\phi$ factor is $e^{i[k-l+(j-h)/d]\phi}$, fixing the Fourier and sinc signs.
@@ -238,7 +238,7 @@ For any real probability density,
 F_M=\frac1d+
 \frac2\pi\sum_{q=1}^{N-1}
 \left(1-\frac qN\right)
-\operatorname{Re}\widehat p(q)\,\frac{\sin(q\pi/d)}q.
+\mathrm{Re}\,\widehat p(q)\,\frac{\sin(q\pi/d)}q.
 }
 ```
 
@@ -258,7 +258,7 @@ C^{(M)}_{jh}(\theta)
 K_M(d\theta-\phi)e^{is\phi/d}\frac{d\phi}{2\pi}.
 ```
 
-Interpret $g_s(\phi)=e^{is\phi/d}$ on $[-\pi,\pi)$ and extend it periodically. It is bounded and continuous except possibly at the branch cut. The kernels $K_M$ form a positive approximate identity: their integrals are $2\pi$, and for every fixed circular distance $b>0$ from zero,
+Interpret $g_s(\phi)=e^{is\phi/d}$ on $[-\pi,\pi)$ and extend it periodically. It is bounded and continuous except possibly at the branch cut. The kernels $K_M$ form a positive approximate identity: their integrals are $2\pi$, and for every fixed circular distance $b\gt 0$ from zero,
 
 ```math
 K_M(t)=\frac{\sin^2(Mt/2)}{M\sin^2(t/2)}
@@ -266,14 +266,14 @@ K_M(t)=\frac{\sin^2(Mt/2)}{M\sin^2(t/2)}
 \quad\text{when }b\le|t|\le\pi.
 ```
 
-Their mass outside any fixed neighborhood of zero therefore vanishes. It follows that the integral converges to $g_s(\operatorname{wrap}(d\theta))$ whenever $d\theta$ is not at the branch cut modulo $2\pi$. Only finitely many $\theta$ in the physical circle are excluded. At every other phase,
+Their mass outside any fixed neighborhood of zero therefore vanishes. It follows that the integral converges to $g_s(\mathrm{wrap}(d\theta))$ whenever $d\theta$ is not at the branch cut modulo $2\pi$. Only finitely many $\theta$ in the physical circle are excluded. At every other phase,
 
 ```math
 C^{(M)}_{jh}(\theta)
 \longrightarrow
 \exp\!\left[-\frac{2\pi i(j-h)\ell(\theta)}d\right],
 \qquad
-\ell(\theta)=\frac{d\theta-\operatorname{wrap}(d\theta)}{2\pi}.
+\ell(\theta)=\frac{d\theta-\mathrm{wrap}(d\theta)}{2\pi}.
 ```
 
 All conditional coefficients have magnitude at most one. Since $p\in L^1$, dominated convergence gives
@@ -293,7 +293,7 @@ p(\theta)\,d\theta.
 Thus the limiting channel is
 
 ```math
-\Lambda_\infty=\sum_{r=0}^{d-1}w_r\operatorname{Ad}_{Z_d^r},
+\Lambda_\infty=\sum_{r=0}^{d-1}w_r\mathrm{Ad}_{Z_d^r},
 \qquad
 Z_d=e^{-2\pi iJ/d}.
 ```
@@ -309,7 +309,7 @@ Finally, each elementary multiplier $X\mapsto|j\rangle\langle j|X|h\rangle\langl
 \longrightarrow0.
 ```
 
-This is a fixed-$d$ statement. It proves convergence against arbitrary reference-entangled inputs, with no smoothness assumption on $p$. The density assumption excludes point masses at the decoder's branch boundaries; a noise law with atoms at those boundaries requires a separate analysis.
+This is a fixed-dimension statement. It proves convergence against arbitrary reference-entangled inputs, with no smoothness assumption on $p$. The density assumption excludes point masses at the decoder's branch boundaries; a noise law with atoms at those boundaries requires a separate analysis.
 
 The [benchmark proof](02-exact-benchmark.md) establishes
 
@@ -321,16 +321,16 @@ F_e(\Lambda_\infty)=F_{\mathrm{ref}}(\Lambda_\infty)=w_0,
 
 Diamond continuity transfers these values to the limiting performance of the finite-support sequence. At finite $M$, $F_M$ is exact, while the raw channel's worst-case reference fidelity and diamond error must be evaluated as their own quantities.
 
-## An optional classical twirl gives exact finite-$M$ metric identities
+## An optional classical twirl gives exact finite-M metric identities
 
-The raw construction already proves the optimum without a retained classical encoding record. If the model also allows a classical record, an independent random cyclic shift makes the finite-$M$ channel a phase Pauli channel. This preserves $F_M$ and converts it exactly to a reference-fidelity and diamond-error guarantee.
+The raw construction already proves the optimum without a retained classical encoding record. If the model also allows a classical record, an independent random cyclic shift makes the finite $M$ channel a phase Pauli channel. This preserves $F_M$ and converts it exactly to a reference-fidelity and diamond-error guarantee.
 
 Let $X|j\rangle=|j+1\bmod d\rangle$. Choose $r\in\{0,\ldots,d-1\}$ uniformly before encoding, retain $r$ classically, encode $X^r\rho X^{-r}$ with $V_M$, and apply $X^{-r}$ after $\mathcal R_M$. Averaging the seed yields
 
 ```math
 \widetilde\Lambda_M
 =\frac1d\sum_{r=0}^{d-1}
-\operatorname{Ad}_{X^{-r}}\circ\Lambda_M\circ\operatorname{Ad}_{X^r}.
+\mathrm{Ad}_{X^{-r}}\circ\Lambda_M\circ\mathrm{Ad}_{X^r}.
 ```
 
 This is a deterministic protocol in the classical-record extension: all seed values are retained and used, and no branch is discarded. It requires a record with $d$ possible values, or $\lceil\log_2d\rceil$ binary memory cells. The phase realization is independent of the seed.
@@ -357,7 +357,7 @@ are nonnegative because they are the eigenvalues of the circulant positive matri
 
 ```math
 \widetilde\Lambda_M
-=\sum_{\ell=0}^{d-1}\widetilde w_\ell\operatorname{Ad}_{Z_d^\ell}.
+=\sum_{\ell=0}^{d-1}\widetilde w_\ell\mathrm{Ad}_{Z_d^\ell}.
 ```
 
 In particular,
@@ -379,13 +379,13 @@ F_e(\widetilde\Lambda_M)
 }
 ```
 
-These identities describe this explicit twirled code. They do not assert that it is optimal at a fixed photon cutoff or mean energy. They must also not be assigned to the raw finite-$M$ channel without an additional argument.
+These identities describe this explicit twirled code. They do not assert that it is optimal at a fixed photon cutoff or mean energy. They must also not be assigned to the raw finite $M$ channel without an additional argument.
 
 The hard cutoff stays $N-1$. For any logical input, averaging over the independent uniform seed gives
 
 ```math
 \frac1d\sum_{r=0}^{d-1}
-\operatorname{Tr}\!\left[\hat nV_MX^r\rho X^{-r}V_M^\dagger\right]
+\mathrm{Tr}\left[\hat nV_MX^r\rho X^{-r}V_M^\dagger\right]
 =\frac{N-1}{2}.
 ```
 

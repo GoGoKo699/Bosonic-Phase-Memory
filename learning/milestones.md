@@ -58,7 +58,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** What must a memory preserve when the stored register is part of a larger quantum state?
 
-**Understanding target.** Distinguish the accessible logical register from an untouched reference that may be entangled with it. Preserving the logical register means preserving those correlations as well as its local populations. Understand why the reference used to evaluate a channel is not an extra memory available to the encoder or recovery, and why a reference of dimension $d$ suffices for a $d$-dimensional input.
+**Understanding target.** Distinguish the accessible logical register from an untouched reference that may be entangled with it. Preserving the logical register means preserving those correlations as well as its local populations. Understand why the reference used to evaluate a channel is not an extra memory available to the encoder or recovery, and why a reference of dimension $d$ suffices for an input of dimension $d$.
 
 **Dependencies and story role.** Depends on [M03](#m03). It extends the storage task beyond individually selected pure states and prepares the operational error criteria.
 
@@ -268,7 +268,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 ### M19 — Exact finite-code channel formulas
 
-**Central question.** How can the complete finite-$M$ protocol be calculated before taking an ideal limit?
+**Central question.** How can the complete finite $M$ protocol be calculated before taking an ideal limit?
 
 **Understanding target.** Understand the Schur coefficients $C^{(M)}_{jh}$ as the factors multiplying logical matrix elements. Their finite sums contain the phase density's Fourier coefficients and the decoder's sinc factors. The identity $D_M(d\delta)D_d(\delta)=D_{dM}(\delta)$ turns entanglement fidelity into a central-window convolution with a Fejér kernel. These formulas are exact for the specified finite code; its raw channel is generally a mixture of continuous diagonal rotations, not yet a discrete phase Pauli channel.
 
@@ -284,7 +284,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** What remains when the gauge estimates phase with arbitrarily fine resolution inside its modular cell?
 
-**Understanding target.** Explain the limiting residual channel $\Lambda_\infty=\sum_r w_r\operatorname{Ad}_{Z_d^r}$, with each $w_r$ equal to a phase-cell probability. Increasing $M$ sharpens the estimate of $d\theta$ modulo $2\pi$; it does not identify the missing alias. The distinct powers of $Z_d$ give orthogonal maximally entangled output states, making the identity-cell probability operationally meaningful. Understand why convergence of every Schur coefficient implies diamond-norm convergence at fixed $d$, and why an $L^1$ density makes the finitely many branch boundaries harmless.
+**Understanding target.** Explain the limiting residual channel $\Lambda_\infty=\sum_r w_r\mathrm{Ad}_{Z_d^r}$, with each $w_r$ equal to a phase-cell probability. Increasing $M$ sharpens the estimate of $d\theta$ modulo $2\pi$; it does not identify the missing alias. The distinct powers of $Z_d$ give orthogonal maximally entangled output states, making the identity-cell probability operationally meaningful. Understand why convergence of every Schur coefficient implies diamond-norm convergence at fixed $d$, and why an $L^1$ density makes the finitely many branch boundaries harmless.
 
 **Dependencies and story role.** Depends on [M04](#m04), [M07](#m07), [M09](#m09), and [M19](#m19). It supplies the full-channel limit required to match the operational converse.
 
@@ -298,7 +298,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** How do a universal upper bound and a convergent physical construction establish an exact answer without an optimal finite code?
 
-**Understanding target.** Combine the converse with the phase-alias channel to obtain $\sup F_e=\sup F_{\mathrm{ref}}=w_d(p)$ and $\inf\varepsilon_\diamond=1-w_d(p)$. Distinguish equality of these optimized values from equality for each protocol. For $d>1$ under the strict threshold condition in the theorem, a normal protocol's continuous response cannot equal the required discontinuous indicator, so the optimum is unattained. The $d=1$ and uniform-density cases are attained and provide useful boundaries.
+**Understanding target.** Combine the converse with the phase-alias channel to obtain $\sup F_e=\sup F_{\mathrm{ref}}=w_d(p)$ and $\inf\varepsilon_\diamond=1-w_d(p)$. Distinguish equality of these optimized values from equality for each protocol. For $d\gt 1$ under the strict threshold condition in the theorem, a normal protocol's continuous response cannot equal the required discontinuous indicator, so the optimum is unattained. The $d=1$ and uniform-density cases are attained and provide useful boundaries.
 
 **Dependencies and story role.** Integrates [M13–M20](#m13), particularly [M16](#m16) and [M20](#m20). It completes the core theorem before introducing quantitative finite-resource refinements.
 
@@ -312,7 +312,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** How can a finite implementation obtain an exact diamond-error guarantee from its computed entanglement fidelity?
 
-**Understanding target.** Explain the independent random cyclic-$X$ conjugation and its retained classical seed. For the phase-only Schur channel, this makes the Schur matrix circulant and the logical channel a discrete phase Pauli mixture, while preserving $F_M$. Its identity probability is then exactly $F_M$, so $F_{\mathrm{ref}}=F_M$ and $\varepsilon_\diamond=1-F_M$. These identities apply to the twirled implementation, without claiming finite-energy optimality.
+**Understanding target.** Explain the independent random cyclic $X$ conjugation and its retained classical seed. For the phase-only Schur channel, this makes the Schur matrix circulant and the logical channel a discrete phase Pauli mixture, while preserving $F_M$. Its identity probability is then exactly $F_M$, so $F_{\mathrm{ref}}=F_M$ and $\varepsilon_\diamond=1-F_M$. These identities apply to the twirled implementation, without claiming finite-energy optimality.
 
 **Dependencies and story role.** Depends on [M05](#m05), [M07](#m07), [M19](#m19), and [M21](#m21). It converts the exact finite-code formula into a sharp operational guarantee.
 
@@ -396,7 +396,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** What additional information is needed to turn the fidelity benchmark into a storage-time or register-size constraint?
 
-**Understanding target.** Interpret $d=2^k$ for a $k$-qubit register and invert the central-cell probability at a specified target error. Under exponential Ramsey decay, the Gaussian and Cauchy storage thresholds scale as $d^{-2}$ and $d^{-1}$ at large $d$, respectively; quasistatic Gaussian frequency noise instead gives a $d^{-1}$ time law. The Gaussian $4^{-k}$ storage scaling requires phase variance proportional to time. These concern the whole reference-entangled register and the limiting optimum; finite implementations need a strict error margin and adequate resources.
+**Understanding target.** Interpret $d=2^k$ for a register of $k$ qubits and invert the central-cell probability at a specified target error. Under exponential Ramsey decay, the Gaussian and Cauchy storage thresholds scale as $d^{-2}$ and $d^{-1}$ at large $d$, respectively; quasistatic Gaussian frequency noise instead gives a $d^{-1}$ time law. The Gaussian $4^{-k}$ storage scaling requires phase variance proportional to time. These concern the whole reference-entangled register and the limiting optimum; finite implementations need a strict error margin and adequate resources.
 
 **Dependencies and story role.** Depends on [M08](#m08), [M11](#m11), [M21](#m21), and [M27](#m27). It translates the probability benchmark into architectural quantities while keeping the dynamical assumptions visible.
 

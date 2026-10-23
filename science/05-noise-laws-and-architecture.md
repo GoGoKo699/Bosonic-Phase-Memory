@@ -22,7 +22,7 @@ r=\widehat p(1)=\int_{-\pi}^{\pi}p(\theta)\cos\theta\,d\theta,
 \chi=-\log r.
 ```
 
-The examples below have $0<r<1$. Thus $\chi>0$ is dimensionless. It is the attenuation exponent of $|0\rangle\langle1|$, rather than an unspecified dephasing rate. Two laws with the same $\chi$ give the same Ramsey contrast in the $\{|0\rangle,|1\rangle\}$ subspace. They can act very differently on $|n\rangle\langle m|$ with larger $|n-m|$.
+The examples below have $0\lt r\lt 1$. Thus $\chi\gt 0$ is dimensionless. It is the attenuation exponent of $|0\rangle\langle1|$, rather than an unspecified dephasing rate. Two laws with the same $\chi$ give the same Ramsey contrast in the $\{|0\rangle,|1\rangle\}$ subspace. They can act very differently on $|n\rangle\langle m|$ with larger $|n-m|$.
 
 Use $a=\pi/d$ throughout. For $d=1$, the logical system is trivial and $F_*=1$, $\varepsilon_*=0$ for every noise strength. Statements about nontrivial error below concern $d\ge2$.
 
@@ -71,41 +71,41 @@ Set $q=e^{-\chi}\in(0,1)$. The Jacobi product identity gives
 \left(1+2q^{2m-1}\cos\theta+q^{4m-2}\right).
 ```
 
-This is [NIST DLMF, equation 20.5.3](https://dlmf.nist.gov/20.5.E3). Its factors are positive, and the logarithmic derivative converges for fixed $q<1$:
+This is [NIST DLMF, equation 20.5.3](https://dlmf.nist.gov/20.5.E3). Its factors are positive, and the logarithmic derivative converges for fixed $q\lt 1$:
 
 ```math
 \frac{\partial}{\partial\theta}\log p_G(\theta;\chi)
 =-2\sin\theta\sum_{m=1}^{\infty}
 \frac{q^{2m-1}}
-{1+2q^{2m-1}\cos\theta+q^{4m-2}}<0,
-\qquad 0<\theta<\pi.
+{1+2q^{2m-1}\cos\theta+q^{4m-2}}\lt 0,
+\qquad 0\lt \theta\lt \pi.
 ```
 
-The exact theorem therefore applies for every finite $\chi>0$.
+The exact theorem therefore applies for every finite $\chi\gt 0$.
 
 ### A controlled Gaussian-tail approximation
 
 The unwrapped central interval has probability
 
 ```math
-\Pr(|X|\le a)=\operatorname{erf}\!\left(\frac{a}{2\sqrt\chi}\right).
+\Pr(|X|\le a)=\mathrm{erf}\left(\frac{a}{2\sqrt\chi}\right).
 ```
 
 All additional correct intervals lie within $|X|\ge2\pi-a$. Thus
 
 ```math
 0\le F_{*,G}(d,\chi)
--\operatorname{erf}\!\left(\frac{a}{2\sqrt\chi}\right)
-\le \operatorname{erfc}\!\left(\frac{2\pi-a}{2\sqrt\chi}\right).
+-\mathrm{erf}\left(\frac{a}{2\sqrt\chi}\right)
+\le \mathrm{erfc}\left(\frac{2\pi-a}{2\sqrt\chi}\right).
 ```
 
 Equivalently, the exact error satisfies the finite wrapping bounds
 
 ```math
-\operatorname{erfc}\!\left(\frac{a}{2\sqrt\chi}\right)
--\operatorname{erfc}\!\left(\frac{2\pi-a}{2\sqrt\chi}\right)
+\mathrm{erfc}\left(\frac{a}{2\sqrt\chi}\right)
+-\mathrm{erfc}\left(\frac{2\pi-a}{2\sqrt\chi}\right)
 \le \varepsilon_{*,G}(d,\chi)
-\le \operatorname{erfc}\!\left(\frac{a}{2\sqrt\chi}\right).
+\le \mathrm{erfc}\left(\frac{a}{2\sqrt\chi}\right).
 ```
 
 These inequalities state when the familiar complementary-error-function expression is accurate. They also show its direction: the unwrapped tail slightly overestimates the actual logical error, because sufficiently large phase excursions can wrap into a correct interval. The error-function expression is not the exact wrapped answer.
@@ -123,7 +123,7 @@ Two other limits prevent overextending that approximation:
 ```math
 F_{*,G}(d,\chi)
 \sim\frac{2\pi p_G(0;\chi)}d
-\quad(d\to\infty,\ \chi>0\text{ fixed}),
+\quad(d\to\infty,\ \chi\gt 0\text{ fixed}),
 ```
 
 ```math
@@ -140,16 +140,16 @@ For $d\ge2$, the Gaussian optimum is strictly decreasing with $\chi$. Indeed, th
 
 ```math
 \partial_\chi F_{*,G}(d,\chi)
-=2\partial_\theta p_G(a;\chi)<0.
+=2\partial_\theta p_G(a;\chi)\lt 0.
 ```
 
-For a target $0<\varepsilon<1-1/d$, there is consequently a unique exact threshold $\chi_{G}(d,\varepsilon)$ defined by
+For a target $0\lt \varepsilon\lt 1-1/d$, there is consequently a unique exact threshold $\chi_{G}(d,\varepsilon)$ defined by
 
 ```math
 F_{*,G}(d,\chi_G)=1-\varepsilon.
 ```
 
-The wrapped series above specifies it without approximation. Let $z_\varepsilon=\operatorname{erfc}^{-1}(\varepsilon)>0$. A simple sufficient noise budget is
+The wrapped series above specifies it without approximation. Let $z_\varepsilon=\mathrm{erfc}^{-1}(\varepsilon)\gt 0$. A simple sufficient noise budget is
 
 ```math
 \chi\le\frac{\pi^2}{4d^2z_\varepsilon^2}.
@@ -172,7 +172,7 @@ d_{\varepsilon,G}(\chi)
 
 For a very small target error, $z_\varepsilon^2\sim\log(1/\varepsilon)$, with smaller logarithmic corrections. This gives the familiar leading dependence $\chi_G\sim\pi^2/[4d^2\log(1/\varepsilon)]$ when $d$ is fixed and $\varepsilon\downarrow0$.
 
-The ceiling refers to the infimum over all allowed codes. Strictly unimodal noise has no normal code attaining that infimum for $d>1$. A strict error margin above $\varepsilon_*$ is achievable with finite photon support; equality at the threshold requires the limiting construction. This distinction does not change the displayed asymptotic scalings.
+The ceiling refers to the infimum over all allowed codes. Strictly unimodal noise has no normal code attaining that infimum for $d\gt 1$. A strict error margin above $\varepsilon_*$ is achievable with finite photon support; equality at the threshold requires the limiting construction. This distinction does not change the displayed asymptotic scalings.
 
 ## 3. Wrapped Cauchy phase noise at the same Ramsey contrast
 
@@ -194,8 +194,8 @@ The density is even, and
 ```math
 \partial_\theta p_C(\theta;\chi)
 =-\frac{\sinh\chi\sin\theta}
-{2\pi(\cosh\chi-\cos\theta)^2}<0
-\qquad(0<\theta<\pi).
+{2\pi(\cosh\chi-\cos\theta)^2}\lt 0
+\qquad(0\lt \theta\lt \pi).
 ```
 
 Integrating with $u=\tan(\theta/2)$ gives the exact optimum
@@ -236,7 +236,7 @@ F_{*,C}(d,\chi)
 
 ### Dimension and noise budgets
 
-The exact condition $\varepsilon_{*,C}(d,\chi)\le\varepsilon$, for $0<\varepsilon<1$, is
+The exact condition $\varepsilon_{*,C}(d,\chi)\le\varepsilon$, for $0\lt \varepsilon\lt 1$, is
 
 ```math
 d\le\frac{\pi}
@@ -251,11 +251,11 @@ d_{\varepsilon,C}(\chi)
 \qquad(\chi\downarrow0).
 ```
 
-Conversely, for $d\ge2$ and $0<\varepsilon<1-1/d$, the exact largest noise exponent is
+Conversely, for $d\ge2$ and $0\lt \varepsilon\lt 1-1/d$, the exact largest noise exponent is
 
 ```math
 \chi_C(d,\varepsilon)
-=2\operatorname{artanh}\!\left[
+=2\mathrm{artanh}\left[
 \tan(\pi\varepsilon/2)\tan\!\left(\frac\pi{2d}\right)
 \right].
 ```
@@ -289,7 +289,7 @@ The following exact integer ceilings use target error $\varepsilon=0.01$. The Ga
 
 The figure fixes $\chi=0.01$. At $d=2$, the exact Gaussian and Cauchy errors are approximately $1.16\times10^{-28}$ and $0.00318$. At $d=16$, they are approximately $0.165$ and $0.0323$. Both comparisons use the same Ramsey contrast $e^{-0.01}$. The [data](../figures/equal_ramsey_error.csv) and [plotting calculation](../verification/plot_noise_comparison.py) reproduce the curves.
 
-Noise-law dependence and Gaussian/Cauchy capacity comparisons already appear in [Lami and Wilde's capacity work](06-prior-work.md#capacities-and-one-shot-communication). The contribution here is the exact single-interval fidelity and diamond-error comparison, including its finite-$d$ crossover. A Ramsey decay constant alone cannot certify this memory benchmark, and a statement that heavier tails are always worse would be incorrect.
+Noise-law dependence and Gaussian/Cauchy capacity comparisons already appear in [Lami and Wilde's capacity work](06-prior-work.md#capacities-and-one-shot-communication). The contribution here is the exact single-interval fidelity and diamond-error comparison, including its finite-dimension crossover. A Ramsey decay constant alone cannot certify this memory benchmark, and a statement that heavier tails are always worse would be incorrect.
 
 ## 5. Translating phase uncertainty into storage time
 
@@ -311,7 +311,7 @@ The exact Gaussian threshold is the root of the wrapped expression. The Cauchy t
 
 ```math
 t_C(d,\varepsilon)
-=2T_R\operatorname{artanh}\!\left[
+=2T_R\mathrm{artanh}\left[
 \tan(\pi\varepsilon/2)\tan\!\left(\frac\pi{2d}\right)
 \right]
 \sim\pi T_R\tan(\pi\varepsilon/2)\,2^{-k}.
@@ -338,7 +338,7 @@ Suppose instead that an unknown frequency offset is constant within each interva
 \chi(t)=\frac{\sigma_\omega^2t^2}{2}.
 ```
 
-The large-$d$ threshold becomes
+The large-dimension threshold becomes
 
 ```math
 t_G(d,\varepsilon)
@@ -369,7 +369,7 @@ e^{-i\theta(\hat n_1+\hat n_2)}.
 
 For fixed total number $N$, the $N+1$ states $|n,N-n\rangle$, $0\le n\le N$, span a subspace on which every phase rotation is a scalar. A logical system of dimension at most $N+1$ is therefore perfectly protected against that collective noise. The extra mode and $N$ photons are explicit resources. Uniform averaging over the common phase is not entanglement breaking, so the single-mode converse does not apply.
 
-For $m$ modes whose vector of individual phases has a joint integrable density on the $m$-torus, averaging independently and uniformly over all $m$ angles does dephase the nondegenerate joint Fock basis. The same converse then gives a useful upper bound: the weighted success function has uniform average at most $1/d$, so its weighted average is at most the probability mass of the densest region of phase volume $(2\pi)^m/d$. The singular common-phase distribution in the preceding example is outside this density assumption. This does not establish a matching multimode code. A central interval has no direct higher-dimensional replacement that is automatically achievable. Product codes give lower bounds, while joint coding requires a separate analysis.
+For $m$ modes whose vector of individual phases has a joint integrable density on the torus of dimension $m$, averaging independently and uniformly over all $m$ angles does dephase the nondegenerate joint Fock basis. The same converse then gives a useful upper bound: the weighted success function has uniform average at most $1/d$, so its weighted average is at most the probability mass of the densest region of phase volume $(2\pi)^m/d$. The singular common-phase distribution in the preceding example is outside this density assumption. This does not establish a matching multimode code. A central interval has no direct higher-dimensional replacement that is automatically achievable. Product codes give lower bounds, while joint coding requires a separate analysis.
 
 ### Information about the realized phase
 
