@@ -5,13 +5,14 @@
 For a logical register of dimension $d$ and a phase density $p$ that is symmetric about zero and nonincreasing on $[0,\pi]$, the exact answer is the probability in one angular cell of width $2\pi/d$. A known symmetry center can first be rotated to zero:
 
 ```math
-w_d(p)=\int_{-\pi/d}^{\pi/d}p(\theta)\,d\theta,
-\qquad
-\sup_{\mathcal E,\mathcal R}F_e(\mathcal R\mathcal D_p\mathcal E)=w_d(p),
-\qquad
+\begin{aligned}
+w_d(p)&=\int_{-\pi/d}^{\pi/d}p(\theta)\,d\theta,\\
+\sup_{\mathcal E,\mathcal R}F_e(\mathcal R\mathcal D_p\mathcal E)
+&=w_d(p),\\
 \inf_{\mathcal E,\mathcal R}\frac12
 \|\mathcal R\mathcal D_p\mathcal E-\operatorname{id}_d\|_\diamond
-=1-w_d(p).
+&=1-w_d(p).
+\end{aligned}
 ```
 
 The optimization allows arbitrary deterministic encoders and recoveries, with no photon-number limit. The oscillator is the only quantum memory through the interval; no external record reveals the realized phase, and no correction occurs during the interval. Retained classical encoding records do not improve the optimum.
@@ -45,6 +46,30 @@ The central proof has two parts. Uniform phase averaging completely dephases the
 | What does this imply for register size and storage time? | [Noise laws and architecture](science/05-noise-laws-and-architecture.md) |
 | Which ingredients are established, and which comparison is new? | [Prior work](science/06-prior-work.md) and [bibliography](references/references.bib) |
 | Which calculations can be reproduced? | [Verification](verification/README.md) |
+
+## Learn the project
+
+The educational anchor is **Steven M. Girvin, [Introduction to Quantum Error Correction and Fault Tolerance](https://arxiv.org/html/2111.08894v4)**, *SciPost Physics Lecture Notes* 70 (2023). The [Girvin-to-project bridge](learning/girvin-bridge.md) selects the relevant sections, translates notation and assumptions, and supplies the steps needed to reach the phase-memory theorem.
+
+The [30-milestone map](learning/milestones.md) has two connected phases: **12 background milestones** build the physical and operational model; **18 narrative milestones** develop the converse, matching construction, resource bounds, and architectural meaning. The targets belong to the project and apply to any reader.
+
+Start at the [learning entrypoint](learning/README.md) for the guided route, or use the [scientific reading guide for LLMs](llms.txt) to locate authoritative statements and preserve the distinctions between the exact optimum, finite constructions, and physical implementation.
+
+## A measurable coherence does not determine the whole memory
+
+![Optimal phase-memory error for wrapped Gaussian and wrapped Cauchy laws at equal adjacent-level Ramsey coherence.](figures/equal_ramsey_error.svg)
+
+These two phase laws have the same adjacent-level Ramsey coherence, $\widehat p(1)=e^{-0.01}$, but their exact optimal register errors differ and their ordering reverses as the logical dimension grows. The [noise-law analysis](science/05-noise-laws-and-architecture.md) gives the formulas and qualifications; the [CSV](figures/equal_ramsey_error.csv) contains the plotted values.
+
+## Reproduce the finite calculations
+
+From the repository root, with Python 3.10 or later:
+
+```sh
+python3 verification/check_finite_resources.py
+```
+
+The calculation checks use the standard library. The [verification guide](verification/README.md) explains the independent formulas compared, records the expected output, and gives the plotting command and pinned dependency. Finite numerical checks complement the written proofs.
 
 ## Scope
 
