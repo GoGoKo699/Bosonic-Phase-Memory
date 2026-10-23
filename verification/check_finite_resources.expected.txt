@@ -1,0 +1,19 @@
+PASS: resource moments, Fejer bounds, sine moment, and radial loss inequality
+PASS: exact loss formula versus direct Kraus sum, converse, and first-order coefficient
+PASS: scalar inequality used in the reference-assisted hard-cutoff diamond proof
+
+Example: d=4, wrapped-Gaussian variance=0.16, s=-log(eta)=0.0001
+Universal phase-only error floor: 0.0495886375
+M   N    E_av   envelope  phase_error  joint_error  product_upper
+4   16   7.5    flat      0.1116064955 0.1122724580 0.1122725409
+4   16   7.5    sine      0.0957944742 0.0964723172 0.0964723741
+8   32   15.5   flat      0.0805975665 0.0820211698 0.0820215364
+8   32   15.5   sine      0.0639524391 0.0654019930 0.0654021890
+16  64   31.5   flat      0.0650931020 0.0680318861 0.0680334253
+16  64   31.5   sine      0.0536112358 0.0565869592 0.0565876700
+32  128  63.5   flat      0.0573408697 0.0633014993 0.0633077902
+32  128  63.5   sine      0.0506541789 0.0566607417 0.0566634253
+64  256  127.5  flat      0.0534647536 0.0654311534 0.0654564684
+64  256  127.5  sine      0.0498629126 0.0618898993 0.0619002593
+Errors are exact half-diamond errors of the classically twirled finite protocols.
+The last column is the proved analytic upper bound, not the global joint optimum.
