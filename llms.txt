@@ -1,0 +1,51 @@
+# Bosonic Phase Memory
+
+> An exact single-use benchmark for preserving an arbitrary quantum register in one oscillator under an unobserved random phase, with a finite-support matching construction and explicit resource and photon-loss guarantees.
+
+## Scientific story
+
+The oscillator has an unbounded number of levels, but its number generator is nondegenerate. Uniform phase averaging therefore destroys all entanglement. This puts an integral budget on every code's fidelity response. For an even phase density that is nonincreasing away from zero, the optimal probability mass under that budget is the central interval of width 2*pi/d. A number-phase comb and modular-phase decoder approach this bound while retaining an unknown d-dimensional quantum state.
+
+The authoritative account is organized by scientific topic. Read the assumptions and metric conventions before comparing a theorem or numerical value with another paper.
+
+## Reader intentions and authoritative files
+
+- [Overview](README.md): question, principal results, exact benchmark, learning and reproduction routes, and physical scope.
+- [Science map](science/README.md): connected narrative and proof dependencies.
+- [Model and question](science/01-model-and-question.md): one-interval task, arbitrary deterministic operations, allowed classical information, reference systems, and error conventions.
+- [Exact benchmark](science/02-exact-benchmark.md): response-function converse, complete dephasing, concentration bound, optimal reference-assisted metrics, continuity, and nonattainment.
+- [Constructive achievability](science/03-constructive-achievability.md): finite-support encoder, complete CPTP decoder, exact finite formulas, and convergence of the full logical channel.
+- [Finite resources](science/04-finite-resources.md): classical cyclic twirl, flat and sine envelopes, cutoff and mean energy, hard-cutoff loss distance, code-specific joint-noise guarantees, and weak-loss balance.
+- [Noise laws and architecture](science/05-noise-laws-and-architecture.md): exact wrapped Gaussian and Cauchy examples, equal-Ramsey comparison, dimension and storage-time laws, and model changes.
+- [Prior work](science/06-prior-work.md): authoritative comparison with earlier coding, capacity, sensing, and loss-dephasing results.
+- [References](references/README.md): bibliography map and distinction between research sources and the educational anchor.
+- [Bibliography](references/references.bib): verified machine-readable source records.
+- [Verification](verification/README.md): commands, dependencies, expected outputs, figure provenance, and the limits of finite numerical checks.
+
+## Learning route
+
+- [Learning entrypoint](learning/README.md): one educational anchor and routes into the scientific account.
+- [Thirty milestones](learning/milestones.md): M01–M12 background/preliminaries and M13–M30 narrative/innovation, each progressing from local concepts to global understanding. The map is intrinsic to the project and independent of any learner's assessment history.
+- [Girvin-to-project bridge](learning/girvin-bridge.md): selective sections, notation and assumption translation, a small worked example, and the steps supplied locally to reach the theorem.
+
+The selected educational anchor is Steven M. Girvin, Introduction to Quantum Error Correction and Fault Tolerance, SciPost Physics Lecture Notes 70 (2023), arXiv:2111.08894v4. Its role is foundational. The exact phase-memory optimum is developed in the project; it is not attributed to Girvin. The primary research bibliography remains available for attribution without adding alternative educational prerequisites.
+
+## Essential scientific distinctions
+
+- The exact optimum concerns one oscillator and one unobserved phase-noise interval, with a known integrable even unimodal density. A known symmetry center can be rotated to zero.
+- The oscillator is the sole quantum memory through the interval. Retained classical encoding records and fresh recovery ancillas are allowed; coherent bypasses, preshared entanglement across the interval, external information about the realized phase, and intermediate correction change the task.
+- Entanglement fidelity uses the normalized maximally entangled input and a squared overlap. Worst-case reference-assisted fidelity and half-diamond error are separate operational quantities; unentangled pure-input fidelity is not substituted for them.
+- The central probability gives an unrestricted-energy supremum and infimum, approached by finite-support codes. For continuous strictly decreasing densities and d greater than one, no normal code attains the limit.
+- Raw finite codes need not have half-diamond error equal to one minus entanglement fidelity. The optional retained classical cyclic twirl supplies that equality for the stated finite phase and joint-noise constructions.
+- Hard photon cutoff, mean photon number for the maximally mixed input, and largest mean over logical inputs are different resources. The explicit loss-distance theorem assumes a hard cutoff.
+- Flat and inherited sine envelopes have constructive convergence and loss guarantees. The weak-loss exponent is achievable at fixed logical dimension and fixed phase density; it is not a global optimum at fixed energy or for joint loss and dephasing.
+- Equal adjacent-level Ramsey coherence fixes only one Fourier coefficient of the phase law. It does not determine the exact memory error for a large register. Fixed-dimension weak-noise comparisons and fixed-error dimension limits can order distributions differently.
+- A phase-width law is not a universal storage-time law. Markov and quasistatic phase noise have different time dependences.
+- The same converse mass bound does not establish matching achievability for arbitrary multimodal densities. Collective-phase noise on multiple modes has degenerate sectors and can evade the single-mode argument.
+- Number-phase coding, phase-bin recovery, sine phase states, and several statistical ingredients are established prior work. The precise comparison and limits of the literature screen are in science/06-prior-work.md.
+
+## Reproduction route
+
+Run `python3 verification/check_finite_resources.py` with Python 3.10 or later. It requires the standard library and reproduces the committed expected output. Rebuild the figure with the pinned plotting dependency and command in verification/README.md. The figure and CSV are analytic predictions, not device data.
+
+Numerical cases check finite formulas and indexing. The general optimum, convergence statement, and loss bounds depend on the written proofs.
