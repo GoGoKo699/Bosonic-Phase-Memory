@@ -2,7 +2,7 @@
 
 **How accurately can one oscillator preserve an arbitrary quantum register through an unobserved phase-noise interval, even with the best possible encoding and recovery?**
 
-For a logical register of dimension $d$ and a phase density $p$ that is symmetric about zero and nonincreasing on $[0,\pi]$, the exact answer is the probability in one angular cell of width $2\pi/d$. A known symmetry center can first be rotated to zero:
+For a logical register of dimension $`d`$ and a phase density $`p`$ that is symmetric about zero and nonincreasing on $`[0,\pi]`$, the exact answer is the probability in one angular cell of width $`2\pi/d`$. A known symmetry center can first be rotated to zero:
 
 ```math
 \begin{aligned}
@@ -17,7 +17,7 @@ w_d(p)&=\int_{-\pi/d}^{\pi/d}p(\theta)\,d\theta,\\
 
 The optimization allows arbitrary deterministic encoders and recoveries, with no photon-number limit. The oscillator is the only quantum memory through the interval; no external record reveals the realized phase, and no correction occurs during the interval. Retained classical encoding records do not improve the optimum.
 
-The converse applies to every allowed code. A finite-support number-phase construction approaches it, with its full logical channel converging to an explicit mixture of logical phase errors. If the density is continuous and strictly decreasing on $(0,\pi)$ and $d\gt 1$, the limiting optimum is not attained by a normal code. The [number-phase construction is inherited](science/06-prior-work.md); the claim developed here is its exact universal optimum in this operational model.
+The converse applies to every allowed code. A finite-support number-phase construction approaches it, with its full logical channel converging to an explicit mixture of logical phase errors. If the density is continuous and strictly decreasing on $`(0,\pi)`$ and $`d\gt 1`$, the limiting optimum is not attained by a normal code. The [number-phase construction is inherited](science/06-prior-work.md); the claim developed here is its exact universal optimum in this operational model.
 
 ## Main results
 
@@ -59,7 +59,7 @@ Start at the [learning entrypoint](learning/README.md) for the guided route, or 
 
 ![Optimal phase-memory error for wrapped Gaussian and wrapped Cauchy laws at equal adjacent-level Ramsey coherence.](figures/equal_ramsey_error.svg)
 
-These two phase laws have the same adjacent-level Ramsey coherence, $\widehat p(1)=e^{-0.01}$, but their exact optimal register errors differ and their ordering reverses as the logical dimension grows. The [noise-law analysis](science/05-noise-laws-and-architecture.md) gives the formulas and qualifications; the [CSV](figures/equal_ramsey_error.csv) contains the plotted values.
+These two phase laws have the same adjacent-level Ramsey coherence, $`\widehat p(1)=e^{-0.01}`$, but their exact optimal register errors differ and their ordering reverses as the logical dimension grows. The [noise-law analysis](science/05-noise-laws-and-architecture.md) gives the formulas and qualifications; the [CSV](figures/equal_ramsey_error.csv) contains the plotted values.
 
 ## Reproduce the finite calculations
 

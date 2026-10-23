@@ -16,7 +16,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** What does it mean for a single physical oscillator to contain a many-dimensional logical register?
 
-**Understanding target.** Distinguish the oscillator's number states $|n\rangle$, its nondegenerate number operator $\hat n$, and a logical system of dimension $d$. An infinite collection of available levels establishes a state-space possibility; it does not establish accurate storage under noise. Photon number is dimensionless, while the excitation energy above vacuum is $\hbar\omega\langle\hat n\rangle$.
+**Understanding target.** Distinguish the oscillator's number states $`|n\rangle`$, its nondegenerate number operator $`\hat n`$, and a logical system of dimension $`d`$. An infinite collection of available levels establishes a state-space possibility; it does not establish accurate storage under noise. Photon number is dimensionless, while the excitation energy above vacuum is $`\hbar\omega\langle\hat n\rangle`$.
 
 **Dependencies and story role.** This is the starting point. It introduces the physical carrier and the logical object whose preservation will be optimized, before choosing a code or a noise measure.
 
@@ -30,7 +30,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** How can a phase rotation damage stored information while leaving every photon-number population unchanged?
 
-**Understanding target.** Explain the action $U_\theta|n\rangle=e^{-in\theta}|n\rangle$ and distinguish a common overall phase from a relative phase between different number states. A coherence $|n\rangle\langle m|$ acquires the factor $e^{-i(n-m)\theta}$; the same phase uncertainty can therefore affect different number separations differently.
+**Understanding target.** Explain the action $`U_\theta|n\rangle=e^{-in\theta}|n\rangle`$ and distinguish a common overall phase from a relative phase between different number states. A coherence $`|n\rangle\langle m|`$ acquires the factor $`e^{-i(n-m)\theta}`$; the same phase uncertainty can therefore affect different number separations differently.
 
 **Dependencies and story role.** Depends on [M01](#m01). It turns the number basis into a concrete error mechanism and establishes why preserving basis labels alone is insufficient.
 
@@ -44,7 +44,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** How does uncertainty about a phase become a deterministic map on density operators?
 
-**Understanding target.** Interpret $\mathcal D_p(\rho)=\int p(\theta)U_\theta\rho U_\theta^\dagger d\theta$ as averaging over an unobserved classical variable. Understand the circle normalization, why a known offset can be removed, and why the Fourier coefficient $\widehat p(n-m)$ multiplies the corresponding coherence. A wrapped Gaussian phase density is a probability law; it should not be confused with the separate phase-space definition of a bosonic Gaussian channel.
+**Understanding target.** Interpret $`\mathcal D_p(\rho)=\int p(\theta)U_\theta\rho U_\theta^\dagger d\theta`$ as averaging over an unobserved classical variable. Understand the circle normalization, why a known offset can be removed, and why the Fourier coefficient $`\widehat p(n-m)`$ multiplies the corresponding coherence. A wrapped Gaussian phase density is a probability law; it should not be confused with the separate phase-space definition of a bosonic Gaussian channel.
 
 **Dependencies and story role.** Depends on [M01](#m01) and [M02](#m02). It packages the physical error into the channel that every admissible protocol must use.
 
@@ -58,7 +58,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** What must a memory preserve when the stored register is part of a larger quantum state?
 
-**Understanding target.** Distinguish the accessible logical register from an untouched reference that may be entangled with it. Preserving the logical register means preserving those correlations as well as its local populations. Understand why the reference used to evaluate a channel is not an extra memory available to the encoder or recovery, and why a reference of dimension $d$ suffices for an input of dimension $d$.
+**Understanding target.** Distinguish the accessible logical register from an untouched reference that may be entangled with it. Preserving the logical register means preserving those correlations as well as its local populations. Understand why the reference used to evaluate a channel is not an extra memory available to the encoder or recovery, and why a reference of dimension $`d`$ suffices for an input of dimension $`d`$.
 
 **Dependencies and story role.** Depends on [M03](#m03). It extends the storage task beyond individually selected pure states and prepares the operational error criteria.
 
@@ -72,7 +72,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** What class of physical procedures is included when a theorem optimizes over every encoder and recovery?
 
-**Understanding target.** Read $\Lambda=\mathcal R\mathcal D_p\mathcal E$ as a composition of completely positive trace-preserving maps. Encoding and recovery may use fresh ancillas, measurements, and conditional operations. Every outcome must be included in the overall map. A normalized successful branch, considered without its probability and unsuccessful branches, is a different operational task.
+**Understanding target.** Read $`\Lambda=\mathcal R\mathcal D_p\mathcal E`$ as a composition of completely positive trace-preserving maps. Encoding and recovery may use fresh ancillas, measurements, and conditional operations. Every outcome must be included in the overall map. A normalized successful branch, considered without its probability and unsuccessful branches, is a different operational task.
 
 **Dependencies and story role.** Depends on [M03](#m03) and [M04](#m04). It defines the mathematical competitors against which a proposed code will be compared.
 
@@ -100,7 +100,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** Which quantity answers whether the entire register has been preserved, and which answers the worst-case distinguishability question?
 
-**Understanding target.** Distinguish maximally mixed-input entanglement fidelity $F_e$, worst-case reference-assisted fidelity $F_{\mathrm{ref}}$, and half the diamond distance $\varepsilon_\diamond$. The first two are squared pure-state overlaps after purification; the third optimizes operational distinguishability over reference-assisted inputs. Understand $F_{\mathrm{ref}}\le F_e$ and $\varepsilon_\diamond\ge1-F_e$, without assuming equality for every channel.
+**Understanding target.** Distinguish maximally mixed-input entanglement fidelity $`F_e`$, worst-case reference-assisted fidelity $`F_{\mathrm{ref}}`$, and half the diamond distance $`\varepsilon_\diamond`$. The first two are squared pure-state overlaps after purification; the third optimizes operational distinguishability over reference-assisted inputs. Understand $`F_{\mathrm{ref}}\le F_e`$ and $`\varepsilon_\diamond\ge1-F_e`$, without assuming equality for every channel.
 
 **Dependencies and story role.** Depends on [M04](#m04) and [M05](#m05). It fixes the success criteria before any optimum is stated.
 
@@ -142,7 +142,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** Why does an encoding that handles phase uncertainty need a separate analysis when photons can be lost?
 
-**Understanding target.** Phase rotations preserve number populations; pure loss transfers population toward lower number states and changes amplitudes even in its no-loss Kraus branch. Interpret transmissivity $\eta$, the no-loss operator $\eta^{\hat n/2}$, and the dependence of loss on photon number. The same added photon support that improves phase resolution can increase exposure to loss.
+**Understanding target.** Phase rotations preserve number populations; pure loss transfers population toward lower number states and changes amplitudes even in its no-loss Kraus branch. Interpret transmissivity $`\eta`$, the no-loss operator $`\eta^{\hat n/2}`$, and the dependence of loss on photon number. The same added photon support that improves phase resolution can increase exposure to loss.
 
 **Dependencies and story role.** Depends on [M02](#m02), [M03](#m03), [M05](#m05), and [M08](#m08). It identifies a second physical noise mechanism without importing it into the phase-only theorem.
 
@@ -170,7 +170,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** What precisely is held fixed, what is optimized, and what information can the protocol use?
 
-**Understanding target.** Assemble the model: fixed $d$, fixed known even unimodal $L^1$ phase density, one oscillator with nondegenerate number spectrum, arbitrary deterministic endpoint channels, and no coherent bypass or preshared entanglement across the interval. Retained classical encoding records are allowed in an explicit extension; additional information about the realized phase is a different resource. The theorem optimizes fidelity and diamond error without imposing a photon budget.
+**Understanding target.** Assemble the model: fixed $`d`$, fixed known even unimodal $`L^1`$ phase density, one oscillator with nondegenerate number spectrum, arbitrary deterministic endpoint channels, and no coherent bypass or preshared entanglement across the interval. Retained classical encoding records are allowed in an explicit extension; additional information about the realized phase is a different resource. The theorem optimizes fidelity and diamond error without imposing a photon budget.
 
 **Dependencies and story role.** Integrates [M01–M11](#m01), particularly [M07](#m07), [M08](#m08), and [M11](#m11). It closes the background phase by forming one complete operational question from the preceding concepts.
 
@@ -186,7 +186,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** How can the performance of an arbitrarily complicated encoding and recovery be represented by one function of phase?
 
-**Understanding target.** Fix the protocol and define $f(\theta)=F_e(\Lambda_\theta)$ for a deterministic phase. Explain why $0\le f\le1$ and why the noisy-channel fidelity is $\int p(\theta)f(\theta)d\theta$. The protocol is held fixed while the phase is varied; optimizing a separate recovery for every known phase would change the task.
+**Understanding target.** Fix the protocol and define $`f(\theta)=F_e(\Lambda_\theta)`$ for a deterministic phase. Explain why $`0\le f\le1`$ and why the noisy-channel fidelity is $`\int p(\theta)f(\theta)d\theta`$. The protocol is held fixed while the phase is varied; optimizing a separate recovery for every known phase would change the task.
 
 **Dependencies and story role.** Depends on [M03](#m03), [M05](#m05), [M07](#m07), and [M12](#m12). It begins the narrative with the local mathematical object that makes the universal converse possible.
 
@@ -200,7 +200,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** What constraint must every physical phase-response function obey, regardless of the chosen code?
 
-**Understanding target.** Follow uniform averaging from $U_\theta$ to complete dephasing in the nondegenerate number basis, and then to a measure-and-prepare logical channel. Its maximally entangled overlap is at most $1/d$, giving $\int f(\theta)d\theta\le2\pi/d$. Conditional recovery from a retained classical encoding record still has this property.
+**Understanding target.** Follow uniform averaging from $`U_\theta`$ to complete dephasing in the nondegenerate number basis, and then to a measure-and-prepare logical channel. Its maximally entangled overlap is at most $`1/d`$, giving $`\int f(\theta)d\theta\le2\pi/d`$. Conditional recovery from a retained classical encoding record still has this property.
 
 **Dependencies and story role.** Depends on [M02](#m02), [M04](#m04), [M05](#m05), and [M13](#m13). It supplies the code-independent restriction that the remaining converse will exploit.
 
@@ -214,7 +214,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** Where should a bounded response with a fixed integral budget be placed to collect the greatest probability mass?
 
-**Understanding target.** Understand the threshold argument that compares $f$ with the indicator of $[-\pi/d,\pi/d]$. Evenness and monotonic decrease away from zero make this interval the highest-density set of the required angular measure. The argument establishes $F_e\le w_d(p)$ without assuming that the discontinuous indicator is a physical finite-code response.
+**Understanding target.** Understand the threshold argument that compares $`f`$ with the indicator of $`[-\pi/d,\pi/d]`$. Evenness and monotonic decrease away from zero make this interval the highest-density set of the required angular measure. The argument establishes $`F_e\le w_d(p)`$ without assuming that the discontinuous indicator is a physical finite-code response.
 
 **Dependencies and story role.** Depends on [M09](#m09), [M13](#m13), and [M14](#m14). It converts the uniform budget into the sharp upper bound for the stated density class.
 
@@ -228,7 +228,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** What does the fidelity ceiling imply for an arbitrary reference-assisted input or a channel-discrimination experiment?
 
-**Understanding target.** Explain why $F_{\mathrm{ref}}\le F_e\le w_d(p)$ and why the maximally entangled input gives $\varepsilon_\diamond\ge1-F_e\ge1-w_d(p)$. These are bounds for every admissible protocol. At this stage they do not establish that any code approaches the bounds, or that fidelity and diamond error coincide for a general recovered channel.
+**Understanding target.** Explain why $`F_{\mathrm{ref}}\le F_e\le w_d(p)`$ and why the maximally entangled input gives $`\varepsilon_\diamond\ge1-F_e\ge1-w_d(p)`$. These are bounds for every admissible protocol. At this stage they do not establish that any code approaches the bounds, or that fidelity and diamond error coincide for a general recovered channel.
 
 **Dependencies and story role.** Depends on [M07](#m07) and [M15](#m15). It completes the universal converse in all three stated metrics before turning to achievability.
 
@@ -242,7 +242,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** How can one oscillator carry both an unknown logical state and information useful for estimating its phase error?
 
-**Understanding target.** Interpret $V_M|j\rangle=M^{-1/2}\sum_{k=0}^{M-1}|dk+j\rangle$ as an isometric encoding with distinct number residues. Under $|dk+j\rangle\mapsto|k\rangle_G|j\rangle_L$, a phase rotation factors into a gauge state depending on $d\theta$ and a logical rotation depending on $\theta$. This factorization also holds with an inaccessible reference. The photon cutoff is $N-1$ with $N=dM$.
+**Understanding target.** Interpret $`V_M|j\rangle=M^{-1/2}\sum_{k=0}^{M-1}|dk+j\rangle`$ as an isometric encoding with distinct number residues. Under $`|dk+j\rangle\mapsto|k\rangle_G|j\rangle_L`$, a phase rotation factors into a gauge state depending on $`d\theta`$ and a logical rotation depending on $`\theta`$. This factorization also holds with an inaccessible reference. The photon cutoff is $`N-1`$ with $`N=dM`$.
 
 **Dependencies and story role.** Depends on [M06](#m06), [M08](#m08), [M09](#m09), and [M12](#m12). It introduces the explicit finite code that will meet the converse in the limit.
 
@@ -256,7 +256,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** What actual measurement and conditional operation turn the quotient coordinate into a valid decoder?
 
-**Understanding target.** Explain the finite-support phase POVM, its principal outcome interval, and the correction $e^{+i\phi J/d}$. The gauge outcome estimates $d\theta$ modulo $2\pi$ without measuring the logical amplitudes. Understand why the recovery includes a complementary outcome outside the occupied gauge support: a channel must be trace preserving on its entire input space, even if the intended phase-noise input never reaches that outcome.
+**Understanding target.** Explain the finite-support phase POVM, its principal outcome interval, and the correction $`e^{+i\phi J/d}`$. The gauge outcome estimates $`d\theta`$ modulo $`2\pi`$ without measuring the logical amplitudes. Understand why the recovery includes a complementary outcome outside the occupied gauge support: a channel must be trace preserving on its entire input space, even if the intended phase-noise input never reaches that outcome.
 
 **Dependencies and story role.** Depends on [M05](#m05), [M06](#m06), [M09](#m09), and [M17](#m17). It makes the achievability protocol a complete physical quantum operation.
 
@@ -268,9 +268,9 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 ### M19 — Exact finite-code channel formulas
 
-**Central question.** How can the complete finite $M$ protocol be calculated before taking an ideal limit?
+**Central question.** How can the complete finite $`M`$ protocol be calculated before taking an ideal limit?
 
-**Understanding target.** Understand the Schur coefficients $C^{(M)}_{jh}$ as the factors multiplying logical matrix elements. Their finite sums contain the phase density's Fourier coefficients and the decoder's sinc factors. The identity $D_M(d\delta)D_d(\delta)=D_{dM}(\delta)$ turns entanglement fidelity into a central-window convolution with a Fejér kernel. These formulas are exact for the specified finite code; its raw channel is generally a mixture of continuous diagonal rotations, not yet a discrete phase Pauli channel.
+**Understanding target.** Understand the Schur coefficients $`C^{(M)}_{jh}`$ as the factors multiplying logical matrix elements. Their finite sums contain the phase density's Fourier coefficients and the decoder's sinc factors. The identity $`D_M(d\delta)D_d(\delta)=D_{dM}(\delta)`$ turns entanglement fidelity into a central-window convolution with a Fejér kernel. These formulas are exact for the specified finite code; its raw channel is generally a mixture of continuous diagonal rotations, not yet a discrete phase Pauli channel.
 
 **Dependencies and story role.** Depends on [M03](#m03), [M07](#m07), and [M18](#m18). It provides a finite, reproducible description that will support both convergence and resource estimates.
 
@@ -284,7 +284,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** What remains when the gauge estimates phase with arbitrarily fine resolution inside its modular cell?
 
-**Understanding target.** Explain the limiting residual channel $\Lambda_\infty=\sum_r w_r\mathrm{Ad}_{Z_d^r}$, with each $w_r$ equal to a phase-cell probability. Increasing $M$ sharpens the estimate of $d\theta$ modulo $2\pi$; it does not identify the missing alias. The distinct powers of $Z_d$ give orthogonal maximally entangled output states, making the identity-cell probability operationally meaningful. Understand why convergence of every Schur coefficient implies diamond-norm convergence at fixed $d$, and why an $L^1$ density makes the finitely many branch boundaries harmless.
+**Understanding target.** Explain the limiting residual channel $`\Lambda_\infty=\sum_r w_r\mathrm{Ad}_{Z_d^r}`$, with each $`w_r`$ equal to a phase-cell probability. Increasing $`M`$ sharpens the estimate of $`d\theta`$ modulo $`2\pi`$; it does not identify the missing alias. The distinct powers of $`Z_d`$ give orthogonal maximally entangled output states, making the identity-cell probability operationally meaningful. Understand why convergence of every Schur coefficient implies diamond-norm convergence at fixed $`d`$, and why an $`L^1`$ density makes the finitely many branch boundaries harmless.
 
 **Dependencies and story role.** Depends on [M04](#m04), [M07](#m07), [M09](#m09), and [M19](#m19). It supplies the full-channel limit required to match the operational converse.
 
@@ -298,7 +298,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** How do a universal upper bound and a convergent physical construction establish an exact answer without an optimal finite code?
 
-**Understanding target.** Combine the converse with the phase-alias channel to obtain $\sup F_e=\sup F_{\mathrm{ref}}=w_d(p)$ and $\inf\varepsilon_\diamond=1-w_d(p)$. Distinguish equality of these optimized values from equality for each protocol. For $d\gt 1$ under the strict threshold condition in the theorem, a normal protocol's continuous response cannot equal the required discontinuous indicator, so the optimum is unattained. The $d=1$ and uniform-density cases are attained and provide useful boundaries.
+**Understanding target.** Combine the converse with the phase-alias channel to obtain $`\sup F_e=\sup F_{\mathrm{ref}}=w_d(p)`$ and $`\inf\varepsilon_\diamond=1-w_d(p)`$. Distinguish equality of these optimized values from equality for each protocol. For $`d\gt 1`$ under the strict threshold condition in the theorem, a normal protocol's continuous response cannot equal the required discontinuous indicator, so the optimum is unattained. The $`d=1`$ and uniform-density cases are attained and provide useful boundaries.
 
 **Dependencies and story role.** Integrates [M13–M20](#m13), particularly [M16](#m16) and [M20](#m20). It completes the core theorem before introducing quantitative finite-resource refinements.
 
@@ -312,7 +312,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** How can a finite implementation obtain an exact diamond-error guarantee from its computed entanglement fidelity?
 
-**Understanding target.** Explain the independent random cyclic $X$ conjugation and its retained classical seed. For the phase-only Schur channel, this makes the Schur matrix circulant and the logical channel a discrete phase Pauli mixture, while preserving $F_M$. Its identity probability is then exactly $F_M$, so $F_{\mathrm{ref}}=F_M$ and $\varepsilon_\diamond=1-F_M$. These identities apply to the twirled implementation, without claiming finite-energy optimality.
+**Understanding target.** Explain the independent random cyclic $`X`$ conjugation and its retained classical seed. For the phase-only Schur channel, this makes the Schur matrix circulant and the logical channel a discrete phase Pauli mixture, while preserving $`F_M`$. Its identity probability is then exactly $`F_M`$, so $`F_{\mathrm{ref}}=F_M`$ and $`\varepsilon_\diamond=1-F_M`$. These identities apply to the twirled implementation, without claiming finite-energy optimality.
 
 **Dependencies and story role.** Depends on [M05](#m05), [M07](#m07), [M19](#m19), and [M21](#m21). It converts the exact finite-code formula into a sharp operational guarantee.
 
@@ -326,7 +326,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** How does the regularity of the phase density determine the photon support needed to approach the ideal cell probability?
 
-**Understanding target.** Interpret $F_M$ as a positive-kernel average of the translated interval mass $H(t)$. For a smooth or Lipschitz density, cancellation of the odd part gives a phase gap of order $1/N$ for the flat comb. A jump at the cell boundary can instead produce a $\log N/N$ rate. These are properties of this specified envelope and decoder, not necessary energy requirements for every possible code.
+**Understanding target.** Interpret $`F_M`$ as a positive-kernel average of the translated interval mass $`H(t)`$. For a smooth or Lipschitz density, cancellation of the odd part gives a phase gap of order $`1/N`$ for the flat comb. A jump at the cell boundary can instead produce a $`\log N/N`$ rate. These are properties of this specified envelope and decoder, not necessary energy requirements for every possible code.
 
 **Dependencies and story role.** Depends on [M08](#m08), [M19](#m19), and [M22](#m22). It turns qualitative convergence into finite-resource estimates with explicit hypotheses.
 
@@ -340,7 +340,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** Can changing the gauge amplitudes improve the finite-resource guarantee while keeping the same logical residues and photon support?
 
-**Understanding target.** Explain how a common sine envelope changes the phase kernel while retaining the quotient/remainder decoder. Its first circular moment gives a phase-gap bound of order $1/[d(M+1)^2]$ for fixed density regularity, or order $d/N^2$. The symmetric envelope preserves the flat code's cutoff and mean-energy ledger. The sine phase-estimation state is inherited; the memory bounds are derived for this task.
+**Understanding target.** Explain how a common sine envelope changes the phase kernel while retaining the quotient/remainder decoder. Its first circular moment gives a phase-gap bound of order $`1/[d(M+1)^2]`$ for fixed density regularity, or order $`d/N^2`$. The symmetric envelope preserves the flat code's cutoff and mean-energy ledger. The sine phase-estimation state is inherited; the memory bounds are derived for this task.
 
 **Dependencies and story role.** Depends on [M08](#m08), [M17](#m17), [M19](#m19), and [M23](#m23). It shows how a physically specified finite construction can improve without changing the unrestricted optimum.
 
@@ -354,7 +354,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** How much can pure loss change any input that is supported below a known photon number, including one entangled with a reference?
 
-**Understanding target.** Understand the exact restricted half-diamond distance $1-\eta^{n_{\max}}$ and why its restriction is a hard support cutoff. The no-loss branch and the total probability of all loss branches together control the upper bound; the highest Fock state attains it. A mean photon number alone does not supply the same cutoff statement.
+**Understanding target.** Understand the exact restricted half-diamond distance $`1-\eta^{n_{\max}}`$ and why its restriction is a hard support cutoff. The no-loss branch and the total probability of all loss branches together control the upper bound; the highest Fock state attains it. A mean photon number alone does not supply the same cutoff statement.
 
 **Dependencies and story role.** Depends on [M07](#m07), [M08](#m08), and [M10](#m10). It provides a channel-level continuity estimate for adding physical loss to the finite phase-memory construction.
 
@@ -368,7 +368,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** How can photon support be chosen when better phase resolution and greater loss exposure compete?
 
-**Understanding target.** Explain the code-specific guarantee $F_g^{\mathrm{loss+phase}}\ge\eta^{(N-1)/2}F_g^{\mathrm{phase}}$ and its conversion to a diamond bound by the admissible twirl. Phase covariance preserves the phase-only converse as an upper bound on joint-noise fidelity. Balancing the finite phase gap against loss gives constructive excess-error bounds of order $s^{1/2}$ for the flat envelope and $s^{2/3}$ for the sine envelope, with $s=-\log\eta\to0$ at fixed $d$ and Lipschitz density.
+**Understanding target.** Explain the code-specific guarantee $`F_g^{\mathrm{loss+phase}}\ge\eta^{(N-1)/2}F_g^{\mathrm{phase}}`$ and its conversion to a diamond bound by the admissible twirl. Phase covariance preserves the phase-only converse as an upper bound on joint-noise fidelity. Balancing the finite phase gap against loss gives constructive excess-error bounds of order $`s^{1/2}`$ for the flat envelope and $`s^{2/3}`$ for the sine envelope, with $`s=-\log\eta\to0`$ at fixed $`d`$ and Lipschitz density.
 
 **Dependencies and story role.** Integrates [M10](#m10), [M22–M25](#m22), and the unrestricted benchmark in [M21](#m21). It connects the exact phase theorem to an explicit implementation under an additional noise mechanism.
 
@@ -382,7 +382,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** Does one measured coherence decay determine the accuracy of a many-dimensional quantum memory?
 
-**Understanding target.** Compare wrapped Gaussian and wrapped Cauchy phase laws with the same first Fourier coefficient $r=e^{-\chi}$. Their higher coherences and central-cell probabilities differ. At fixed dimension and weak noise, the Gaussian error can be much smaller; at fixed nonzero target error, the Cauchy law can eventually support a larger dimension. Distinguish the exact wrapped formulas from the unwrapped Gaussian tail approximation and its controlled correction.
+**Understanding target.** Compare wrapped Gaussian and wrapped Cauchy phase laws with the same first Fourier coefficient $`r=e^{-\chi}`$. Their higher coherences and central-cell probabilities differ. At fixed dimension and weak noise, the Gaussian error can be much smaller; at fixed nonzero target error, the Cauchy law can eventually support a larger dimension. Distinguish the exact wrapped formulas from the unwrapped Gaussian tail approximation and its controlled correction.
 
 **Dependencies and story role.** Depends on [M03](#m03), [M15](#m15), and [M21](#m21). It uses the exact theorem to interpret a concrete physical noise comparison.
 
@@ -396,7 +396,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** What additional information is needed to turn the fidelity benchmark into a storage-time or register-size constraint?
 
-**Understanding target.** Interpret $d=2^k$ for a register of $k$ qubits and invert the central-cell probability at a specified target error. Under exponential Ramsey decay, the Gaussian and Cauchy storage thresholds scale as $d^{-2}$ and $d^{-1}$ at large $d$, respectively; quasistatic Gaussian frequency noise instead gives a $d^{-1}$ time law. The Gaussian $4^{-k}$ storage scaling requires phase variance proportional to time. These concern the whole reference-entangled register and the limiting optimum; finite implementations need a strict error margin and adequate resources.
+**Understanding target.** Interpret $`d=2^k`$ for a register of $`k`$ qubits and invert the central-cell probability at a specified target error. Under exponential Ramsey decay, the Gaussian and Cauchy storage thresholds scale as $`d^{-2}`$ and $`d^{-1}`$ at large $`d`$, respectively; quasistatic Gaussian frequency noise instead gives a $`d^{-1}`$ time law. The Gaussian $`4^{-k}`$ storage scaling requires phase variance proportional to time. These concern the whole reference-entangled register and the limiting optimum; finite implementations need a strict error margin and adequate resources.
 
 **Dependencies and story role.** Depends on [M08](#m08), [M11](#m11), [M21](#m21), and [M27](#m27). It translates the probability benchmark into architectural quantities while keeping the dynamical assumptions visible.
 
@@ -410,7 +410,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** Which changes alter the problem so that the single-mode optimum no longer applies?
 
-**Understanding target.** Identify how additional coherent modes, phase side information, or correction during the interval change the assumptions. Two modes under a common total-number phase have degenerate fixed-number subspaces and can store information perfectly against that collective noise. For a joint $L^1$ phase density, independent uniform averaging over all phase components instead yields a related probability-volume converse, with no matching general code established here. Conditional phase observations have their own density-dependent upper bound.
+**Understanding target.** Identify how additional coherent modes, phase side information, or correction during the interval change the assumptions. Two modes under a common total-number phase have degenerate fixed-number subspaces and can store information perfectly against that collective noise. For a joint $`L^1`$ phase density, independent uniform averaging over all phase components instead yields a related probability-volume converse, with no matching general code established here. Conditional phase observations have their own density-dependent upper bound.
 
 **Dependencies and story role.** Depends on [M11](#m11), [M12](#m12), [M14](#m14), [M21](#m21), and [M28](#m28). It locates the architectural conclusions within the exact physical resources that make them valid.
 

@@ -8,7 +8,7 @@ F_*(d,p)=w_d(p)=\int_{-\pi/d}^{\pi/d}p(\theta)\,d\theta,
 \varepsilon_*(d,p)=1-w_d(p).
 ```
 
-Here $F_*$ is the supremal entanglement fidelity and $\varepsilon_*$ is the infimal half diamond distance. The hypotheses and allowed resources are specified in [the model](01-model-and-question.md); [the theorem](02-exact-benchmark.md) proves optimality over all deterministic encoders and recoveries. The density must be symmetric and nonincreasing away from its center. This chapter verifies that hypothesis for two important noise laws, computes their exact benchmarks, and explains the architectural consequences.
+Here $`F_*`$ is the supremal entanglement fidelity and $`\varepsilon_*`$ is the infimal half diamond distance. The hypotheses and allowed resources are specified in [the model](01-model-and-question.md); [the theorem](02-exact-benchmark.md) proves optimality over all deterministic encoders and recoveries. The density must be symmetric and nonincreasing away from its center. This chapter verifies that hypothesis for two important noise laws, computes their exact benchmarks, and explains the architectural consequences.
 
 The central comparison is deliberately made at **equal adjacent-Fock Ramsey coherence**. Measuring that one coherence does not determine how well a large logical register can be stored. The distribution of phase uncertainty, including its central width and its tails, matters.
 
@@ -22,15 +22,15 @@ r=\widehat p(1)=\int_{-\pi}^{\pi}p(\theta)\cos\theta\,d\theta,
 \chi=-\log r.
 ```
 
-The examples below have $0\lt r\lt 1$. Thus $\chi\gt 0$ is dimensionless. It is the attenuation exponent of $|0\rangle\langle1|$, rather than an unspecified dephasing rate. Two laws with the same $\chi$ give the same Ramsey contrast in the $\{|0\rangle,|1\rangle\}$ subspace. They can act very differently on $|n\rangle\langle m|$ with larger $|n-m|$.
+The examples below have $`0\lt r\lt 1`$. Thus $`\chi\gt 0`$ is dimensionless. It is the attenuation exponent of $`|0\rangle\langle1|`$, rather than an unspecified dephasing rate. Two laws with the same $`\chi`$ give the same Ramsey contrast in the $`\{|0\rangle,|1\rangle\}`$ subspace. They can act very differently on $`|n\rangle\langle m|`$ with larger $`|n-m|`$.
 
-Use $a=\pi/d$ throughout. For $d=1$, the logical system is trivial and $F_*=1$, $\varepsilon_*=0$ for every noise strength. Statements about nontrivial error below concern $d\ge2$.
+Use $`a=\pi/d`$ throughout. For $`d=1`$, the logical system is trivial and $`F_*=1`$, $`\varepsilon_*=0`$ for every noise strength. Statements about nontrivial error below concern $`d\ge2`$.
 
 ## 2. Wrapped Gaussian phase noise
 
 ### Exact density and fidelity
 
-Let an unwrapped real phase $X$ be Gaussian with mean zero and variance $2\chi$. Reducing it modulo $2\pi$ gives
+Let an unwrapped real phase $`X`$ be Gaussian with mean zero and variance $`2\chi`$. Reducing it modulo $`2\pi`$ gives
 
 ```math
 p_G(\theta;\chi)
@@ -41,9 +41,9 @@ p_G(\theta;\chi)
 e^{-\chi n^2}\cos(n\theta)\right].
 ```
 
-Consequently $\widehat p_G(n)=e^{-\chi n^2}$ and $r=e^{-\chi}$, as required. If the phase variance is instead denoted by $\gamma$, then $\gamma=2\chi$. Keeping this factor explicit avoids confusing a variance with a Lindblad rate.
+Consequently $`\widehat p_G(n)=e^{-\chi n^2}`$ and $`r=e^{-\chi}`$, as required. If the phase variance is instead denoted by $`\gamma`$, then $`\gamma=2\chi`$. Keeping this factor explicit avoids confusing a variance with a Lindblad rate.
 
-Writing $\Phi_{\mathrm N}$ for the standard normal cumulative distribution function, the exact answer is
+Writing $`\Phi_{\mathrm N}`$ for the standard normal cumulative distribution function, the exact answer is
 
 ```math
 F_{*,G}(d,\chi)
@@ -60,9 +60,9 @@ The first expression adds the probabilities of all correct phase aliases on the 
 
 ### Why the wrapped density is strictly unimodal
 
-Evenness follows directly from either representation. Strict decrease on $(0,\pi)$ needs a justification: it does not follow just by declaring a wrapped sum to be unimodal.
+Evenness follows directly from either representation. Strict decrease on $`(0,\pi)`$ needs a justification: it does not follow just by declaring a wrapped sum to be unimodal.
 
-Set $q=e^{-\chi}\in(0,1)$. The Jacobi product identity gives
+Set $`q=e^{-\chi}\in(0,1)`$. The Jacobi product identity gives
 
 ```math
 2\pi p_G(\theta;\chi)
@@ -71,7 +71,7 @@ Set $q=e^{-\chi}\in(0,1)$. The Jacobi product identity gives
 \left(1+2q^{2m-1}\cos\theta+q^{4m-2}\right).
 ```
 
-This is [NIST DLMF, equation 20.5.3](https://dlmf.nist.gov/20.5.E3). Its factors are positive, and the logarithmic derivative converges for fixed $q\lt 1$:
+This is [NIST DLMF, equation 20.5.3](https://dlmf.nist.gov/20.5.E3). Its factors are positive, and the logarithmic derivative converges for fixed $`q\lt 1`$:
 
 ```math
 \frac{\partial}{\partial\theta}\log p_G(\theta;\chi)
@@ -81,7 +81,7 @@ This is [NIST DLMF, equation 20.5.3](https://dlmf.nist.gov/20.5.E3). Its factors
 \qquad 0\lt \theta\lt \pi.
 ```
 
-The exact theorem therefore applies for every finite $\chi\gt 0$.
+The exact theorem therefore applies for every finite $`\chi\gt 0`$.
 
 ### A controlled Gaussian-tail approximation
 
@@ -91,7 +91,7 @@ The unwrapped central interval has probability
 \Pr(|X|\le a)=\mathrm{erf}\left(\frac{a}{2\sqrt\chi}\right).
 ```
 
-All additional correct intervals lie within $|X|\ge2\pi-a$. Thus
+All additional correct intervals lie within $`|X|\ge2\pi-a`$. Thus
 
 ```math
 0\le F_{*,G}(d,\chi)
@@ -110,7 +110,7 @@ Equivalently, the exact error satisfies the finite wrapping bounds
 
 These inequalities state when the familiar complementary-error-function expression is accurate. They also show its direction: the unwrapped tail slightly overestimates the actual logical error, because sufficiently large phase excursions can wrap into a correct interval. The error-function expression is not the exact wrapped answer.
 
-At fixed $d\ge2$ and $\chi\downarrow0$, the correction is exponentially smaller than the leading tail, so
+At fixed $`d\ge2`$ and $`\chi\downarrow0`$, the correction is exponentially smaller than the leading tail, so
 
 ```math
 \varepsilon_{*,G}(d,\chi)
@@ -132,37 +132,37 @@ F_{*,G}(d,\chi)
 \quad(\chi\to\infty,\ d\text{ fixed}).
 ```
 
-At fixed noise strength, increasing logical dimension ultimately makes the error approach one. At very large noise, the optimum approaches the fidelity $1/d$ of a completely dephased logical register.
+At fixed noise strength, increasing logical dimension ultimately makes the error approach one. At very large noise, the optimum approaches the fidelity $`1/d`$ of a completely dephased logical register.
 
 ### Exact threshold and dimension scaling
 
-For $d\ge2$, the Gaussian optimum is strictly decreasing with $\chi$. Indeed, the wrapped heat kernel obeys $\partial_\chi p_G=\partial_\theta^2p_G$, and therefore
+For $`d\ge2`$, the Gaussian optimum is strictly decreasing with $`\chi`$. Indeed, the wrapped heat kernel obeys $`\partial_\chi p_G=\partial_\theta^2p_G`$, and therefore
 
 ```math
 \partial_\chi F_{*,G}(d,\chi)
 =2\partial_\theta p_G(a;\chi)\lt 0.
 ```
 
-For a target $0\lt \varepsilon\lt 1-1/d$, there is consequently a unique exact threshold $\chi_{G}(d,\varepsilon)$ defined by
+For a target $`0\lt \varepsilon\lt 1-1/d`$, there is consequently a unique exact threshold $`\chi_{G}(d,\varepsilon)`$ defined by
 
 ```math
 F_{*,G}(d,\chi_G)=1-\varepsilon.
 ```
 
-The wrapped series above specifies it without approximation. Let $z_\varepsilon=\mathrm{erfc}^{-1}(\varepsilon)\gt 0$. A simple sufficient noise budget is
+The wrapped series above specifies it without approximation. Let $`z_\varepsilon=\mathrm{erfc}^{-1}(\varepsilon)\gt 0`$. A simple sufficient noise budget is
 
 ```math
 \chi\le\frac{\pi^2}{4d^2z_\varepsilon^2}.
 ```
 
-The lower wrapping bound supplies the corresponding necessary test when precision beyond the leading expression matters. In the limit of large $d$ at fixed $\varepsilon\in(0,1)$,
+The lower wrapping bound supplies the corresponding necessary test when precision beyond the leading expression matters. In the limit of large $`d`$ at fixed $`\varepsilon\in(0,1)`$,
 
 ```math
 \chi_G(d,\varepsilon)
 \sim\frac{\pi^2}{4d^2z_\varepsilon^2}.
 ```
 
-Equivalently, define the benchmark dimension ceiling as the largest integer $d$ for which $\varepsilon_{*,G}(d,\chi)\le\varepsilon$. Then
+Equivalently, define the benchmark dimension ceiling as the largest integer $`d`$ for which $`\varepsilon_{*,G}(d,\chi)\le\varepsilon`$. Then
 
 ```math
 d_{\varepsilon,G}(\chi)
@@ -170,15 +170,15 @@ d_{\varepsilon,G}(\chi)
 \qquad(\chi\downarrow0,\ \varepsilon\in(0,1)\text{ fixed}).
 ```
 
-For a very small target error, $z_\varepsilon^2\sim\log(1/\varepsilon)$, with smaller logarithmic corrections. This gives the familiar leading dependence $\chi_G\sim\pi^2/[4d^2\log(1/\varepsilon)]$ when $d$ is fixed and $\varepsilon\downarrow0$.
+For a very small target error, $`z_\varepsilon^2\sim\log(1/\varepsilon)`$, with smaller logarithmic corrections. This gives the familiar leading dependence $`\chi_G\sim\pi^2/[4d^2\log(1/\varepsilon)]`$ when $`d`$ is fixed and $`\varepsilon\downarrow0`$.
 
-The ceiling refers to the infimum over all allowed codes. Strictly unimodal noise has no normal code attaining that infimum for $d\gt 1$. A strict error margin above $\varepsilon_*$ is achievable with finite photon support; equality at the threshold requires the limiting construction. This distinction does not change the displayed asymptotic scalings.
+The ceiling refers to the infimum over all allowed codes. Strictly unimodal noise has no normal code attaining that infimum for $`d\gt 1`$. A strict error margin above $`\varepsilon_*`$ is achievable with finite photon support; equality at the threshold requires the limiting construction. This distinction does not change the displayed asymptotic scalings.
 
 ## 3. Wrapped Cauchy phase noise at the same Ramsey contrast
 
 ### Exact solution
 
-The wrapped Cauchy law with the same $r=e^{-\chi}$ is
+The wrapped Cauchy law with the same $`r=e^{-\chi}`$ is
 
 ```math
 p_C(\theta;\chi)
@@ -187,7 +187,7 @@ p_C(\theta;\chi)
 =\frac{\sinh\chi}{2\pi(\cosh\chi-\cos\theta)}.
 ```
 
-Its Fourier coefficients are $\widehat p_C(n)=e^{-\chi|n|}$. In particular, its first coefficient agrees exactly with the Gaussian law, while higher coherences have a linear exponent in $|n|$ rather than a quadratic one. Its unwrapped Cauchy scale is $\chi$; no finite unwrapped phase variance is assigned to it.
+Its Fourier coefficients are $`\widehat p_C(n)=e^{-\chi|n|}`$. In particular, its first coefficient agrees exactly with the Gaussian law, while higher coherences have a linear exponent in $`|n|`$ rather than a quadratic one. Its unwrapped Cauchy scale is $`\chi`$; no finite unwrapped phase variance is assigned to it.
 
 The density is even, and
 
@@ -198,7 +198,7 @@ The density is even, and
 \qquad(0\lt \theta\lt \pi).
 ```
 
-Integrating with $u=\tan(\theta/2)$ gives the exact optimum
+Integrating with $`u=\tan(\theta/2)`$ gives the exact optimum
 
 ```math
 F_{*,C}(d,\chi)
@@ -214,16 +214,16 @@ F_{*,C}(d,\chi)
 \right].
 ```
 
-The second expression computes small errors without subtracting a fidelity close to one. For $d=1$, interpret the first formula by continuity; the second directly gives zero.
+The second expression computes small errors without subtracting a fidelity close to one. For $`d=1`$, interpret the first formula by continuity; the second directly gives zero.
 
-For fixed $d\ge2$ and weak noise,
+For fixed $`d\ge2`$ and weak noise,
 
 ```math
 \varepsilon_{*,C}(d,\chi)
 \sim\frac\chi\pi\cot\!\left(\frac\pi{2d}\right).
 ```
 
-For large dimension at fixed positive $\chi$, and for broad noise at fixed dimension, respectively,
+For large dimension at fixed positive $`\chi`$, and for broad noise at fixed dimension, respectively,
 
 ```math
 F_{*,C}(d,\chi)\sim\frac{\coth(\chi/2)}d,
@@ -236,7 +236,7 @@ F_{*,C}(d,\chi)
 
 ### Dimension and noise budgets
 
-The exact condition $\varepsilon_{*,C}(d,\chi)\le\varepsilon$, for $0\lt \varepsilon\lt 1$, is
+The exact condition $`\varepsilon_{*,C}(d,\chi)\le\varepsilon`$, for $`0\lt \varepsilon\lt 1`$, is
 
 ```math
 d\le\frac{\pi}
@@ -251,7 +251,7 @@ d_{\varepsilon,C}(\chi)
 \qquad(\chi\downarrow0).
 ```
 
-Conversely, for $d\ge2$ and $0\lt \varepsilon\lt 1-1/d$, the exact largest noise exponent is
+Conversely, for $`d\ge2`$ and $`0\lt \varepsilon\lt 1-1/d`$, the exact largest noise exponent is
 
 ```math
 \chi_C(d,\varepsilon)
@@ -260,34 +260,34 @@ Conversely, for $d\ge2$ and $0\lt \varepsilon\lt 1-1/d$, the exact largest noise
 \right].
 ```
 
-If $\varepsilon\ge1-1/d$, a completely dephased logical register already meets the target, and this criterion imposes no finite upper bound on $\chi$. For large $d$ and fixed $\varepsilon$,
+If $`\varepsilon\ge1-1/d`$, a completely dephased logical register already meets the target, and this criterion imposes no finite upper bound on $`\chi`$. For large $`d`$ and fixed $`\varepsilon`$,
 
 ```math
 \chi_C(d,\varepsilon)
 \sim\frac{\pi\tan(\pi\varepsilon/2)}d.
 ```
 
-When the target error is also small, the leading coefficient becomes $\pi^2\varepsilon/(2d)$. As for the Gaussian law, finite codes attain any strict margin above the limiting optimum.
+When the target error is also small, the leading coefficient becomes $`\pi^2\varepsilon/(2d)`$. As for the Gaussian law, finite codes attain any strict margin above the limiting optimum.
 
 ## 4. Equal Ramsey coherence does not give a universal ordering
 
 There are two different questions, with different answers.
 
-At **fixed logical dimension** and $\chi\downarrow0$, the Gaussian error is exponentially small in $1/\chi$, whereas the Cauchy error is proportional to $\chi$. The Gaussian memory is much better in this limit.
+At **fixed logical dimension** and $`\chi\downarrow0`$, the Gaussian error is exponentially small in $`1/\chi`$, whereas the Cauchy error is proportional to $`\chi`$. The Gaussian memory is much better in this limit.
 
-At **fixed nonzero target error** and $\chi\downarrow0$, the largest allowed dimension grows as $\chi^{-1/2}$ for the Gaussian law and as $\chi^{-1}$ for the Cauchy law. The Cauchy law eventually supports a larger register. At equal first Fourier coefficient it has a much narrower central peak, accompanied by heavier tails. A small fixed register is sensitive to those tails; a growing register can instead benefit from the narrower peak.
+At **fixed nonzero target error** and $`\chi\downarrow0`$, the largest allowed dimension grows as $`\chi^{-1/2}`$ for the Gaussian law and as $`\chi^{-1}`$ for the Cauchy law. The Cauchy law eventually supports a larger register. At equal first Fourier coefficient it has a much narrower central peak, accompanied by heavier tails. A small fixed register is sensitive to those tails; a growing register can instead benefit from the narrower peak.
 
-The following exact integer ceilings use target error $\varepsilon=0.01$. The Gaussian entries use the wrapped interval sum and the Cauchy entries use its exact inverse formula; these are not floors of leading asymptotic estimates.
+The following exact integer ceilings use target error $`\varepsilon=0.01`$. The Gaussian entries use the wrapped interval sum and the Cauchy entries use its exact inverse formula; these are not floors of leading asymptotic estimates.
 
-| Equal Ramsey exponent $\chi$ | Gaussian dimension ceiling | Cauchy dimension ceiling |
+| Equal Ramsey exponent $`\chi`$ | Gaussian dimension ceiling | Cauchy dimension ceiling |
 |---:|---:|---:|
-| $10^{-2}$ | 8 | 5 |
-| $10^{-3}$ | 27 | 49 |
-| $10^{-4}$ | 86 | 493 |
+| $`10^{-2}`$ | 8 | 5 |
+| $`10^{-3}`$ | 27 | 49 |
+| $`10^{-4}`$ | 86 | 493 |
 
 ![Exact optimal errors for equal Ramsey contrast, with a crossover as logical dimension grows.](../figures/equal_ramsey_error.svg)
 
-The figure fixes $\chi=0.01$. At $d=2$, the exact Gaussian and Cauchy errors are approximately $1.16\times10^{-28}$ and $0.00318$. At $d=16$, they are approximately $0.165$ and $0.0323$. Both comparisons use the same Ramsey contrast $e^{-0.01}$. The [data](../figures/equal_ramsey_error.csv) and [plotting calculation](../verification/plot_noise_comparison.py) reproduce the curves.
+The figure fixes $`\chi=0.01`$. At $`d=2`$, the exact Gaussian and Cauchy errors are approximately $`1.16\times10^{-28}`$ and $`0.00318`$. At $`d=16`$, they are approximately $`0.165`$ and $`0.0323`$. Both comparisons use the same Ramsey contrast $`e^{-0.01}`$. The [data](../figures/equal_ramsey_error.csv) and [plotting calculation](../verification/plot_noise_comparison.py) reproduce the curves.
 
 Noise-law dependence and Gaussian/Cauchy capacity comparisons already appear in [Lami and Wilde's capacity work](06-prior-work.md#capacities-and-one-shot-communication). The contribution here is the exact single-interval fidelity and diamond-error comparison, including its finite-dimension crossover. A Ramsey decay constant alone cannot certify this memory benchmark, and a statement that heavier tails are always worse would be incorrect.
 
@@ -297,9 +297,9 @@ The theorem depends on the phase distribution accumulated during an interval. It
 
 ### Exponential Ramsey decay
 
-Suppose $r(t)=e^{-t/T_R}$, so $\chi(t)=t/T_R$. Both the wrapped Gaussian family and the wrapped Cauchy family define convolution semigroups with this first-harmonic decay, although their higher harmonics differ. For a logical register of $k$ qubits, set $d=2^k$.
+Suppose $`r(t)=e^{-t/T_R}`$, so $`\chi(t)=t/T_R`$. Both the wrapped Gaussian family and the wrapped Cauchy family define convolution semigroups with this first-harmonic decay, although their higher harmonics differ. For a logical register of $`k`$ qubits, set $`d=2^k`$.
 
-At fixed target error and large $d$, the Gaussian storage threshold is
+At fixed target error and large $`d`$, the Gaussian storage threshold is
 
 ```math
 t_G(d,\varepsilon)
@@ -328,11 +328,11 @@ For the common master-equation convention
 -\tfrac12\{L^\dagger L,\rho\},
 ```
 
-one has $\gamma(t)=\kappa_\phi t$, $\chi(t)=\kappa_\phi t/2$, and $T_R=2/\kappa_\phi$. Any numerical architecture estimate must state this convention.
+one has $`\gamma(t)=\kappa_\phi t`$, $`\chi(t)=\kappa_\phi t/2`$, and $`T_R=2/\kappa_\phi`$. Any numerical architecture estimate must state this convention.
 
 ### Quasistatic Gaussian frequency noise
 
-Suppose instead that an unknown frequency offset is constant within each interval, with zero mean and variance $\sigma_\omega^2$. Then $\theta=t\,\delta\omega$ is Gaussian before wrapping, but
+Suppose instead that an unknown frequency offset is constant within each interval, with zero mean and variance $`\sigma_\omega^2`$. Then $`\theta=t\,\delta\omega`$ is Gaussian before wrapping, but
 
 ```math
 \chi(t)=\frac{\sigma_\omega^2t^2}{2}.
@@ -345,15 +345,15 @@ t_G(d,\varepsilon)
 \sim\frac{\pi}{\sqrt2\,\sigma_\omega z_\varepsilon}\,d^{-1}.
 ```
 
-Thus even Gaussian phase noise does not universally imply a $4^{-k}$ time law. That exponent requires phase variance proportional to time. The general prescription is to determine the interval's phase law, evaluate its exact central probability, and then invert its actual time dependence.
+Thus even Gaussian phase noise does not universally imply a $`4^{-k}`$ time law. That exponent requires phase variance proportional to time. The general prescription is to determine the interval's phase law, evaluate its exact central probability, and then invert its actual time dependence.
 
 ## 6. Architectural meaning and boundaries
 
 ### Energy, controls, and additional noise
 
-The oscillator's infinite Hilbert space does not provide an unlimited high-fidelity quantum register for a fixed nonzero phase law. Increasing photon support improves phase estimation within a modular cell; it cannot distinguish the $d$ phase aliases that act differently on the logical register. The universal converse makes this limitation independent of a chosen code family.
+The oscillator's infinite Hilbert space does not provide an unlimited high-fidelity quantum register for a fixed nonzero phase law. Increasing photon support improves phase estimation within a modular cell; it cannot distinguish the $`d`$ phase aliases that act differently on the logical register. The universal converse makes this limitation independent of a chosen code family.
 
-Approaching the optimum still consumes a resource. The finite comb with logical dimension $d$ and gauge length $M$ occupies Fock levels up to $dM-1$. Its mean photon number is $(dM-1)/2$ on the maximally mixed logical input and at most $(dM+d-2)/2$ over all logical inputs. The [finite-resource analysis](04-finite-resources.md) treats the approximation to the ideal limit and the cost of photon loss. An arbitrarily large photon budget is allowed in the upper bound; it is not described as free in a physical implementation.
+Approaching the optimum still consumes a resource. The finite comb with logical dimension $`d`$ and gauge length $`M`$ occupies Fock levels up to $`dM-1`$. Its mean photon number is $`(dM-1)/2`$ on the maximally mixed logical input and at most $`(dM+d-2)/2`$ over all logical inputs. The [finite-resource analysis](04-finite-resources.md) treats the approximation to the ideal limit and the cost of photon loss. An arbitrarily large photon budget is allowed in the upper bound; it is not described as free in a physical implementation.
 
 The architecture statement applies between a completed encoding and a final recovery. It does not estimate preparation time, gate throughput, syndrome-extraction bandwidth, or the quality of available controls. An architecture performing active or autonomous correction throughout the interval has changed the protocol. Such an architecture must charge its extra modes, measurements, control operations, and time; it is not constrained by simply applying this passive-interval formula to its full operating lifetime.
 
@@ -367,15 +367,15 @@ The nondegenerate single-mode number spectrum is essential. Two modes with a com
 e^{-i\theta(\hat n_1+\hat n_2)}.
 ```
 
-For fixed total number $N$, the $N+1$ states $|n,N-n\rangle$, $0\le n\le N$, span a subspace on which every phase rotation is a scalar. A logical system of dimension at most $N+1$ is therefore perfectly protected against that collective noise. The extra mode and $N$ photons are explicit resources. Uniform averaging over the common phase is not entanglement breaking, so the single-mode converse does not apply.
+For fixed total number $`N`$, the $`N+1`$ states $`|n,N-n\rangle`$, $`0\le n\le N`$, span a subspace on which every phase rotation is a scalar. A logical system of dimension at most $`N+1`$ is therefore perfectly protected against that collective noise. The extra mode and $`N`$ photons are explicit resources. Uniform averaging over the common phase is not entanglement breaking, so the single-mode converse does not apply.
 
-For $m$ modes whose vector of individual phases has a joint integrable density on the torus of dimension $m$, averaging independently and uniformly over all $m$ angles does dephase the nondegenerate joint Fock basis. The same converse then gives a useful upper bound: the weighted success function has uniform average at most $1/d$, so its weighted average is at most the probability mass of the densest region of phase volume $(2\pi)^m/d$. The singular common-phase distribution in the preceding example is outside this density assumption. This does not establish a matching multimode code. A central interval has no direct higher-dimensional replacement that is automatically achievable. Product codes give lower bounds, while joint coding requires a separate analysis.
+For $`m`$ modes whose vector of individual phases has a joint integrable density on the torus of dimension $`m`$, averaging independently and uniformly over all $`m`$ angles does dephase the nondegenerate joint Fock basis. The same converse then gives a useful upper bound: the weighted success function has uniform average at most $`1/d`$, so its weighted average is at most the probability mass of the densest region of phase volume $`(2\pi)^m/d`$. The singular common-phase distribution in the preceding example is outside this density assumption. This does not establish a matching multimode code. A central interval has no direct higher-dimensional replacement that is automatically achievable. Product codes give lower bounds, while joint coding requires a separate analysis.
 
 ### Information about the realized phase
 
-A known constant phase offset can be removed by a known rotation. Knowledge of the random phase realization is a different resource: if a sensor reports $\theta$ exactly, applying $U_\theta^\dagger$ removes the noise and the ceiling disappears.
+A known constant phase offset can be removed by a known rotation. Knowledge of the random phase realization is a different resource: if a sensor reports $`\theta`$ exactly, applying $`U_\theta^\dagger`$ removes the noise and the ceiling disappears.
 
-For an external classical observation $Y$ whose joint law with the phase is independent of the logical input, the same converse can be applied conditionally. Assume that $p(\theta\mid Y=y)$ is an integrable density for almost every $y$; exact phase reporting, which gives point masses instead, was treated separately above. If
+For an external classical observation $`Y`$ whose joint law with the phase is independent of the logical input, the same converse can be applied conditionally. Assume that $`p(\theta\mid Y=y)`$ is an integrable density for almost every $`y`$; exact phase reporting, which gives point masses instead, was treated separately above. If
 
 ```math
 \Lambda_d(p)=\sup_{\substack{0\le f\le1\\
@@ -383,6 +383,6 @@ For an external classical observation $Y$ whose joint law with the phase is inde
 \int p(\theta)f(\theta)\,d\theta,
 ```
 
-then any decoder using that observation obeys $F_e\le\mathbb E_Y\Lambda_d(p(\theta\mid Y))$. This is an upper bound for general conditional densities, not an automatic achievability theorem. A phase monitor or correlated pilot must therefore be included in the resource model. The oscillator's own measured gauge degree of freedom already belongs to the allowed recovery; a separate surviving quantum memory does not.
+then any decoder using that observation obeys $`F_e\le\mathbb E_Y\Lambda_d(p(\theta\mid Y))`$. This is an upper bound for general conditional densities, not an automatic achievability theorem. A phase monitor or correlated pilot must therefore be included in the resource model. The oscillator's own measured gauge degree of freedom already belongs to the allowed recovery; a separate surviving quantum memory does not.
 
 These boundaries explain both the force and the limits of the result. It gives an exact, code-independent ceiling for one specified memory interval. Extending a device's resources or changing its phase correlations creates a new physical question, rather than a violation of that ceiling.
