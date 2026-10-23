@@ -1,6 +1,6 @@
 # Prior work and the precise contribution
 
-The result established in this repository is an exact optimization for **one use of one bosonic phase-noise channel**. For every logical dimension $d$ and every symmetric unimodal phase density $p$,
+The result established in this repository is an exact optimization for **one use of one bosonic phase-noise channel**. For every logical dimension $`d`$ and every symmetric unimodal phase density $`p`$,
 
 ```math
 \sup_{\mathcal E,\mathcal R}F_e(\mathcal R\mathcal D_p\mathcal E)
@@ -25,7 +25,7 @@ Machine-readable bibliographic records are collected in [references.bib](../refe
 | A Gaussian probability integrated over a phase bin | Already appears in bosonic coding and distillation analyses; the error-function expression alone is not a new result. |
 | Statistical descriptions of bosonic dephasing and hypothesis-testing converses | Established tools, especially in Lami–Wilde capacity work and Huang–Lami–Wilde sensing work. |
 | A dephasing no-go theorem for gapped bosonic codes | Established by Ouyang and Campbell; it includes an unrestricted-support case when the gap parameter is one. |
-| Exact global single-use optimum for every $d$ and every symmetric unimodal density | The specific result proved here by matching the uniform-twirl converse to the limiting number-phase code. |
+| Exact global single-use optimum for every $`d`$ and every symmetric unimodal density | The specific result proved here by matching the uniform-twirl converse to the limiting number-phase code. |
 | Matching optimum in half diamond distance | Follows here from the universal fidelity bound and convergence to the explicit phase-alias channel. |
 | Finite photon support approaching the ideal optimum | An inherited construction supplied here with an explicit channel-convergence argument and resource bounds. |
 | Sine-envelope phase state for a smoother finite construction | An established canonical-phase-estimation state, used by Berry and Wiseman; its finite-memory bounds are derived here. |
@@ -47,7 +47,7 @@ Equation 10 gives the sine coefficients that maximize canonical phase sharpness 
 
 **Jacoby, Arnon-Friedman, and Rosenblum, “Hardware-Efficient Entanglement Distillation Using Bosonic Systems,” arXiv:2503.09700v1, 12 March 2025.** [Primary full text](https://arxiv.org/html/2503.09700v1).
 
-Appendix A.2 already integrates a Gaussian over a phase bin of width $2\pi/d$ and expresses the result with error functions. Appendix G uses Pegg–Barnett angular states and traces out the within-bin coordinate. This is a direct precedent for the phase-bin interpretation. Its discretized error model is an approximation, and its optimization concerns specified maps and states within that setting. The exact arbitrary-code converse is the distinction made in this repository; neither Gaussian bin probabilities nor angular coarse-graining are presented as new ideas.
+Appendix A.2 already integrates a Gaussian over a phase bin of width $`2\pi/d`$ and expresses the result with error functions. Appendix G uses Pegg–Barnett angular states and traces out the within-bin coordinate. This is a direct precedent for the phase-bin interpretation. Its discretized error model is an approximation, and its optimization concerns specified maps and states within that setting. The exact arbitrary-code converse is the distinction made in this repository; neither Gaussian bin probabilities nor angular coarse-graining are presented as new ideas.
 
 ## Closest earlier coding converse
 
@@ -57,7 +57,7 @@ Theorem 2 is a genuine prior no-go result for approximate correction of Gaussian
 
 The present result specializes the physical setting to a single nondegenerate oscillator and obtains the exact optimum at every positive width and logical dimension, with a matching construction. It does not replace the multimode statements of Ouyang and Campbell. Nor should values under the two papers' error conventions be compared without translating the metrics.
 
-There is a useful direct connection for a one-mode code supported on a single congruence class $n=n_0+gk$. Relabeling $k$ as the number coordinate changes a Gaussian phase variance $\gamma$ to $g^2\gamma$; the known offset $n_0$ contributes only a global phase. Applying the present benchmark to that restricted sector recovers the physical penalty from increasing number spacing, with the exact single-mode curve. This observation does not establish a result for every more general use of the phrase “gapped code.”
+There is a useful direct connection for a one-mode code supported on a single congruence class $`n=n_0+gk`$. Relabeling $`k`$ as the number coordinate changes a Gaussian phase variance $`\gamma`$ to $`g^2\gamma`$; the known offset $`n_0`$ contributes only a global phase. Applying the present benchmark to that restricted sector recovers the physical penalty from increasing number spacing, with the exact single-mode curve. This observation does not establish a result for every more general use of the phrase “gapped code.”
 
 ## Capacities and one-shot communication
 
@@ -70,7 +70,7 @@ Q(\mathcal D_p)=D(p\|u)
 =\int_{-\pi}^{\pi}p(\theta)\log_2[2\pi p(\theta)]\,d\theta.
 ```
 
-It also supplies finite-blocklength Rényi converse bounds; main equations 30 and 33 are relevant, and the supplement defines one-shot tasks. These statements concern achievable rates over many uses or bounds on finite-use tasks. They do not state the exact single-use, fixed-$d$ fidelity curve proved here. Their explicit Gaussian and Cauchy comparisons already establish that the full noise law matters. Thus a coarse logarithmic packing estimate or noise-law comparison alone would be a weak novelty claim.
+It also supplies finite-blocklength Rényi converse bounds; main equations 30 and 33 are relevant, and the supplement defines one-shot tasks. These statements concern achievable rates over many uses or bounds on finite-use tasks. They do not state the exact single-use, fixed-dimension fidelity curve proved here. Their explicit Gaussian and Cauchy comparisons already establish that the full noise law matters. Thus a coarse logarithmic packing estimate or noise-law comparison alone would be a weak novelty claim.
 
 **Arqand and Smith, “No advantage from classical assistance for energy-constrained bosonic dephasing channels,” arXiv:2610.13854v1, 9 October 2026.** [Primary full text](https://arxiv.org/html/2610.13854v1).
 
@@ -87,7 +87,7 @@ The distinction between a wrapped Gaussian *phase distribution* and a bosonic *G
 
 **Huang, Lami, and Wilde, “Exact Quantum Sensing Limits for Bosonic Dephasing Channels,” PRX Quantum 5, 020354 (2024).** Published 6 June 2024. [Primary preprint](https://arxiv.org/abs/2402.05793); [full paper](https://pure.uva.nl/ws/files/230546417/Exact_Quantum_Sensing_Limits_for_Bosonic_Dephasing_Channels.pdf); [DOI](https://doi.org/10.1103/PRXQuantum.5.020354).
 
-This work reduces dephasing-channel discrimination and estimation, including adaptive strategies, to classical statistics of the phase density. Number-superposition probes and phase measurements supply the corresponding high-energy achievability. It is the closest methodological predecessor of the present classical acceptance-function argument. The fact that the converse can be written as a probability-mass optimization should not be portrayed as a new general method for bosonic channels. The coding statement requires the additional step of matching that upper bound while retaining an unknown $d$-dimensional quantum state.
+This work reduces dephasing-channel discrimination and estimation, including adaptive strategies, to classical statistics of the phase density. Number-superposition probes and phase measurements supply the corresponding high-energy achievability. It is the closest methodological predecessor of the present classical acceptance-function argument. The fact that the converse can be written as a probability-mass optimization should not be portrayed as a new general method for bosonic channels. The coding statement requires the additional step of matching that upper bound while retaining an unknown quantum state of dimension $`d`$.
 
 **Huang, Lami, Singh, and Wilde, “Efficiently Computable Strategies and Limits for Bosonic Channel Discrimination,” Physical Review A 114, 032441 (2026).** [Primary full text, arXiv:2603.19911v2, revised 21 September 2026](https://arxiv.org/html/2603.19911v2); [DOI](https://doi.org/10.1103/fypm-kjt6).
 
@@ -119,7 +119,7 @@ These sources also explain why taking photon number to infinity in a loss-free c
 
 The strongest scientific conclusion is that an oscillator's unlimited number of levels does not allow unlimited quantum memory quality at fixed phase uncertainty. There is an exact register-size/error tradeoff, and a known code family exhausts what every allowed code can do in the stated model. This changes a code-specific phase window into a physical optimum.
 
-Three aspects make that result more informative than a scaling estimate. It gives the full fixed-$d$ error curve, rather than only a rate or exponent. It identifies an optimal worst-case operational error, not just an average selected observable. It also exposes the failure of a single Ramsey contrast to certify a large register's fidelity, including the reversal between the Gaussian and Cauchy examples as the dimension changes. The proof remains short because uniform phase averaging destroys all entanglement and the optimal remaining statistical test has a simple geometry.
+Three aspects make that result more informative than a scaling estimate. It gives the full fixed-dimension error curve, rather than only a rate or exponent. It identifies an optimal worst-case operational error, not just an average selected observable. It also exposes the failure of a single Ramsey contrast to certify a large register's fidelity, including the reversal between the Gaussian and Cauchy examples as the dimension changes. The proof remains short because uniform phase averaging destroys all entanglement and the optimal remaining statistical test has a simple geometry.
 
 The proof ingredients and ideal code are established. The result does not establish an exact finite-energy optimum, an experimentally competitive implementation, or a fault-tolerance threshold. Its contribution is the global single-use optimization and the resulting physical benchmark.
 

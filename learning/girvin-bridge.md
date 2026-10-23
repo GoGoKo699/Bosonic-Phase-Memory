@@ -25,10 +25,10 @@ The proof route does not require the surface-code material in §5. That material
 
 | Starting point | Convention in this project |
 |---|---|
-| Girvin uses $\mathcal E$ for a collection of Kraus error operators in §4. | Here $\mathcal E$ denotes the **encoder**, a CPTP map from a logical system into the oscillator. A set of Kraus operators is written explicitly as $\{K_\ell\}$. |
-| A logical qubit has two orthogonal codewords. | The logical system is $\mathbb C^d$; its basis index is $j=0,\ldots,d-1$. A register of $k$ logical qubits has $d=2^k$. |
-| The oscillator has annihilation operator $a$ and number operator $a^\dagger a$. | Write $\hat n=a^\dagger a$, with nondegenerate eigenstates $\lvert n\rangle$ for $n\ge0$. Number is dimensionless; excitation energy is $\hbar\omega\langle\hat n\rangle$. |
-| Damping changes the oscillator excitation. | Pure loss is $\mathcal A_\eta$, with transmissivity $\eta$. Random phase is $\mathcal D_p$, with $\mathcal D_p(\lvert n\rangle\langle m\rvert)=\widehat p(n-m)\lvert n\rangle\langle m\rvert$. They are different channels. |
+| Girvin uses $`\mathcal E`$ for a collection of Kraus error operators in §4. | Here $`\mathcal E`$ denotes the **encoder**, a CPTP map from a logical system into the oscillator. A set of Kraus operators is written explicitly as $`\{K_\ell\}`$. |
+| A logical qubit has two orthogonal codewords. | The logical system is $`\mathbb C^d`$; its basis index is $`j=0,\ldots,d-1`$. A register of $`k`$ logical qubits has $`d=2^k`$. |
+| The oscillator has annihilation operator $`a`$ and number operator $`a^\dagger a`$. | Write $`\hat n=a^\dagger a`$, with nondegenerate eigenstates $`\lvert n\rangle`$ for $`n\ge0`$. Number is dimensionless; excitation energy is $`\hbar\omega\langle\hat n\rangle`$. |
+| Damping changes the oscillator excitation. | Pure loss is $`\mathcal A_\eta`$, with transmissivity $`\eta`$. Random phase is $`\mathcal D_p`$, with $`\mathcal D_p(\lvert n\rangle\langle m\rvert)=\widehat p(n-m)\lvert n\rangle\langle m\rvert`$. They are different channels. |
 | Exact error correction asks whether the chosen error set can be reversed perfectly on a code. | This project fixes a channel, allows **all** deterministic encoders and recoveries, and optimizes a generally nonzero error. Exact Knill–Laflamme conditions alone do not give that optimum. |
 | A syndrome helps select a recovery. | Every measurement outcome is included. Postselecting a favorable outcome changes the task unless the failure probability is included. |
 
@@ -39,7 +39,7 @@ Two rate conventions deserve particular care. For the Lindblad dissipator
 =L\rho L^\dagger-\tfrac12\{L^\dagger L,\rho\},
 ```
 
-the equations $\dot\rho=\kappa\mathfrak D[a](\rho)$ and $\dot\rho=\kappa_\phi\mathfrak D[\hat n](\rho)$ describe loss and Gaussian phase diffusion, respectively. Over time $t$, their parameters are
+the equations $`\dot\rho=\kappa\mathfrak D[a](\rho)`$ and $`\dot\rho=\kappa_\phi\mathfrak D[\hat n](\rho)`$ describe loss and Gaussian phase diffusion, respectively. Over time $`t`$, their parameters are
 
 ```math
 \eta=e^{-\kappa t},
@@ -49,7 +49,7 @@ the equations $\dot\rho=\kappa\mathfrak D[a](\rho)$ and $\dot\rho=\kappa_\phi\ma
 \chi=\gamma/2.
 ```
 
-Here $\gamma$ is the unwrapped Gaussian phase variance and $e^{-\chi}$ is the adjacent-Fock coherence. The different symbol $\mathfrak D[L]$ in this paragraph separates a Lindblad generator from the finite-time phase channel $\mathcal D_p$.
+Here $`\gamma`$ is the unwrapped Gaussian phase variance and $`e^{-\chi}`$ is the adjacent-Fock coherence. The different symbol $`\mathfrak D[L]`$ in this paragraph separates a Lindblad generator from the finite-time phase channel $`\mathcal D_p`$.
 
 The resource assumptions are as important as the symbols. The oscillator is the only system carrying coherent logical information through the interval. Fresh recovery ancillas and an encoding-time classical record are permitted. A surviving extra quantum memory, an external observation of the realized phase, or active correction inside the interval changes the problem. The [model chapter](../science/01-model-and-question.md) states the complete allowance and exclusion list.
 
@@ -59,13 +59,13 @@ The following steps connect the coding language to the exact theorem. They are p
 
 ### 1. Test a channel on an entangled input
 
-Preserving a few chosen basis states does not establish that a quantum memory preserves arbitrary superpositions or their correlations with another system. Introduce an inaccessible reference $R$ and
+Preserving a few chosen basis states does not establish that a quantum memory preserves arbitrary superpositions or their correlations with another system. Introduce an inaccessible reference $`R`$ and
 
 ```math
 |\Phi_d\rangle=\frac1{\sqrt d}\sum_{j=0}^{d-1}|j\rangle_R|j\rangle_A,
 \qquad
 F_e(\Lambda)=\langle\Phi_d|
-(\operatorname{id}_R\otimes\Lambda)(|\Phi_d\rangle\langle\Phi_d|)
+(\mathrm{id}_R\otimes\Lambda)(|\Phi_d\rangle\langle\Phi_d|)
 |\Phi_d\rangle.
 ```
 
@@ -81,7 +81,7 @@ f(\theta)=F_e(\mathcal R\circ\mathcal U_\theta\circ\mathcal E),
 \mathcal U_\theta(\rho)=e^{-i\theta\hat n}\rho e^{i\theta\hat n}.
 ```
 
-Then $0\le f\le1$, and the actual fidelity is $\int p(\theta)f(\theta)\,d\theta$. This step retains the optimization over every code; it does not assume a number-phase encoder. See [M13](milestones.md#m13) and [the universal converse](../science/02-exact-benchmark.md#universal-converse).
+Then $`0\le f\le1`$, and the actual fidelity is $`\int p(\theta)f(\theta)\,d\theta`$. This step retains the optimization over every code; it does not assume a number-phase encoder. See [M13](milestones.md#m13) and [the universal converse](../science/02-exact-benchmark.md#universal-converse).
 
 ### 3. Obtain a budget from uniform phase averaging
 
@@ -92,7 +92,7 @@ Uniform averaging removes every off-diagonal number-basis term:
 =\sum_{n=0}^{\infty}|n\rangle\langle n|\rho|n\rangle\langle n|.
 ```
 
-Because each number eigenspace is one-dimensional, this channel measures and prepares number states. Its output cannot remain entangled with the reference. A separable state has overlap at most $1/d$ with $|\Phi_d\rangle$, giving
+Because each number eigenspace is one-dimensional, this channel measures and prepares number states. Its output cannot remain entangled with the reference. A separable state has overlap at most $`1/d`$ with $`|\Phi_d\rangle`$, giving
 
 ```math
 \frac1{2\pi}\int_{-\pi}^{\pi}f(\theta)\,d\theta\le\frac1d.
@@ -102,7 +102,7 @@ A classical encoding record does not restore the lost entanglement, so the same 
 
 ### 4. Use the shape of the phase distribution
 
-A function between zero and one with total angular weight at most $2\pi/d$ collects the most probability by placing that weight where $p$ is largest. For an even density nonincreasing away from zero, that region is the central interval:
+A function between zero and one with total angular weight at most $`2\pi/d`$ collects the most probability by placing that weight where $`p`$ is largest. For an even density nonincreasing away from zero, that region is the central interval:
 
 ```math
 F_e\le w_d(p):=\int_{-\pi/d}^{\pi/d}p(\theta)\,d\theta.
@@ -118,25 +118,25 @@ The finite-support encoder is
 V_M|j\rangle=\frac1{\sqrt M}\sum_{k=0}^{M-1}|dk+j\rangle.
 ```
 
-Writing $n=dk+j$ separates the number label into quotient $k$ and remainder $j$. In this tensor-factor description, phase rotation acts on the logical part with phase $\theta$ and on the gauge part with phase $d\theta$. Measuring the gauge estimates the latter phase modulo $2\pi$ without reading $j$. Hence it estimates $\theta$ modulo $2\pi/d$.
+Writing $`n=dk+j`$ separates the number label into quotient $`k`$ and remainder $`j`$. In this tensor-factor description, phase rotation acts on the logical part with phase $`\theta`$ and on the gauge part with phase $`d\theta`$. Measuring the gauge estimates the latter phase modulo $`2\pi`$ without reading $`j`$. Hence it estimates $`\theta`$ modulo $`2\pi/d`$.
 
-Increasing $M$ improves precision within that modular cell. It leaves an ambiguity among $d$ aliases, whose residual logical operations are powers of a generalized phase operator $Z_d$. The central alias has probability $w_d(p)$. A complete recovery and convergence of the entire logical channel, including reference-entangled inputs, are proved in [M17–M20](milestones.md#m17) and [constructive achievability](../science/03-constructive-achievability.md).
+Increasing $`M`$ improves precision within that modular cell. It leaves an ambiguity among $`d`$ aliases, whose residual logical operations are powers of a generalized phase operator $`Z_d`$. The central alias has probability $`w_d(p)`$. A complete recovery and convergence of the entire logical channel, including reference-entangled inputs, are proved in [M17–M20](milestones.md#m17) and [constructive achievability](../science/03-constructive-achievability.md).
 
 ### 6. Distinguish an optimum, a limiting code, and finite resources
 
 For every logical channel,
 
 ```math
-\frac12\|\Lambda-\operatorname{id}_d\|_\diamond\ge1-F_e(\Lambda).
+\frac12\|\Lambda-\mathrm{id}_d\|_\diamond\ge1-F_e(\Lambda).
 ```
 
-For the limiting phase-Pauli channel, equality holds: its nonidentity aliases have total probability $1-w_d(p)$. Thus the construction matches the converse in both metrics. If $p$ is even, continuous, and strictly decreasing on $(0,\pi)$, and $d>1$, the optimal value is approached by normal codes but is not attained by one. These qualifications appear in [M21](milestones.md#m21) and [the theorem's continuity discussion](../science/02-exact-benchmark.md#continuity-and-nonattainment).
+For the limiting phase-Pauli channel, equality holds: its nonidentity aliases have total probability $`1-w_d(p)`$. Thus the construction matches the converse in both metrics. If $`p`$ is even, continuous, and strictly decreasing on $`(0,\pi)`$, and $`d\gt 1`$, the optimal value is approached by normal codes but is not attained by one. These qualifications appear in [M21](milestones.md#m21) and [the theorem's continuity discussion](../science/02-exact-benchmark.md#continuity-and-nonattainment).
 
-Finite $M$ requires a separate calculation. The raw finite-code channel does not generally have diamond error $1-F_e$. The permitted classical twirl gives that equality for the twirled channel; [M22](milestones.md#m22) explains what resource is used. Photon support, convergence estimates, and additional loss are treated in [M23–M26](milestones.md#m23) and [finite resources](../science/04-finite-resources.md). None of these steps makes the joint loss-and-dephasing optimum an exact solved quantity.
+Finite $`M`$ requires a separate calculation. The raw finite-code channel does not generally have diamond error $`1-F_e`$. The permitted classical twirl gives that equality for the twirled channel; [M22](milestones.md#m22) explains what resource is used. Photon support, convergence estimates, and additional loss are treated in [M23–M26](milestones.md#m23) and [finite resources](../science/04-finite-resources.md). None of these steps makes the joint loss-and-dephasing optimum an exact solved quantity.
 
 ## A small example that keeps the metrics honest
 
-Encode one qubit directly as $|0_L\rangle=|0\rangle$, $|1_L\rangle=|1\rangle$. For an even phase law with real adjacent-Fock coherence $r$, the resulting logical channel is
+Encode one qubit directly as $`|0_L\rangle=|0\rangle`$, $`|1_L\rangle=|1\rangle`$. For an even phase law with real adjacent-Fock coherence $`r`$, the resulting logical channel is
 
 ```math
 \Lambda(\rho)
@@ -149,12 +149,12 @@ Both number states are preserved perfectly. Nevertheless, a superposition loses 
 ```math
 F_e(\Lambda)=1-q,
 \qquad
-\frac12\|\Lambda-\operatorname{id}_2\|_\diamond=q.
+\frac12\|\Lambda-\mathrm{id}_2\|_\diamond=q.
 ```
 
-The metric equality is justified here by the explicit Pauli mixture; it is not an identity for arbitrary channels. Under Gaussian phase noise with $\chi=0.01$, this simple code has $q=(1-e^{-0.01})/2\approx0.004975$. It is a feasible finite-energy code, not the optimized benchmark. The optimal error instead depends on the full probability outside the correct half-circle, with wrapping included.
+The metric equality is justified here by the explicit Pauli mixture; it is not an identity for arbitrary channels. Under Gaussian phase noise with $`\chi=0.01`$, this simple code has $`q=(1-e^{-0.01})/2\approx0.004975`$. It is a feasible finite-energy code, not the optimized benchmark. The optimal error instead depends on the full probability outside the correct half-circle, with wrapping included.
 
-At the uniform-noise boundary, $r=0$ and the same simple code attains $F_e=1/2$ and diamond error $1/2$, exactly matching $w_2=1/2$. This special case is attained with finite support; it should not be confused with nonattainment for a strictly peaked density.
+At the uniform-noise boundary, $`r=0`$ and the same simple code attains $`F_e=1/2`$ and diamond error $`1/2`$, exactly matching $`w_2=1/2`$. This special case is attained with finite support; it should not be confused with nonattainment for a strictly peaked density.
 
 ## Where the bridge ends
 

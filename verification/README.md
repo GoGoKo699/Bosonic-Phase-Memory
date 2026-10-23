@@ -22,7 +22,7 @@ This script uses only the Python standard library. Its deterministic output is r
 | Converse and small-loss coefficient | Computed finite fidelities obey the phase-only ceiling and approach the derived first-order loss slope. |
 | Cutoff diamond-distance inequality | A deterministic grid checks the scalar inequality used in the reference-assisted hard-cutoff proof. |
 
-The final table reports exact finite-protocol formulas evaluated in floating point for a four-dimensional register, wrapped-Gaussian phase variance $0.16$, and $-\log\eta=10^{-4}$. Its errors are half-diamond errors of the classically twirled protocols. The last column is a proved upper bound for those explicit codes. Increasing photon support eventually increases the joint error in these examples, illustrating the competition between phase resolution and photon loss.
+The final table reports exact finite-protocol formulas evaluated in floating point for a four-dimensional register, wrapped-Gaussian phase variance $`0.16`$, and $`-\log\eta=10^{-4}`$. Its errors are half-diamond errors of the classically twirled protocols. The last column is a proved upper bound for those explicit codes. Increasing photon support eventually increases the joint error in these examples, illustrating the competition between phase resolution and photon loss.
 
 Numerical checks cover finitely many parameter values. No global finite-energy optimization, semidefinite-program certificate, device measurement, or experimental calibration is claimed.
 
@@ -37,6 +37,6 @@ python3 verification/plot_noise_comparison.py
 
 The plotting environment uses Matplotlib 3.10.8. The generator writes [equal_ramsey_error.svg](../figures/equal_ramsey_error.svg) and its numerical data, [equal_ramsey_error.csv](../figures/equal_ramsey_error.csv). It fixes the SVG hash seed and omits timestamp metadata so the output is reproducible in the stated environment.
 
-The figure compares the exact wrapped-Gaussian and wrapped-Cauchy benchmarks at the same adjacent-level Ramsey coherence, $e^{-\chi}$ with $\chi=0.01$, for logical dimensions $2$ through $256$. The values come from the formulas in [noise laws and architecture](../science/05-noise-laws-and-architecture.md); they are not measured data. The Gaussian calculation uses a convergent image sum, which avoids cancellation in very small tail probabilities.
+The figure compares the exact wrapped-Gaussian and wrapped-Cauchy benchmarks at the same adjacent-level Ramsey coherence, $`e^{-\chi}`$ with $`\chi=0.01`$, for logical dimensions $`2`$ through $`256`$. The values come from the formulas in [noise laws and architecture](../science/05-noise-laws-and-architecture.md); they are not measured data. The Gaussian calculation uses a convergent image sum, which avoids cancellation in very small tail probabilities.
 
 The generated figure was visually inspected for legibility and clipping. The CSV records the full numerical values used in the plot.
