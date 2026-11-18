@@ -11,7 +11,7 @@ and the infimal half diamond distance is the complement of this probability. The
 
 The code family that approaches the optimum, the use of phase syndromes, and the statistical interpretation of bosonic dephasing all have substantial prior literature. The scientific claim is that a known number-phase construction attains a universal single-use converse, including a worst-case operational error measure. It is not the invention of number-phase coding or of phase-estimation-based recovery.
 
-The primary-source comparison below was checked through **23 October 2026**. No matching exact arbitrary-encoder, arbitrary-recovery single-use fidelity curve was identified in these sources. This is a bounded literature assessment, not a proof of bibliographic priority. Titles containing “exact,” “optimal,” or “one-shot” are separated by their actual operational task and optimization domain.
+The primary-source comparison for the unrestricted benchmark was checked through **23 October 2026**. No matching exact arbitrary-encoder, arbitrary-recovery single-use fidelity curve was identified in those sources. The finite-energy comparison was refreshed on **18 November 2026**. This is a bounded literature assessment, not a proof of bibliographic priority. Titles containing “exact,” “optimal,” or “one-shot” are separated by their actual operational task and optimization domain.
 
 Machine-readable bibliographic records are collected in [references.bib](../references/references.bib). This chapter is the authoritative account of how those sources relate to the present result.
 
@@ -29,6 +29,7 @@ Machine-readable bibliographic records are collected in [references.bib](../refe
 | Matching optimum in half diamond distance | Follows here from the universal fidelity bound and convergence to the explicit phase-alias channel. |
 | Finite photon support approaching the ideal optimum | An inherited construction supplied here with an explicit channel-convergence argument and resource bounds. |
 | Sine-envelope phase state for a smoother finite construction | An established canonical-phase-estimation state, used by Berry and Wiseman; its finite-memory bounds are derived here. |
+| Optimal order of the finite-mean-energy gap | The sine-envelope rate is matched by a code-independent converse. The converse combines a first-moment continuity bound with the unavoidable fidelity deficit across the two phase-cell boundaries. |
 | Dimension and storage-time consequences | Corollaries of the exact benchmark under a specified phase law and time dependence; their broad scaling is not claimed as a previously unknown capacity phenomenon. |
 
 ## Established number-phase constructions
@@ -74,7 +75,7 @@ It also supplies finite-blocklength Rényi converse bounds; main equations 30 an
 
 **Arqand and Smith, “No advantage from classical assistance for energy-constrained bosonic dephasing channels,” arXiv:2610.13854v1, 9 October 2026.** [Primary full text](https://arxiv.org/html/2610.13854v1).
 
-This recent work establishes energy-constrained asymptotic capacity equalities and characterizes the optimized input through Fock-diagonal coherent information. It addresses a resource constraint absent from the universal optimum here. Its asymptotic task does not yield an exact finite-energy, single-use fidelity curve. The existence of this result is a reason to avoid presenting energy-constrained capacity or absence of an asymptotic classical-assistance advantage as a new project contribution.
+This recent work establishes energy-constrained asymptotic capacity equalities and characterizes the optimized input through Fock-diagonal coherent information. The preprint abstract identifies the optimized quantity as an asymptotic rate over many channel uses under an average photon constraint. The quantity in the present finite-energy law is the excess error for one use at fixed logical dimension.
 
 Two recent non-asymptotic bosonic communication papers are also close in terminology but different in channel model:
 
@@ -92,6 +93,16 @@ This work reduces dephasing-channel discrimination and estimation, including ada
 **Huang, Lami, Singh, and Wilde, “Efficiently Computable Strategies and Limits for Bosonic Channel Discrimination,” Physical Review A 114, 032441 (2026).** [Primary full text, arXiv:2603.19911v2, revised 21 September 2026](https://arxiv.org/html/2603.19911v2); [DOI](https://doi.org/10.1103/fypm-kjt6).
 
 The later paper develops an energy-constrained Belavkin–Staszewski divergence chain rule and computable bounds on asymmetric discrimination error exponents, including dephasing and loss-dephasing. Its section I explicitly lists these contributions, and section II defines the discrimination task. It does not optimize the fidelity of transmitting an unknown logical register. This resolves an apparent overlap caused by “limits,” finite resources, and dephasing appearing together in the title and abstract.
+
+## Mean-energy phase resolution
+
+**Berry, Hall, Zwierz, and Wiseman, “Optimal Heisenberg-style bounds for the average performance of arbitrary phase estimates,” Physical Review A 86, 053813 (2012).** [Primary full text](https://arxiv.org/html/1209.3547v2), [DOI](https://doi.org/10.1103/PhysRevA.86.053813).
+
+Sections III–V give bounds on average phase resolution, including inverse-mean-photon scaling for the root-mean-square error. This is an antecedent for the inverse-square resource scale. The memory law instead bounds how far the optimal fidelity for an unknown register falls short of a nonzero alias-limited benchmark. A bound on phase-estimation error alone does not give this excess fidelity deficit for arbitrary recovery channels.
+
+**Winter, “Energy-constrained diamond norm with applications to the uniform continuity of continuous variable channel capacities,” arXiv:1712.10267 (2017).** [Primary preprint](https://arxiv.org/abs/1712.10267).
+
+Energy-constrained continuity of unitary evolution is established methodology. The [mean-energy proof](04-finite-resources.md#sharp-mean-energy-law) gives a direct first-moment bound for the number-generated phase response. The scientific addition uses this response bound alongside the uniform-phase test budget to quantify the deficit near the two decision boundaries. The sine envelope and cyclic twirl provide a matching order with finite encoded energy.
 
 ## Recent number-phase optimization
 
@@ -121,6 +132,6 @@ The strongest scientific conclusion is that an oscillator's unlimited number of 
 
 Three aspects make that result more informative than a scaling estimate. It gives the full fixed-dimension error curve, rather than only a rate or exponent. It identifies an optimal worst-case operational error, not just an average selected observable. It also exposes the failure of a single Ramsey contrast to certify a large register's fidelity, including the reversal between the Gaussian and Cauchy examples as the dimension changes. The proof remains short because uniform phase averaging destroys all entanglement and the optimal remaining statistical test has a simple geometry.
 
-The proof ingredients and ideal code are established. The result does not establish an exact finite-energy optimum, an experimentally competitive implementation, or a fault-tolerance threshold. Its contribution is the global single-use optimization and the resulting physical benchmark.
+The unrestricted proof and its explicit code give a global single-use benchmark. The finite-energy converse identifies the best order of approach to that benchmark under a mean-photon cap. It covers every encoder and recovery in the model, including photon-number distributions with infinite variance. Its scope is the asymptotic order at fixed dimension and phase density. The exact finite-energy value, experimental control costs, and fault-tolerance thresholds remain open.
 
-The mathematical limits are also clear. Arbitrary multimodal phase densities retain the same probability-mass converse, but the present construction is not proved to attain it. Several independently noisy modes, correlated phase sensors, intermediate correction, and a fixed energy budget define further optimizations. These are scope boundaries of the established result, not assumptions that can be silently removed.
+The mathematical limits are also clear. Arbitrary multimodal phase densities retain the same probability-mass converse, but the present construction is not proved to attain it. Several independently noisy modes, correlated phase sensors, and intermediate correction define further optimizations. These are scope boundaries of the established result, not assumptions that can be silently removed.

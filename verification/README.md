@@ -17,14 +17,15 @@ This script uses only the Python standard library. Its deterministic output is r
 | Resource moments and envelope normalization | The flat and sine constructions have the stated cutoff and photon-number moments. |
 | Phase fidelity formulas | The finite Fourier expression agrees with the amplitude-polynomial autocorrelation formula. |
 | Approximation estimates | Representative finite cases obey the stated flat and sine envelope bounds, including the sine circular moment. |
+| Sharp mean-energy law | The cosine-density qubit case checks the finite sine-code gap and energy budget against the analytic formulas. |
 | Radial polynomial inequality | Finite points obey the inequality used to control the no-loss Kraus contribution. |
 | Joint loss and dephasing | The autocorrelation formula agrees with an independent double sum of the original logical Kraus traces. |
 | Converse and small-loss coefficient | Computed finite fidelities obey the phase-only ceiling and approach the derived first-order loss slope. |
 | Cutoff diamond-distance inequality | A deterministic grid checks the scalar inequality used in the reference-assisted hard-cutoff proof. |
 
-The final table reports exact finite-protocol formulas evaluated in floating point for a four-dimensional register, wrapped-Gaussian phase variance $`0.16`$, and $`-\log\eta=10^{-4}`$. Its errors are half-diamond errors of the classically twirled protocols. The last column is a proved upper bound for those explicit codes. Increasing photon support eventually increases the joint error in these examples, illustrating the competition between phase resolution and photon loss.
+The joint-noise table reports exact finite-protocol formulas evaluated in floating point for a four-dimensional register, wrapped-Gaussian phase variance $`0.16`$, and $`-\log\eta=10^{-4}`$. Its errors are half-diamond errors of the classically twirled protocols. The last column is a proved upper bound for those explicit codes. Increasing photon support eventually increases the joint error in these examples, illustrating the competition between phase resolution and photon loss.
 
-Numerical checks cover finitely many parameter values. No global finite-energy optimization, semidefinite-program certificate, device measurement, or experimental calibration is claimed.
+The [cosine-density qubit example](../science/04-finite-resources.md#a-qubit-with-cosine-phase-noise) gives a finite formula for the sine code. The [mean-energy theorem](../science/04-finite-resources.md#sharp-mean-energy-law) establishes the scaling for arbitrary codes by proof.
 
 ## Rebuilding the noise-law figure
 

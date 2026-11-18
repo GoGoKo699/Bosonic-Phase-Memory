@@ -285,7 +285,7 @@ F_{\mathrm{ref}}(\Lambda)\lt w_d(p),\qquad
 \varepsilon_\diamond(\Lambda)\gt 1-w_d(p).
 ```
 
-This statement includes normal encoders with infinite mean photon number. It does not classify densities with a flat region at the threshold. In particular, the strictness assumption is essential to this nonattainment argument.
+This statement includes normal encoders with infinite mean photon number. It does not classify densities with a flat region at the threshold. In particular, the strictness assumption is essential to this nonattainment argument. For smooth densities whose slope is nonzero at the phase-cell boundary, the [sharp mean-energy law](04-finite-resources.md#sharp-mean-energy-law) quantifies the deficit for every code with bounded mean photon number.
 
 ## Edge cases and scope
 

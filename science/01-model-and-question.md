@@ -75,6 +75,16 @@ Finite or countable classical outcomes suffice for every construction used here.
 
 The reference used to evaluate a channel is not an accessible memory resource. Likewise, measuring the oscillator's own gauge subsystem during recovery is allowed: it extracts information from the system that actually experienced the noisy interval. A separate phase pilot is a different resource.
 
+## Mean photon number budget
+
+For the finite-energy phase-only problem, let $`\rho_B(\rho_A)`$ be the oscillator marginal after encoding a logical input $`\rho_A`$, averaged over any retained classical encoding record. The all-input budget is
+
+```math
+\sup_{\rho_A}\operatorname{Tr}\bigl[\hat n\rho_B(\rho_A)\bigr]\le E.
+```
+
+The mean is evaluated just after encoding. The phase rotation preserves it. This condition allows a photon-number distribution of unbounded support, and averaging over an encoding record permits some branches to have higher conditional means. A hard cutoff and a cap on the mean in every branch are separate resource constraints. The [sharp phase-only law](04-finite-resources.md#sharp-mean-energy-law) uses the all-input budget. Its converse needs only the budget on the maximally mixed logical input. The oscillator marginal of the encoded maximally entangled test state is exactly $`\rho_B(I/d)`$.
+
 ## Error measures
 
 Let
@@ -146,7 +156,7 @@ Uniform phase averaging completely measures the oscillator's nondegenerate numbe
 
 For example, two modes under a common phase $`e^{-i\theta(\hat n_1+\hat n_2)}`$ have a fixed-total-number subspace spanned by $`|n,N-n\rangle`$, of dimension $`N+1`$. Every vector in that subspace receives the same phase. A logical register with $`d\le N+1`$ can therefore be stored perfectly against that collective phase noise. This is a different physical channel, with an additional oscillator and a degenerate generator.
 
-Independent phase noise on several modes, control during the interval, extra phase information, and a fixed energy constraint likewise require distinct optimization problems. The present result gives an exact reference point for one carefully specified memory task.
+Independent phase noise on several modes, control during the interval, and extra phase information likewise define distinct optimization problems. For the model here, the [finite-energy theorem](04-finite-resources.md#sharp-mean-energy-law) measures how fast the optimum approaches the unrestricted reference point.
 
 ## Reading route
 

@@ -1,6 +1,7 @@
 PASS: resource moments, Fejer bounds, sine moment, and radial loss inequality
 PASS: exact loss formula versus direct Kraus sum, converse, and first-order coefficient
 PASS: scalar inequality used in the reference-assisted hard-cutoff diamond proof
+PASS: cosine-density finite-energy example versus direct Kraus sum and theorem bounds
 
 Example: d=4, wrapped-Gaussian variance=0.16, s=-log(eta)=0.0001
 Universal phase-only error floor: 0.0495886375

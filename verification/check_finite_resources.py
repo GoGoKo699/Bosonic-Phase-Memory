@@ -178,6 +178,29 @@ def run_checks() -> None:
                 if not -2e-13 <= w - f <= bound + 2e-12:
                     raise AssertionError((d, m, kind, w - f, bound))
 
+    # The cosine-density example has only one nonzero Fourier harmonic besides DC.
+    d = 2
+    w = 0.5 + 1.0 / math.pi
+    r = math.pi / 4.0
+    slope = math.sqrt(2.0) / (4.0 * math.pi)
+    lipschitz = 1.0 / (2.0 * math.pi)
+
+    def cosine_hat(harmonic: int) -> float:
+        if harmonic in (0, 1):
+            return (1.0, 0.5)[harmonic]
+        return 0.0
+
+    for m in (1, 4, 8, 16):
+        g = envelope(m, "sine")
+        energy = m - 0.5
+        fidelity = joint_fidelity_direct_kraus(d, g, 1.0, cosine_hat)
+        gap = w - fidelity
+        close(gap, (1.0 - math.cos(math.pi / (m + 1))) / (2.0 * math.pi))
+        lower = slope / (80.0 * (2.0 * energy + 1.0 / r) ** 2)
+        upper = math.pi**4 * lipschitz / (4.0 * d * (m + 1) ** 2)
+        if not lower <= gap <= upper:
+            raise AssertionError((m, energy, lower, gap, upper))
+
     # The leading Fejer coefficient is compared with the exact finite sum.
     d, m = 3, 100
     n = d * m
@@ -241,6 +264,7 @@ def run_checks() -> None:
     print("PASS: resource moments, Fejer bounds, sine moment, and radial loss inequality")
     print("PASS: exact loss formula versus direct Kraus sum, converse, and first-order coefficient")
     print("PASS: scalar inequality used in the reference-assisted hard-cutoff diamond proof")
+    print("PASS: cosine-density finite-energy example versus direct Kraus sum and theorem bounds")
 
 
 def print_examples() -> None:

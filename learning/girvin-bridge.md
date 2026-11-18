@@ -132,7 +132,11 @@ For every logical channel,
 
 For the limiting phase-Pauli channel, equality holds: its nonidentity aliases have total probability $`1-w_d(p)`$. Thus the construction matches the converse in both metrics. If $`p`$ is even, continuous, and strictly decreasing on $`(0,\pi)`$, and $`d\gt 1`$, the optimal value is approached by normal codes but is not attained by one. These qualifications appear in [M21](milestones.md#m21) and [the theorem's continuity discussion](../science/02-exact-benchmark.md#continuity-and-nonattainment).
 
-Finite $`M`$ requires a separate calculation. The raw finite-code channel does not generally have diamond error $`1-F_e`$. The permitted classical twirl gives that equality for the twirled channel; [M22](milestones.md#m22) explains what resource is used. Photon support, convergence estimates, and additional loss are treated in [M23–M26](milestones.md#m23) and [finite resources](../science/04-finite-resources.md). None of these steps makes the joint loss-and-dephasing optimum an exact solved quantity.
+The permitted classical twirl gives diamond error $`1-F_e`$ for the twirled finite channel and makes the mean encoded photon number the same for every logical input. [M22](milestones.md#m22) explains the retained seed and why the channel has this metric identity.
+
+To see why the sine code’s inverse-square rate is optimal, compare the fidelity responses for two nearby angles. A mean photon budget $`E`$ bounds the change between them by $`\sqrt{2E|\delta|}`$ for angle separation $`\delta`$. This follows from $`1-\cos x\le|x|`$ applied to the number distribution of the encoded test state. The bound still holds with a retained classical record. It forces every code to smooth the jump at each end of the ideal phase cell over a width at least of order $`1/E`$. Where the density has nonzero slope, the resulting probability penalty is quadratic in that width. The sine code matches that order for fixed $`d`$ and fixed noise law. [M24](milestones.md#m24) · [Sharp mean-energy law](../science/04-finite-resources.md#sharp-mean-energy-law)
+
+Photon loss introduces a second cost that grows with the occupied photon levels. [M25–M26](milestones.md#m25) connect the hard-cutoff distance formula to guarantees for the explicit finite codes.
 
 ## A small example that keeps the metrics honest
 
