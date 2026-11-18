@@ -1,6 +1,6 @@
 # Thirty milestones for understanding Bosonic Phase Memory
 
-This map develops one scientific question: how accurately can an arbitrary logical register survive one unobserved random-phase interval in a single oscillator, after optimizing its encoding and recovery? Its destination is the exact unrestricted-energy benchmark, the finite constructions that approach it, and the physical conclusions that follow under specified noise laws.
+This map develops one scientific question: how accurately can an arbitrary logical register survive one unobserved random-phase interval in a single oscillator, after optimizing its encoding and recovery? Its destination is the exact unrestricted-energy benchmark, the optimal mean-energy scaling for approaching it, and the physical conclusions that follow under specified noise laws.
 
 The **12 background/preliminary milestones** build from number states and relative phase to quantum channels, reference entanglement, resource definitions, and the complete memory model. The **18 narrative/innovation milestones** then assemble the universal converse and matching construction, establish finite-resource and loss guarantees, and integrate the result's architectural meaning. This allocation gives the quantum-information and oscillator prerequisites room to connect, while placing most of the map on the project's actual argument. Each phase moves from individual objects and mechanisms toward an integrated account.
 
@@ -114,7 +114,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** Which resource is being bounded when a finite oscillator encoding is called low energy?
 
-**Understanding target.** Distinguish a hard photon cutoff, the mean photon number for the maximally mixed logical state, and the largest mean over all logical inputs. A mean bound permits small high-number tails; a hard support bound excludes them. Understand why an unrestricted-energy supremum can be approached by a sequence of finite-support codes without being a theorem about the best code at any fixed energy.
+**Understanding target.** Distinguish a hard photon cutoff, the mean photon number for the maximally mixed logical state, and the largest mean over all logical inputs. A mean bound permits small high-number tails. A hard support bound excludes them. An encoder can also average energy over a retained classical seed, in which case distinguish the all-input unconditional mean from the mean within any one seed branch.
 
 **Dependencies and story role.** Depends on [M01](#m01), [M05](#m05), and [M07](#m07). It supplies the resource vocabulary needed to interpret the construction and its physical cost.
 
@@ -312,7 +312,7 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** How can a finite implementation obtain an exact diamond-error guarantee from its computed entanglement fidelity?
 
-**Understanding target.** Explain the independent random cyclic $`X`$ conjugation and its retained classical seed. For the phase-only Schur channel, this makes the Schur matrix circulant and the logical channel a discrete phase Pauli mixture, while preserving $`F_M`$. Its identity probability is then exactly $`F_M`$, so $`F_{\mathrm{ref}}=F_M`$ and $`\varepsilon_\diamond=1-F_M`$. These identities apply to the twirled implementation, without claiming finite-energy optimality.
+**Understanding target.** Explain the independent random cyclic $`X`$ conjugation and its retained classical seed. For the phase-only Schur channel, this makes the Schur matrix circulant and the logical channel a discrete phase Pauli mixture, while preserving $`F_M`$. Its identity probability is then exactly $`F_M`$, so $`F_{\mathrm{ref}}=F_M`$ and $`\varepsilon_\diamond=1-F_M`$. These identities apply to the twirled implementation and supply the operational achievability part of the mean-energy law in [M24](#m24).
 
 **Dependencies and story role.** Depends on [M05](#m05), [M07](#m07), [M19](#m19), and [M21](#m21). It converts the exact finite-code formula into a sharp operational guarantee.
 
@@ -336,17 +336,17 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 <a name="m24"></a>
 
-### M24 — A sine envelope improves phase resolution
+### M24 — The sharp mean-energy cost of phase resolution
 
-**Central question.** Can changing the gauge amplitudes improve the finite-resource guarantee while keeping the same logical residues and photon support?
+**Central question.** How does a mean photon budget limit every code’s approach to the ideal phase-cell probability, and which finite code matches the order?
 
-**Understanding target.** Explain how a common sine envelope changes the phase kernel while retaining the quotient/remainder decoder. Its first circular moment gives a phase-gap bound of order $`1/[d(M+1)^2]`$ for fixed density regularity, or order $`d/N^2`$. The symmetric envelope preserves the flat code's cutoff and mean-energy ledger. The sine phase-estimation state is inherited; the memory bounds are derived for this task.
+**Understanding target.** Use the mean photon bound to explain why a code’s fidelity response changes by at most $`\sqrt{2E|\delta|}`$ across an angle separation $`\delta`$. Near the cell boundary, a nonzero density slope converts the width of that transition into an unavoidable penalty of order $`E^{-2}`$. Show that the inherited sine envelope and cyclic twirl match this order for fixed dimension and fixed continuously differentiable unimodal density with nonzero boundary slope. The code meets the unconditional mean budget for every input.
 
-**Dependencies and story role.** Depends on [M08](#m08), [M17](#m17), [M19](#m19), and [M23](#m23). It shows how a physically specified finite construction can improve without changing the unrestricted optimum.
+**Dependencies and story role.** Depends on [M08](#m08), [M13–M15](#m13), [M22](#m22), and [M23](#m23). It combines the response budget and a mean-energy constraint with a specified finite construction.
 
-**Conceptual connection.** Resource performance depends on amplitude shaping as well as support size. A better sufficient bound for one family does not prove the globally optimal energy-error frontier.
+**Conceptual connection.** The boundary argument gives a lower bound for all encoders, even ones with very high photon-number tails. The sine-envelope kernel supplies a matching upper bound on the gap.
 
-**Source pointers.** Project: [A sine envelope improves the smooth-density rate](../science/04-finite-resources.md#3-a-sine-envelope-improves-the-smooth-density-rate), and [Established number-phase constructions](../science/06-prior-work.md#established-number-phase-constructions) for envelope attribution. Anchor: [Girvin §8.3][Girvin] as a finite-envelope comparison, not as the source of the sine formula.
+**Source pointers.** Project: [Sharp mean-energy law](../science/04-finite-resources.md#sharp-mean-energy-law), [worked qubit example](../science/04-finite-resources.md#a-qubit-with-cosine-phase-noise), and [number-phase construction and envelope attribution](../science/06-prior-work.md#established-number-phase-constructions). Anchor: [Girvin §8.3][Girvin] for finite-envelope intuition.
 
 <a name="m25"></a>
 
@@ -424,12 +424,12 @@ Dependencies refer to earlier milestone IDs. They describe the structure of the 
 
 **Central question.** What does the project establish when its theorem, construction, resources, and physical interpretation are considered together?
 
-**Understanding target.** Explain the connected argument: uniform phase averaging bounds every code's response, unimodality selects the central probability mass, and an inherited number-phase construction approaches a matching logical phase channel. The result is an exact unrestricted-energy, single-use optimum for specified reference-assisted metrics. Finite envelopes and loss estimates supply constructive implementations; they do not establish a global finite-energy optimum, a general joint-noise solution, an experimental advantage, or a fault-tolerance threshold.
+**Understanding target.** Explain how uniform phase averaging bounds every code’s response, unimodality selects the central probability mass, and an inherited number-phase construction matches the unlimited-energy benchmark. A mean-energy constraint then sharpens the benchmark to an inverse-square approach law in each reference-assisted metric for smooth densities with nonzero boundary slope at fixed dimension. Describe which additional loss guarantees apply to the explicit finite implementations.
 
-**Dependencies and story role.** Integrates the narrative, particularly [M21](#m21), [M26](#m26), [M27](#m27), [M28](#m28), and [M29](#m29). It closes the map by connecting the proof to the physical claim and to the precise contribution relative to prior work.
+**Dependencies and story role.** Integrates the narrative, particularly [M21](#m21), [M24](#m24), [M26](#m26), [M27](#m27), [M28](#m28), and [M29](#m29). It closes the map by connecting the proof to the physical claim and to the precise contribution relative to prior work.
 
 **Conceptual connection.** Code-family analysis, a universal one-use optimum, and asymptotic communication capacity answer different questions. The value of this benchmark is that a known modular recovery exhausts what every allowed code can achieve in the stated memory model.
 
-**Source pointers.** Project: [Theorem](../science/02-exact-benchmark.md#theorem), [What is inherited and what is established here](../science/06-prior-work.md#what-is-inherited-and-what-is-established-here), [Capacities and one-shot communication](../science/06-prior-work.md#capacities-and-one-shot-communication), and [Scientific significance and its limits](../science/06-prior-work.md#scientific-significance-and-its-limits). Anchor: [Girvin §1, §§6.1–6.2, and §10][Girvin] for the larger error-correction setting.
+**Source pointers.** Project: [Theorem](../science/02-exact-benchmark.md#theorem), [Sharp mean-energy law](../science/04-finite-resources.md#sharp-mean-energy-law), [What is inherited and what is established here](../science/06-prior-work.md#what-is-inherited-and-what-is-established-here), [Capacities and one-shot communication](../science/06-prior-work.md#capacities-and-one-shot-communication), and [Scientific significance and its limits](../science/06-prior-work.md#scientific-significance-and-its-limits). Anchor: [Girvin §1, §§6.1–6.2, and §10][Girvin] for the larger error-correction setting.
 
 [Girvin]: https://arxiv.org/html/2111.08894v4

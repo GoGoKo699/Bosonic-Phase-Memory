@@ -75,6 +75,16 @@ Finite or countable classical outcomes suffice for every construction used here.
 
 The reference used to evaluate a channel is not an accessible memory resource. Likewise, measuring the oscillator's own gauge subsystem during recovery is allowed: it extracts information from the system that actually experienced the noisy interval. A separate phase pilot is a different resource.
 
+## Mean photon number budget
+
+For the finite-energy phase-only problem, let $`\rho_B(\rho_A)`$ be the oscillator marginal after encoding a logical input $`\rho_A`$, averaged over any retained classical encoding record. The all-input budget is
+
+```math
+\sup_{\rho_A}\mathrm{Tr}\bigl[\hat n\rho_B(\rho_A)\bigr]\le E.
+```
+
+The mean is evaluated just after encoding. The phase rotation preserves it. This condition allows a photon-number distribution of unbounded support, and averaging over an encoding record permits some branches to have higher conditional means. A hard cutoff and a cap on the mean in every branch are separate resource constraints. The [sharp phase-only law](04-finite-resources.md#sharp-mean-energy-law) uses the all-input budget. Its converse needs only the budget on the maximally mixed logical input. The oscillator marginal of the encoded maximally entangled test state is exactly $`\rho_B(I/d)`$.
+
 ## Error measures
 
 Let
@@ -95,7 +105,7 @@ This is a probability, rather than its square root. It tests preservation of the
 
 ```math
 \varepsilon_\diamond(\Lambda)
-=\frac12\|\Lambda-\mathrm{id}_d\|_\diamond.
+=\frac12\lVert \Lambda-\mathrm{id}_d\rVert_\diamond.
 ```
 
 The diamond norm maximizes distinguishability over arbitrary logical inputs together with a reference; a reference of dimension $`d`$ suffices here. Entanglement fidelity and diamond error are different quantities for a general channel. The exact benchmark establishes their respective optima. It does not identify them for every finite code.
@@ -136,7 +146,7 @@ F_*(d,p)=\frac{2\pi p(0)}{d}+o(d^{-1})
 \quad(d\longrightarrow\infty).
 ```
 
-For bounded $`p`$, the simpler inequality $`F_*\le 2\pi\|p\|_\infty/d`$ is immediate. These are statements about preserving the whole register, not the error of one selected observable or one selected logical qubit.
+For bounded $`p`$, the simpler inequality $`F_*\le 2\pi\lVert p\rVert_\infty/d`$ is immediate. These are statements about preserving the whole register, not the error of one selected observable or one selected logical qubit.
 
 If $`p`$ is continuous and strictly decreasing on $`(0,\pi)`$ and $`d\gt 1`$, no normal code attains the optimum; the more general sufficient condition is the [strict-threshold condition](02-exact-benchmark.md#continuity-and-nonattainment). The [constructive proof](03-constructive-achievability.md) specifies a sequence with finite photon support and convergence of the complete logical channel. The [finite-resource account](04-finite-resources.md) quantifies how this sequence approaches the limit and how photon loss changes its performance.
 
@@ -146,7 +156,7 @@ Uniform phase averaging completely measures the oscillator's nondegenerate numbe
 
 For example, two modes under a common phase $`e^{-i\theta(\hat n_1+\hat n_2)}`$ have a fixed-total-number subspace spanned by $`|n,N-n\rangle`$, of dimension $`N+1`$. Every vector in that subspace receives the same phase. A logical register with $`d\le N+1`$ can therefore be stored perfectly against that collective phase noise. This is a different physical channel, with an additional oscillator and a degenerate generator.
 
-Independent phase noise on several modes, control during the interval, extra phase information, and a fixed energy constraint likewise require distinct optimization problems. The present result gives an exact reference point for one carefully specified memory task.
+Independent phase noise on several modes, control during the interval, and extra phase information likewise define distinct optimization problems. For the model here, the [finite-energy theorem](04-finite-resources.md#sharp-mean-energy-law) measures how fast the optimum approaches the unrestricted reference point.
 
 ## Reading route
 

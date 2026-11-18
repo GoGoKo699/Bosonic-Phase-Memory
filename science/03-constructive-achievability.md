@@ -303,7 +303,7 @@ Its identity probability is $`w_0=\int_{-\pi/d}^{\pi/d}p(\theta)d\theta`$. For e
 Finally, each elementary multiplier $`X\mapsto|j\rangle\langle j|X|h\rangle\langle h|`$ has diamond norm at most one, because left and right multiplication by projections are contractions even with a reference. Hence
 
 ```math
-\|\Lambda_M-\Lambda_\infty\|_\diamond
+\lVert \Lambda_M-\Lambda_\infty\rVert_\diamond
 \le\sum_{j,h=0}^{d-1}
 \left|C^{(M)}_{jh}-C^{(\infty)}_{jh}\right|
 \longrightarrow0.
@@ -379,7 +379,7 @@ F_e(\widetilde\Lambda_M)
 }
 ```
 
-These identities describe this explicit twirled code. They do not assert that it is optimal at a fixed photon cutoff or mean energy. They must also not be assigned to the raw finite $`M`$ channel without an additional argument.
+These identities apply to the explicit twirled code. The [finite-resource analysis](04-finite-resources.md#sharp-mean-energy-law) shows that the sine envelope reaches the best order of convergence to the benchmark under a mean photon budget. The raw finite $`M`$ channel requires its own metric analysis.
 
 The hard cutoff stays $`N-1`$. For any logical input, averaging over the independent uniform seed gives
 

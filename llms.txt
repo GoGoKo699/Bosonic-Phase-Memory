@@ -1,10 +1,10 @@
 # Bosonic Phase Memory
 
-> An exact single-use benchmark for preserving an arbitrary quantum register in one oscillator under an unobserved random phase, with a finite-support matching construction and explicit resource and photon-loss guarantees.
+> An exact single-use benchmark for preserving an arbitrary quantum register in one oscillator under an unobserved random phase, with a sharp inverse-square mean-energy law and explicit photon-loss guarantees.
 
 ## Scientific story
 
-The oscillator has an unbounded number of levels, but its number generator is nondegenerate. Uniform phase averaging therefore destroys all entanglement. This puts an integral budget on every code's fidelity response. For an even phase density that is nonincreasing away from zero, the optimal probability mass under that budget is the central interval of width 2*pi/d. A number-phase comb and modular-phase decoder approach this bound while retaining an unknown d-dimensional quantum state.
+The oscillator has an unbounded number of levels, but its number generator is nondegenerate. Uniform phase averaging therefore destroys all entanglement. This puts an integral budget on every code's fidelity response. For an even phase density that is nonincreasing away from zero, the optimal probability mass under that budget is the central interval of width 2*pi/d. A number-phase comb and modular-phase decoder approach this bound while retaining an unknown d-dimensional quantum state. With a mean photon budget E, every code has a finite transition across the cell boundary. For fixed d and a smooth density with nonzero slope at that boundary, this forces an excess error of order E^-2. A twirled sine-envelope code reaches that order.
 
 The authoritative account is organized by scientific topic. Read the assumptions and metric conventions before comparing a theorem or numerical value with another paper.
 
@@ -15,7 +15,7 @@ The authoritative account is organized by scientific topic. Read the assumptions
 - [Model and question](science/01-model-and-question.md): one-interval task, arbitrary deterministic operations, allowed classical information, reference systems, and error conventions.
 - [Exact benchmark](science/02-exact-benchmark.md): response-function converse, complete dephasing, concentration bound, optimal reference-assisted metrics, continuity, and nonattainment.
 - [Constructive achievability](science/03-constructive-achievability.md): finite-support encoder, complete CPTP decoder, exact finite formulas, and convergence of the full logical channel.
-- [Finite resources](science/04-finite-resources.md): classical cyclic twirl, flat and sine envelopes, cutoff and mean energy, hard-cutoff loss distance, code-specific joint-noise guarantees, and weak-loss balance.
+- [Finite resources](science/04-finite-resources.md): sharp mean-energy law, a worked qubit example, cyclic twirl, flat and sine envelopes, hard-cutoff loss distance, and code-specific joint-noise guarantees.
 - [Noise laws and architecture](science/05-noise-laws-and-architecture.md): exact wrapped Gaussian and Cauchy examples, equal-Ramsey comparison, dimension and storage-time laws, and model changes.
 - [Prior work](science/06-prior-work.md): authoritative comparison with earlier coding, capacity, sensing, and loss-dephasing results.
 - [References](references/README.md): bibliography map and distinction between research sources and the educational anchor.
@@ -38,7 +38,7 @@ The selected educational anchor is Steven M. Girvin, Introduction to Quantum Err
 - The central probability gives an unrestricted-energy supremum and infimum, approached by finite-support codes. For continuous strictly decreasing densities and d greater than one, no normal code attains the limit.
 - Raw finite codes need not have half-diamond error equal to one minus entanglement fidelity. The optional retained classical cyclic twirl supplies that equality for the stated finite phase and joint-noise constructions.
 - Hard photon cutoff, mean photon number for the maximally mixed input, and largest mean over logical inputs are different resources. The explicit loss-distance theorem assumes a hard cutoff.
-- Flat and inherited sine envelopes have constructive convergence and loss guarantees. The weak-loss exponent is achievable at fixed logical dimension and fixed phase density; it is not a global optimum at fixed energy or for joint loss and dephasing.
+- At fixed d >= 2 and fixed continuously differentiable even unimodal p with p'(pi/d) < 0, the optimal fidelity deficits and excess half-diamond error are Theta(E^-2). The converse uses only the mean encoded photon number for the maximally mixed logical input and covers arbitrary deterministic codes. The sine construction satisfies an all-input budget averaged over the retained classical seed. The theorem gives the optimal phase-only exponent. The separate joint-noise bounds are for the specified flat and sine codes.
 - Equal adjacent-level Ramsey coherence fixes only one Fourier coefficient of the phase law. It does not determine the exact memory error for a large register. Fixed-dimension weak-noise comparisons and fixed-error dimension limits can order distributions differently.
 - A phase-width law is not a universal storage-time law. Markov and quasistatic phase noise have different time dependences.
 - The same converse mass bound does not establish matching achievability for arbitrary multimodal densities. Collective-phase noise on multiple modes has degenerate sectors and can evade the single-mode argument.
@@ -48,4 +48,4 @@ The selected educational anchor is Steven M. Girvin, Introduction to Quantum Err
 
 Run `python3 verification/check_finite_resources.py` with Python 3.10 or later. It requires the standard library and reproduces the committed expected output. Rebuild the figure with the pinned plotting dependency and command in verification/README.md. The figure and CSV are analytic predictions, not device data.
 
-Numerical cases check finite formulas and indexing. The general optimum, convergence statement, and loss bounds depend on the written proofs.
+Numerical cases check finite formulas and indexing, including a qubit example of the mean-energy law. The general optimum, sharp scaling and loss bounds follow from the written proofs.

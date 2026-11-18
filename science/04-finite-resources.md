@@ -1,8 +1,8 @@
 # Finite photon resources and weak photon loss
 
-The exact benchmark is an unrestricted-energy optimum. This chapter gives finite-support implementations, explicit approximation bounds, and a controlled addition of pure loss. It does **not** solve the globally optimal finite-energy code or the globally optimal joint loss–dephasing problem.
+The exact benchmark is the unrestricted-energy optimum. With smooth unimodal phase noise and nonzero slope at the edge of the central phase cell, the [sharp mean-energy law](#sharp-mean-energy-law) determines the order of the gap to that benchmark. A converse for every code and the explicit sine code give matching inverse-square scaling. The formulas below also bound the effect of pure loss on the explicit codes.
 
-There are two constructive conclusions. The flat comb from [the achievability proof](03-constructive-achievability.md) approaches the phase benchmark with a computable gap of order $`1/N`$ for a continuously differentiable density, where $`N=dM`$ is the number of occupied Fock levels. Replacing its flat gauge amplitudes by the established sine envelope improves a rigorous bound to order $`d/N^2`$, at the same photon cutoff and mean energy. Both constructions obey the following loss guarantee after an admissible classical twirl:
+The flat comb from [the achievability proof](03-constructive-achievability.md) approaches the phase benchmark with a computable gap of order $`1/N`$ for a continuously differentiable density, where $`N=dM`$ is the number of occupied Fock levels. Replacing its flat gauge amplitudes by the established sine envelope improves a rigorous bound to order $`d/N^2`$, at the same photon cutoff and mean energy. Both constructions obey the following loss guarantee after an admissible classical twirl:
 
 ```math
 \varepsilon_\diamond^{\rm loss+phase}
@@ -86,7 +86,7 @@ This finite sum has no truncation error. It is usually the simplest numerical ev
 
 ### 2.1 A derivative bound with an explicit constant
 
-Suppose $`p`$ is periodic and continuously differentiable, and write $`L=\|p'\|_\infty`$. Since
+Suppose $`p`$ is periodic and continuously differentiable, and write $`L=\lVert p'\rVert_\infty`$. Since
 
 ```math
 H'(t)=p(a+t)-p(-a+t),
@@ -110,7 +110,7 @@ The kernel is even, so only this symmetric part matters. The elementary inequali
 where $`\int_{-\pi}^{\pi}\sin^2(Nt/2)\,dt=\pi`$ was used. Thus
 
 ```math
-|F_M-w|\le\frac{\pi^2\|p'\|_\infty}{2N}.
+|F_M-w|\le\frac{\pi^2\lVert p'\rVert_\infty}{2N}.
 ```
 
 For the unimodal class, this is $`0\le\Delta_M\le\pi^2L/(2N)`$. The same proof works for a periodic Lipschitz density using its Lipschitz constant.
@@ -128,9 +128,9 @@ This is finite. Indeed, integration by parts, Parseval, and Cauchy–Schwarz giv
 
 ```math
 \sum_{r=1}^{\infty}r^2|\widehat p(r)|^2
-=\pi\|p'\|_2^2,
+=\pi\lVert p'\rVert_2^2,
 \qquad
-B_{\rm F}\le\sqrt{\frac{2\pi}{3}}\,\|p'\|_2.
+B_{\rm F}\le\sqrt{\frac{2\pi}{3}}\,\lVert p'\rVert_2.
 ```
 
 Subtracting the finite Fourier sum from the interval mass gives
@@ -166,7 +166,7 @@ A useful certified remainder is
 ```
 
 For example, the right side is at most
-$`2\|p'\|_2/[\sqrt\pi\,N\sqrt{N-1}]`$ for $`N\ge2`$. Faster Fourier decay gives a better explicit remainder.
+$`2\lVert p'\rVert_2/[\sqrt\pi\,N\sqrt{N-1}]`$ for $`N\ge2`$. Faster Fourier decay gives a better explicit remainder.
 
 For an even unimodal $`C^1`$ density, $`A`$ also has the nonnegative real-space representation
 
@@ -291,7 +291,7 @@ The raw finite decoder is a random diagonal-rotation channel. Its half-diamond e
 ```
 
 The upper bound follows from the normalized Choi-state inequality
-$`\|\Lambda-\mathrm{id}\|_\diamond\le d\|J(\Lambda)-|\Phi_d\rangle\langle\Phi_d|\|_1`$
+$`\lVert \Lambda-\mathrm{id}\rVert_\diamond\le d\lVert J(\Lambda)-|\Phi_d\rangle\langle\Phi_d|\rVert_1`$
 and the pure-target trace-distance bound. It is conservative and need not approach the optimal phase floor at the correct rate.
 
 The [allowed classical-record model](01-model-and-question.md) permits a sharper construction. Choose $`q`$ uniformly from $`\{0,\ldots,d-1\}`$, apply $`X^q`$ before encoding, retain $`q`$ classically, and apply $`X^{-q}`$ after recovery, where $`X|j\rangle=|j+1\bmod d\rangle`$. The resulting cyclic twirl preserves entanglement fidelity. For the phase-only Schur channel it produces a random $`Z_d`$ channel, and therefore
@@ -311,6 +311,107 @@ After adding pure loss, the raw logical channel remains covariant under $`Z_d`$.
 
 Thus the fidelity estimates below are diamond guarantees for a fully specified admissible implementation. They are not assertions about the untwirled channel.
 
+## Sharp mean-energy law
+
+Fix a logical dimension $`d\ge2`$ and an even periodic $`C^1`$ phase density $`p`$, nonincreasing on $`[0,\pi]`$, with $`p'(a)\lt0`$ at $`a=\pi/d`$. Write $`w=\int_{-a}^a p(\theta)d\theta`$ for the unrestricted fidelity. Impose the [all-input mean-photon budget](01-model-and-question.md#mean-photon-number-budget) $`E`$. Let $`F_e^*(E)`$ and $`F_{\rm ref}^*(E)`$ denote the supremal entanglement fidelity and worst-case reference fidelity. Let $`\varepsilon_\diamond^*(E)`$ denote the infimal half-diamond error. Allow arbitrary encoders and recoveries in the model, including a retained classical encoding record.
+
+Choose $`0\lt r\lt\min(a,\pi-a)`$ and $`s\gt0`$ such that $`-p'(a+t)\ge s`$ for $`|t|\le r`$. Continuity of the derivative ensures such a choice. Take $`L=\lVert p'\rVert_\infty`$ and $`M=\lfloor(2E+1)/d\rfloor`$. For $`E\ge(d-1)/2`$, each of the three gaps
+
+```math
+w-F_e^*(E),\qquad w-F_{\rm ref}^*(E),\qquad
+\varepsilon_\diamond^*(E)-(1-w)
+```
+
+lies between the following explicit bounds:
+
+```math
+\boxed{
+\frac{s}{80(2E+1/r)^2}
+\le \text{gap}
+\le \frac{\pi^4 L}{4d(M+1)^2}
+\lt \frac{\pi^4 L d}{4(2E+1)^2}.
+}
+```
+
+Thus all three gaps are $`\Theta(E^{-2})`$ as $`E\to\infty`$ at fixed $`d,p`$. Approaching the irreducible phase-alias error to within a small excess $`\delta`$ requires and suffices, in order, a mean photon number proportional to $`\delta^{-1/2}`$.
+
+### Mean energy limits the phase response
+
+The [unrestricted converse](02-exact-benchmark.md#1-the-protocols-phase-response) associates a fidelity response $`f(\theta)\in[0,1]`$ to each protocol. Its entanglement fidelity is $`\int p f`$, and the [uniform phase average](02-exact-benchmark.md#2-uniform-phase-averaging-destroys-the-oscillators-entanglement) gives $`\int f\le2a`$. The energy cap also limits how rapidly this response can change.
+
+Start with the maximally entangled logical input and let $`\tau`$ be the normalized encoded state on the oscillator and inaccessible reference. A purification of $`\tau`$ gives two pure phase-shifted states whose overlap at separation $`t`$ is $`z=\mathrm{Tr}(\tau e^{-it\hat n})`$, with the operator acting on the oscillator. Tracing out the purification, recovering the logical output, and testing its overlap with the target can only reduce distinguishability. With $`q_n`$ the photon number probabilities of $`\tau`$ and $`e=\sum_n n q_n`$, we have
+
+```math
+\begin{aligned}
+|f(\theta+t)-f(\theta)|
+&\le \sqrt{1-|z|^2} \\
+&\le \sqrt{2(1-\mathrm{Re}\,z)} \\
+&= \sqrt{2\sum_n q_n[1-\cos(nt)]}
+\le \sqrt{2e|t|}.
+\end{aligned}
+```
+
+The last step uses $`1-\cos u\le|u|`$. Only the first number moment enters, so the bound includes arbitrarily long photon-number tails and infinite variance. The purification is a proof device. Recovery has access only to the resources in the model.
+
+With a retained classical record, apply the bound to each normalized branch of the encoded state and its conditioned recovery. Its branch probability is fixed before the phase rotation. The mean of the branch photon numbers is the encoded mean for the maximally mixed logical input, at most $`E`$. Concavity of the square root, applied to the sum or integral over the record, therefore yields the same universal modulus:
+
+```math
+|f(\theta+t)-f(\theta)|\le \sqrt{2 E |t|}.
+```
+
+### The boundary imposes an unavoidable fidelity deficit
+
+Let $`\chi`$ be the indicator of $`[-a,a]`$ and let $`c=p(a)`$. The threshold identity is
+
+```math
+w-F_e(\Lambda)=\int_{-\pi}^{\pi}(p-c)(\chi-f)\,d\theta
++c\left(2a-\int_{-\pi}^{\pi}f\,d\theta\right).
+```
+
+The first integrand is nonnegative by unimodality, and the mass bound makes the second term nonnegative. At the right boundary, put $`y=f(a)`$ and $`C_E=2E+1/r`$. For $`0\le x\le r`$ the deficit on the inside is at least $`[1-y-\sqrt{C_E x}]_+`$, while the response leaking outside is at least $`[y-\sqrt{C_E x}]_+`$, where $`[u]_+=\max(u,0)`$. The corresponding density difference from $`c`$ on either side is at least $`sx`$.
+
+For either $`A=1-y`$ or $`A=y`$, the positive part extends to $`A^2/C_E\le r`$. Its integral against $`x`$ is
+
+```math
+\int_0^{A^2/C_E} x\bigl(A-\sqrt{C_E x}\bigr)\,dx
+=\frac{A^5}{10C_E^2}.
+```
+
+Since $`y^5+(1-y)^5\ge1/16`$, this boundary contributes at least $`s/(160C_E^2)`$. Evenness supplies the same bound at the other boundary, with its own response value. Their neighborhoods are disjoint by the choice of $`r`$. The sum proves the lower bound for every protocol. It requires only a mean budget on the maximally mixed logical input. The inequalities $`F_{\rm ref}\le F_e`$ and $`\varepsilon_\diamond\ge1-F_e`$ give the other two converses.
+
+### The sine code attains the order
+
+With the sine envelope and the cyclic twirl, every logical input has unconditional encoded mean $`(dM-1)/2\le E`$. The twirl consumes a uniformly random classical label with $`d`$ possible values, retained across the interval and used by the decoder. The Schur channel becomes a random logical phase channel. For that channel the maximally entangled input minimizes the reference fidelity, and the half-diamond error is exactly $`1-F_e`$. All three gaps are therefore equal on this code. Applying the sine-envelope estimate and $`M+1\gt(2E+1)/d`$ proves the upper bound.
+
+If the energy budget instead caps the conditional mean in every twirl branch, budget the maximum branch mean $`(dM+d-2)/2`$. Its extra $`(d-1)/2`$ photons change the finite bound and preserve the fixed-$`d`$ order. The theorem gives a rate for a fixed noise law and register size. An exact optimizer, its leading coefficient, growing logical dimension, vanishing boundary slope, joint photon loss, and hardware preparation or recovery costs are separate questions. The [uniform phase example](02-exact-benchmark.md#edge-cases-and-scope) attains the benchmark at finite energy and illustrates the need for a slope condition.
+
+### The three optimized metrics agree at finite energy
+
+In the classical-record model, take any protocol satisfying the mean budget on the maximally mixed input. Apply a uniformly random logical Weyl unitary before encoding, retain the choice, and undo it after recovery. The $`d^2`$ Weyl choices average every input to $`I/d`$, so the resulting protocol satisfies the unconditional all-input budget with the same cap. The twirl preserves entanglement fidelity and makes the channel a mixture of Weyl errors. The probability of the identity operation equals its entanglement fidelity. Every pure reference–input state has recovered overlap at least this probability, and the maximally entangled input achieves equality by orthogonality. That same input distinguishes the identity from the Weyl mixture with half-diamond error equal to one minus the identity probability. The opposite bound holds by convexity of the norm. Together with the universal metric inequalities, this gives
+
+```math
+F_e^*(E)=F_{\rm ref}^*(E)=1-\varepsilon_\diamond^*(E)
+```
+
+under either unconditional mean-budget convention. The agreement holds at each energy in the classical-record model, while the bounds control its common value. The sine construction above uses only $`d`$ twirl choices because its recovered channel is already a Schur channel.
+
+### A qubit with cosine phase noise
+
+Take $`d=2`$ and $`p(\theta)=(1+\cos\theta)/(2\pi)`$. Then $`a=\pi/2`$, $`w=1/2+1/\pi`$, and $`p'(a)=-1/(2\pi)`$. The universal lower bound can use $`r=\pi/4`$ and $`s=\sqrt{2}/(4\pi)`$. Only the first Fourier harmonic contributes to the sine-code fidelity, so its gap is exactly
+
+```math
+w-F_{\rm sine}=\frac{1-\cos\bigl(\pi/(M+1)\bigr)}{2\pi},\qquad
+E_{\rm code}=M-\tfrac12.
+```
+
+| Gauge length $`M`$ | Mean photons $`E_{\rm code}`$ | Sine-code excess half-diamond error |
+|---:|---:|---:|
+| 4 | 3.5 | 0.03040 |
+| 8 | 7.5 | 0.00960 |
+| 16 | 15.5 | 0.00271 |
+
+For this explicit code, multiplying the gap by $`E_{\rm code}^2`$ tends to $`\pi/4`$. The construction illustrates the order that the universal converse enforces. Its coefficient describes the sine code.
+
 ## 5. Pure loss: an exact hard-cutoff distance
 
 Write $`\mathcal A_\eta`$ for the quantum-limited pure-loss channel with $`0\le\eta\le1`$. Its standard Kraus operators [4,5] act as
@@ -328,7 +429,7 @@ In particular $`A_0=\eta^{\hat n/2}`$. Put $`s=-\log\eta`$ when $`\eta\gt 0`$; f
 On the input subspace $`\mathcal H_{n_{\max}}=\mathrm{span}\{|0\rangle,\ldots,|n_{\max}\rangle\}`$, the exact restricted distance is
 
 ```math
-\frac12\|\mathcal A_\eta-\mathrm{id}\|_{\diamond,\mathcal H_{n_{\max}}}
+\frac12\lVert \mathcal A_\eta-\mathrm{id}\rVert_{\diamond,\mathcal H_{n_{\max}}}
 =1-\eta^{n_{\max}}.
 ```
 

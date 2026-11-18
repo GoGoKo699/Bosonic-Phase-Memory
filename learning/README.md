@@ -13,7 +13,7 @@ The [milestone map](milestones.md) contains exactly **30 understanding targets**
 | Phase | Milestones | What the phase connects |
 |---|---|---|
 | Background and preliminaries | M01–M12 | Number states, phase coherence, channels, recovery, reference-assisted errors, and resources become one precise memory problem. |
-| Narrative and innovation | M13–M30 | The fidelity-response bound and modular-phase code become an exact optimum, then finite-resource guarantees and architectural consequences. |
+| Narrative and innovation | M13–M30 | The fidelity-response bound and modular-phase code give the exact optimum, the sharp mean-energy law, and architectural consequences. |
 
 Each phase moves from individual objects and mechanisms to a synthesis. Each milestone states its central question, understanding target, dependencies, conceptual connection, and source pointers. The map is shared scientific material; its targets do not depend on a reader's prior knowledge.
 
@@ -23,10 +23,10 @@ Each phase moves from individual objects and mechanisms to a synthesis. Each mil
 |---|---|
 | Build the physical picture | Read the [bridge](girvin-bridge.md), then follow [M01–M12](milestones.md#m01) alongside the [model](../science/01-model-and-question.md). |
 | Understand why the bound is universal | Follow [M13 onward](milestones.md#m13) with the [exact benchmark](../science/02-exact-benchmark.md) and [matching construction](../science/03-constructive-achievability.md). |
-| Connect the ideal limit to resources | Read [finite resources](../science/04-finite-resources.md), including the finite classical twirl and the assumptions behind the loss bounds. |
+| Connect the ideal limit to resources | Follow [M22–M26](milestones.md#m22) and the [mean-energy theorem](../science/04-finite-resources.md#sharp-mean-energy-law). Compare the mean budget used for phase memory with the hard cutoff used in the loss bound. |
 | Interpret the architectural consequences | Read [noise laws and architecture](../science/05-noise-laws-and-architecture.md), then the [prior-work comparison](../science/06-prior-work.md) and the map's final synthesis. |
 | Check the numerical examples | Use the [verification guide](../verification/README.md); the general claims remain grounded in their written proofs. |
 
-The route distinguishes three levels throughout: the exact unrestricted-energy benchmark, explicit finite codes that approach it, and the additional resources needed for a physical implementation. In particular, the derived photon-loss guarantees do not assert an exact optimum for combined loss and dephasing.
+The route connects the exact phase-alias floor to the photon cost of approaching it. The mean-energy theorem applies to one phase-only interval at fixed register dimension and noise law with nonzero slope at the phase-cell boundary. The loss chapter gives guarantees for explicit finite codes under the additional noise mechanism.
 
 [Scientific account](../science/README.md) · [Repository overview](../README.md) · [LLM reading guide](../llms.txt)
