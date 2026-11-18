@@ -57,7 +57,7 @@ A reference of dimension $`d`$ suffices, since any purification of a state on $`
 
 ```math
 \varepsilon_\diamond(\Lambda)
-=\frac12\|\Lambda-\mathrm{id}_d\|_\diamond.
+=\frac12\lVert \Lambda-\mathrm{id}_d\rVert_\diamond.
 ```
 
 ### Theorem
@@ -188,9 +188,9 @@ The maximally mixed state is one admissible input in the worst-case fidelity, he
 ```math
 \begin{aligned}
 \varepsilon_\diamond(\Lambda)
-&\ge\frac12\left\|
+&\ge\frac12\left\lVert
 (\mathrm{id}_R\otimes\Lambda)(\Phi_d)-\Phi_d
-\right\|_1\\
+\right\rVert_1\\
 &\ge1-F_e(\Lambda)
 \ge1-w_d(p),
 \end{aligned}
@@ -249,7 +249,7 @@ F_e(\Lambda_\infty)=F_{\mathrm{ref}}(\Lambda_\infty)=w_0.
 The triangle inequality gives
 
 ```math
-\frac12\|\Lambda_\infty-\mathrm{id}_d\|_\diamond
+\frac12\lVert \Lambda_\infty-\mathrm{id}_d\rVert_\diamond
 \le\sum_{r\ne0}w_r=1-w_0.
 ```
 
@@ -270,9 +270,9 @@ A continuous density strictly decreasing with $`|\theta|`$ satisfies this condit
 Every admissible physical protocol, however, has a continuous response $`f`$. To see this in the ordinary model, apply the encoder to half of $`\Phi_d`$, obtaining a trace-class state $`\tau_{RB}`$. Strong continuity of $`U_\theta`$ implies
 
 ```math
-\left\|(I_R\otimes U_\theta)\tau_{RB}(I_R\otimes U_\theta^\dagger)
+\left\lVert(I_R\otimes U_\theta)\tau_{RB}(I_R\otimes U_\theta^\dagger)
 -(I_R\otimes U_{\theta_0})\tau_{RB}(I_R\otimes U_{\theta_0}^\dagger)
-\right\|_1\longrightarrow0
+\right\rVert_1\longrightarrow0
 ```
 
 as $`\theta\to\theta_0`$. A finite-rank approximation of $`\tau_{RB}`$ proves this implication without any energy assumption. Recovery is trace-norm contractive on state differences, and taking the overlap with $`\Phi_d`$ is continuous. For a classical-record instrument, apply the same argument to its unnormalized branch states. Their traces sum or integrate to one, and each difference has norm at most twice its branch trace, so dominated convergence proves continuity after summing over the record.

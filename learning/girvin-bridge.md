@@ -127,7 +127,7 @@ Increasing $`M`$ improves precision within that modular cell. It leaves an ambig
 For every logical channel,
 
 ```math
-\frac12\|\Lambda-\mathrm{id}_d\|_\diamond\ge1-F_e(\Lambda).
+\frac12\lVert \Lambda-\mathrm{id}_d\rVert_\diamond\ge1-F_e(\Lambda).
 ```
 
 For the limiting phase-Pauli channel, equality holds: its nonidentity aliases have total probability $`1-w_d(p)`$. Thus the construction matches the converse in both metrics. If $`p`$ is even, continuous, and strictly decreasing on $`(0,\pi)`$, and $`d\gt 1`$, the optimal value is approached by normal codes but is not attained by one. These qualifications appear in [M21](milestones.md#m21) and [the theorem's continuity discussion](../science/02-exact-benchmark.md#continuity-and-nonattainment).
@@ -153,7 +153,7 @@ Both number states are preserved perfectly. Nevertheless, a superposition loses 
 ```math
 F_e(\Lambda)=1-q,
 \qquad
-\frac12\|\Lambda-\mathrm{id}_2\|_\diamond=q.
+\frac12\lVert \Lambda-\mathrm{id}_2\rVert_\diamond=q.
 ```
 
 The metric equality is justified here by the explicit Pauli mixture; it is not an identity for arbitrary channels. Under Gaussian phase noise with $`\chi=0.01`$, this simple code has $`q=(1-e^{-0.01})/2\approx0.004975`$. It is a feasible finite-energy code, not the optimized benchmark. The optimal error instead depends on the full probability outside the correct half-circle, with wrapping included.

@@ -303,7 +303,7 @@ Its identity probability is $`w_0=\int_{-\pi/d}^{\pi/d}p(\theta)d\theta`$. For e
 Finally, each elementary multiplier $`X\mapsto|j\rangle\langle j|X|h\rangle\langle h|`$ has diamond norm at most one, because left and right multiplication by projections are contractions even with a reference. Hence
 
 ```math
-\|\Lambda_M-\Lambda_\infty\|_\diamond
+\lVert \Lambda_M-\Lambda_\infty\rVert_\diamond
 \le\sum_{j,h=0}^{d-1}
 \left|C^{(M)}_{jh}-C^{(\infty)}_{jh}\right|
 \longrightarrow0.

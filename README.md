@@ -10,7 +10,7 @@ w_d(p)&=\int_{-\pi/d}^{\pi/d}p(\theta)\,d\theta,\\
 \sup_{\mathcal E,\mathcal R}F_e(\mathcal R\mathcal D_p\mathcal E)
 &=w_d(p),\\
 \inf_{\mathcal E,\mathcal R}\frac12
-\|\mathcal R\mathcal D_p\mathcal E-\mathrm{id}_d\|_\diamond
+\lVert \mathcal R\mathcal D_p\mathcal E-\mathrm{id}_d\rVert_\diamond
 &=1-w_d(p).
 \end{aligned}
 ```

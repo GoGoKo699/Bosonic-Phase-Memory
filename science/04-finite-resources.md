@@ -86,7 +86,7 @@ This finite sum has no truncation error. It is usually the simplest numerical ev
 
 ### 2.1 A derivative bound with an explicit constant
 
-Suppose $`p`$ is periodic and continuously differentiable, and write $`L=\|p'\|_\infty`$. Since
+Suppose $`p`$ is periodic and continuously differentiable, and write $`L=\lVert p'\rVert_\infty`$. Since
 
 ```math
 H'(t)=p(a+t)-p(-a+t),
@@ -110,7 +110,7 @@ The kernel is even, so only this symmetric part matters. The elementary inequali
 where $`\int_{-\pi}^{\pi}\sin^2(Nt/2)\,dt=\pi`$ was used. Thus
 
 ```math
-|F_M-w|\le\frac{\pi^2\|p'\|_\infty}{2N}.
+|F_M-w|\le\frac{\pi^2\lVert p'\rVert_\infty}{2N}.
 ```
 
 For the unimodal class, this is $`0\le\Delta_M\le\pi^2L/(2N)`$. The same proof works for a periodic Lipschitz density using its Lipschitz constant.
@@ -128,9 +128,9 @@ This is finite. Indeed, integration by parts, Parseval, and Cauchy–Schwarz giv
 
 ```math
 \sum_{r=1}^{\infty}r^2|\widehat p(r)|^2
-=\pi\|p'\|_2^2,
+=\pi\lVert p'\rVert_2^2,
 \qquad
-B_{\rm F}\le\sqrt{\frac{2\pi}{3}}\,\|p'\|_2.
+B_{\rm F}\le\sqrt{\frac{2\pi}{3}}\,\lVert p'\rVert_2.
 ```
 
 Subtracting the finite Fourier sum from the interval mass gives
@@ -166,7 +166,7 @@ A useful certified remainder is
 ```
 
 For example, the right side is at most
-$`2\|p'\|_2/[\sqrt\pi\,N\sqrt{N-1}]`$ for $`N\ge2`$. Faster Fourier decay gives a better explicit remainder.
+$`2\lVert p'\rVert_2/[\sqrt\pi\,N\sqrt{N-1}]`$ for $`N\ge2`$. Faster Fourier decay gives a better explicit remainder.
 
 For an even unimodal $`C^1`$ density, $`A`$ also has the nonnegative real-space representation
 
@@ -291,7 +291,7 @@ The raw finite decoder is a random diagonal-rotation channel. Its half-diamond e
 ```
 
 The upper bound follows from the normalized Choi-state inequality
-$`\|\Lambda-\mathrm{id}\|_\diamond\le d\|J(\Lambda)-|\Phi_d\rangle\langle\Phi_d|\|_1`$
+$`\lVert \Lambda-\mathrm{id}\rVert_\diamond\le d\lVert J(\Lambda)-|\Phi_d\rangle\langle\Phi_d|\rVert_1`$
 and the pure-target trace-distance bound. It is conservative and need not approach the optimal phase floor at the correct rate.
 
 The [allowed classical-record model](01-model-and-question.md) permits a sharper construction. Choose $`q`$ uniformly from $`\{0,\ldots,d-1\}`$, apply $`X^q`$ before encoding, retain $`q`$ classically, and apply $`X^{-q}`$ after recovery, where $`X|j\rangle=|j+1\bmod d\rangle`$. The resulting cyclic twirl preserves entanglement fidelity. For the phase-only Schur channel it produces a random $`Z_d`$ channel, and therefore
@@ -315,7 +315,7 @@ Thus the fidelity estimates below are diamond guarantees for a fully specified a
 
 Fix a logical dimension $`d\ge2`$ and an even periodic $`C^1`$ phase density $`p`$, nonincreasing on $`[0,\pi]`$, with $`p'(a)\lt0`$ at $`a=\pi/d`$. Write $`w=\int_{-a}^a p(\theta)d\theta`$ for the unrestricted fidelity. Impose the [all-input mean-photon budget](01-model-and-question.md#mean-photon-number-budget) $`E`$. Let $`F_e^*(E)`$ and $`F_{\rm ref}^*(E)`$ denote the supremal entanglement fidelity and worst-case reference fidelity. Let $`\varepsilon_\diamond^*(E)`$ denote the infimal half-diamond error. Allow arbitrary encoders and recoveries in the model, including a retained classical encoding record.
 
-Choose $`0\lt r\lt\min(a,\pi-a)`$ and $`s\gt0`$ such that $`-p'(a+t)\ge s`$ for $`|t|\le r`$. Continuity of the derivative ensures such a choice. Take $`L=\|p'\|_\infty`$ and $`M=\lfloor(2E+1)/d\rfloor`$. For $`E\ge(d-1)/2`$, each of the three gaps
+Choose $`0\lt r\lt\min(a,\pi-a)`$ and $`s\gt0`$ such that $`-p'(a+t)\ge s`$ for $`|t|\le r`$. Continuity of the derivative ensures such a choice. Take $`L=\lVert p'\rVert_\infty`$ and $`M=\lfloor(2E+1)/d\rfloor`$. For $`E\ge(d-1)/2`$, each of the three gaps
 
 ```math
 w-F_e^*(E),\qquad w-F_{\rm ref}^*(E),\qquad
@@ -429,7 +429,7 @@ In particular $`A_0=\eta^{\hat n/2}`$. Put $`s=-\log\eta`$ when $`\eta\gt 0`$; f
 On the input subspace $`\mathcal H_{n_{\max}}=\mathrm{span}\{|0\rangle,\ldots,|n_{\max}\rangle\}`$, the exact restricted distance is
 
 ```math
-\frac12\|\mathcal A_\eta-\mathrm{id}\|_{\diamond,\mathcal H_{n_{\max}}}
+\frac12\lVert \mathcal A_\eta-\mathrm{id}\rVert_{\diamond,\mathcal H_{n_{\max}}}
 =1-\eta^{n_{\max}}.
 ```
 

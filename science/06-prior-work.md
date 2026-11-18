@@ -67,7 +67,7 @@ There is a useful direct connection for a one-mode code supported on a single co
 This is the main communication precedent. It identifies the unrestricted-energy quantum and private capacities, including two-way assisted versions, with the classical relative entropy of the phase law from the uniform distribution. With base-two logarithms,
 
 ```math
-Q(\mathcal D_p)=D(p\|u)
+Q(\mathcal D_p)=D(p\Vert u)
 =\int_{-\pi}^{\pi}p(\theta)\log_2[2\pi p(\theta)]\,d\theta.
 ```
 

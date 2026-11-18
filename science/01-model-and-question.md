@@ -105,7 +105,7 @@ This is a probability, rather than its square root. It tests preservation of the
 
 ```math
 \varepsilon_\diamond(\Lambda)
-=\frac12\|\Lambda-\mathrm{id}_d\|_\diamond.
+=\frac12\lVert \Lambda-\mathrm{id}_d\rVert_\diamond.
 ```
 
 The diamond norm maximizes distinguishability over arbitrary logical inputs together with a reference; a reference of dimension $`d`$ suffices here. Entanglement fidelity and diamond error are different quantities for a general channel. The exact benchmark establishes their respective optima. It does not identify them for every finite code.
@@ -146,7 +146,7 @@ F_*(d,p)=\frac{2\pi p(0)}{d}+o(d^{-1})
 \quad(d\longrightarrow\infty).
 ```
 
-For bounded $`p`$, the simpler inequality $`F_*\le 2\pi\|p\|_\infty/d`$ is immediate. These are statements about preserving the whole register, not the error of one selected observable or one selected logical qubit.
+For bounded $`p`$, the simpler inequality $`F_*\le 2\pi\lVert p\rVert_\infty/d`$ is immediate. These are statements about preserving the whole register, not the error of one selected observable or one selected logical qubit.
 
 If $`p`$ is continuous and strictly decreasing on $`(0,\pi)`$ and $`d\gt 1`$, no normal code attains the optimum; the more general sufficient condition is the [strict-threshold condition](02-exact-benchmark.md#continuity-and-nonattainment). The [constructive proof](03-constructive-achievability.md) specifies a sequence with finite photon support and convergence of the complete logical channel. The [finite-resource account](04-finite-resources.md) quantifies how this sequence approaches the limit and how photon loss changes its performance.
 
