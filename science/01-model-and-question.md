@@ -80,7 +80,7 @@ The reference used to evaluate a channel is not an accessible memory resource. L
 For the finite-energy phase-only problem, let $`\rho_B(\rho_A)`$ be the oscillator marginal after encoding a logical input $`\rho_A`$, averaged over any retained classical encoding record. The all-input budget is
 
 ```math
-\sup_{\rho_A}\operatorname{Tr}\bigl[\hat n\rho_B(\rho_A)\bigr]\le E.
+\sup_{\rho_A}\mathrm{Tr}\bigl[\hat n\rho_B(\rho_A)\bigr]\le E.
 ```
 
 The mean is evaluated just after encoding. The phase rotation preserves it. This condition allows a photon-number distribution of unbounded support, and averaging over an encoding record permits some branches to have higher conditional means. A hard cutoff and a cap on the mean in every branch are separate resource constraints. The [sharp phase-only law](04-finite-resources.md#sharp-mean-energy-law) uses the all-input budget. Its converse needs only the budget on the maximally mixed logical input. The oscillator marginal of the encoded maximally entangled test state is exactly $`\rho_B(I/d)`$.

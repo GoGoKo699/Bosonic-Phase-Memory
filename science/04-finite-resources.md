@@ -339,13 +339,13 @@ Thus all three gaps are $`\Theta(E^{-2})`$ as $`E\to\infty`$ at fixed $`d,p`$. A
 
 The [unrestricted converse](02-exact-benchmark.md#1-the-protocols-phase-response) associates a fidelity response $`f(\theta)\in[0,1]`$ to each protocol. Its entanglement fidelity is $`\int p f`$, and the [uniform phase average](02-exact-benchmark.md#2-uniform-phase-averaging-destroys-the-oscillators-entanglement) gives $`\int f\le2a`$. The energy cap also limits how rapidly this response can change.
 
-Start with the maximally entangled logical input and let $`\tau`$ be the normalized encoded state on the oscillator and inaccessible reference. A purification of $`\tau`$ gives two pure phase-shifted states whose overlap at separation $`t`$ is $`z=\operatorname{Tr}(\tau e^{-it\hat n})`$, with the operator acting on the oscillator. Tracing out the purification, recovering the logical output, and testing its overlap with the target can only reduce distinguishability. With $`q_n`$ the photon number probabilities of $`\tau`$ and $`e=\sum_n n q_n`$, we have
+Start with the maximally entangled logical input and let $`\tau`$ be the normalized encoded state on the oscillator and inaccessible reference. A purification of $`\tau`$ gives two pure phase-shifted states whose overlap at separation $`t`$ is $`z=\mathrm{Tr}(\tau e^{-it\hat n})`$, with the operator acting on the oscillator. Tracing out the purification, recovering the logical output, and testing its overlap with the target can only reduce distinguishability. With $`q_n`$ the photon number probabilities of $`\tau`$ and $`e=\sum_n n q_n`$, we have
 
 ```math
 \begin{aligned}
 |f(\theta+t)-f(\theta)|
 &\le \sqrt{1-|z|^2} \\
-&\le \sqrt{2(1-\operatorname{Re}z)} \\
+&\le \sqrt{2(1-\mathrm{Re}\,z)} \\
 &= \sqrt{2\sum_n q_n[1-\cos(nt)]}
 \le \sqrt{2e|t|}.
 \end{aligned}
